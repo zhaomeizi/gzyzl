@@ -1,0 +1,932 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>带你回忆那些爸爸的口头禅</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<link rel="stylesheet" href="/Public/css/swiper-3.3.0.min.css">
+<link rel="stylesheet" href="/Public/css/father/father.css">
+<link rel="stylesheet" href="/Public/css/father/father_homework.css">
+<link rel="stylesheet" href="/Public/css/father/father_strong.css">
+<link rel="stylesheet" href="/Public/css/father/father_sleep.css">
+<link rel="stylesheet" href="/Public/css/father/father_money.css">
+<link rel="stylesheet" href="/Public/css/father/father_loveme.css">
+<link rel="stylesheet" href="/Public/css/father/father_lovedad.css">
+<!-- <link rel="stylesheet" href="/Public/css/father/father_notafraid.css"> -->
+<link rel="stylesheet" href="/Public/css/father/father_sayagain.css">
+<link rel="stylesheet" href="/Public/css/father/father_listen.css">
+<style>
+* {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+	padding: 0;
+	margin: 0;
+}
+html,body{
+	width:100%;
+	/*max-width:640px;*/
+	min-width:320px;
+	height:100%;
+	overflow-x:hidden;
+	box-sizing:border-box;
+	margin:0 auto;
+	padding:0;
+	/* min-height:480px; */
+	font-family: "微软雅黑","Microsoft YaHei","MS Serif",serif;
+}
+body{
+	background:none;
+	-webkit-overflow-scrolling:touch;
+}
+a, input {
+	text-decoration: none;
+	outline: none !important;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+a:focus, a:active, a:hover, img:focus, img:active, img:hover, input:focus, input:active, input:hover {
+	outline: none !important;
+}
+img {
+	width: 100%;
+	height: auto;
+}
+.wx-logo {
+	display: none;
+}
+
+.bg-music {
+	display: none;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 30px;
+	height: 30px;
+	background: url("/Public/images/clothing/normalmusic.svg") no-repeat;
+	background-size: 100% 100%;
+	z-index: 1200;
+}
+.bg-music.silent {
+	/* background: url("/Public/images/silent.png") no-repeat;
+	background-size: 100% 100%; */
+}
+.rotate {
+	-webkit-animation:rotating 1.2s linear infinite;
+	-moz-animation:rotating 1.2s linear infinite;
+	-o-animation:rotating 1.2s linear infinite;
+	animation:rotating 1.2s linear infinite;
+}
+@-webkit-keyframes rotating {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform:rotate(360deg);
+	}
+}
+@keyframes rotating {
+	from {
+		transform:rotate(0deg);
+	}
+	to {
+		transform:rotate(360deg);
+	}
+}
+@-moz-keyframes rotating {
+	from {
+		-moz-transform:rotate(0deg);
+	}
+	to {
+		-moz-transform:rotate(360deg);
+	}
+}
+
+a {
+	display: block;
+}
+#loading {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	line-height: 1;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,0.75);
+	text-align: center;
+	vertical-align: middle;
+	z-index: 1000;
+	color: white;
+	font-size: 24px;
+}
+.loading-body {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.loading-body > img {
+	width: 100%;
+	height: 100%;
+}
+.loading-body > p {
+	position: absolute;
+	text-align: center;
+	color: #333;
+	line-height: 1;
+	width: 100%;
+}
+#percent-tips {
+	top: 10%;
+	padding: 5px;
+	font-size: 24px;
+}
+#loading-tips {
+	bottom: 10%;
+	padding: 5px;
+	font-size: 18px;
+	text-align: left;
+	width: 100px;
+	left: 50%;
+	margin-left: -50px;
+}
+.main-con {
+	display: none;
+	width: 100%;
+	padding: 15px 15px 5px;
+	overflow-y: auto;
+}
+.picture-bg {
+	width:100%;
+	height:100%;
+	position:relative;
+	background-repeat: no-repeat;
+	background-size: 100% 100%;
+	overflow-y: auto;
+}
+
+.show-con {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+}
+.portrait-show {
+	position: absolute;
+}
+.portrait-show > img {
+	position: relative;
+	border-radius: 50%;
+	vertical-align: top;
+}
+
+div.result-show {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+ 	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.bottom-con {
+	display: none;
+	width: 100%;
+	height: 50px;
+}
+.bottom-fix {
+	position: absolute;
+	width: 100%;
+	height: 5px;
+	left: 0;
+	bottom: 27px;
+	background: #f65494;
+}
+
+.back{
+	display:block;
+	position:absolute;
+	width:110px;
+	height: 40px;
+	left: 50%;
+	bottom: 10px;
+	margin-left: -55px;
+}
+.btn-bg{
+	width:100%;
+	height: auto;
+}
+.first, .second, .third {
+	position: absolute;
+	width: 15px;
+	height: auto;
+	left: 50%;
+	bottom: 13px;
+}
+.first {
+	margin-left: -30px;
+	-webkit-transform: rotate(-11deg);
+	transform: rotate(-11deg);
+	-webkit-animation: jumping 1s linear infinite;
+	-moz-animation: jumping 1s linear infinite;
+	-o-animation: jumping 1s linear infinite;
+	animation: jumping 1s linear infinite;
+}
+.second {
+	margin-left: -8px;
+	-webkit-animation: jumping 1s linear 0.2s infinite;
+	-moz-animation: jumping 1s linear 0.2s infinite;
+	-o-animation: jumping 1s linear 0.2s infinite;
+	animation: jumping 1s linear 0.2s infinite;
+}
+.third {
+	margin-left: 15px;
+	-webkit-transform: rotate(11deg);
+	transform: rotate(11deg);
+	-webkit-animation: jumping 1s linear 0.4s infinite;
+	-moz-animation: jumping 1s linear 0.4s infinite;
+	-o-animation: jumping 1s linear 0.4s infinite;
+	animation: jumping 1s linear 0.4s infinite;
+}
+@-webkit-keyframes jumping {
+	0% {
+		bottom: 13px;
+	}
+	25% {
+		bottom: 20px;
+	}
+	50%, 100% {
+		bottom: 13px;
+	}
+}
+@keyframes jumping {
+	0% {
+		bottom: 13px;
+	}
+	25% {
+		bottom: 20px;
+	}
+	50%, 100% {
+		bottom: 13px;
+	}
+}
+@-moz-keyframes jumping {
+	0% {
+		bottom: 13px;
+	}
+	25% {
+		bottom: 20px;
+	}
+	50%, 100% {
+		bottom: 13px;
+	}
+}
+
+.father-face-show {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+.logo-con {
+	position: absolute;
+	width: 100%;
+	top: 4%;
+	left: 0;
+	padding: 0 10px;
+	text-align: left;
+	z-index: 100;
+}
+.logo-con > img {
+	display: inline-block;
+	margin-left: 5px;
+	vertical-align: middle;
+}
+.logo-con > img:first-child {
+	margin-left: 0;
+}
+.company_logo {
+	width: 30%;
+	height: auto;
+	margin-top: 4%;
+}
+.game_logo {
+	width: 22%;
+	height: auto;
+}
+.split {
+	width: 2px;
+	height:auto;
+}
+.next-btn {
+	position: absolute;
+}
+.loading-gif {
+	position: absolute;
+	width: 70%;
+	height: auto;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+}
+/* 
+.face-strong .portrait-show.frame1 {
+	left: 26%;
+  	bottom: 39.5%;
+}
+.face-strong .portrait-show.frame2 {
+	left: 22.5%;
+	bottom: 40.2%;
+}
+.face-strong .portrait-show.frame3 {
+	left: 20.5%;
+	bottom: 40%;
+} */
+</style>
+
+</head>
+
+<body>
+	<div id="loading">
+		<div class="loading-body">
+			<img src="/Public/images/father/basic_bg.jpg">
+			<img class="loading-gif" src="/Public/images/father/loading.gif">
+			<p id="percent-tips">0%</p>
+			<p id="loading-tips">loading.</p>
+		</div>
+	</div>
+	<div class="main-con">
+		<div class="picture-bg">
+			<div class="show-con">
+			<div class="father-face-show face-homework" data-name="homework" style="z-index:10;">
+				<div class="result-show"></div>
+				<div class="portrait-show">
+				</div>
+			</div>
+			<div class="father-face-show face-strong" data-name="strong" style="z-index:9;">
+				<div class="result-show"></div>
+				<div class="portrait-show">
+				</div>
+			</div>
+			<div class="father-face-show face-sleep" data-name="sleep" style="z-index:8;">
+				<div class="result-show"></div>
+				<div class="portrait-show">
+				</div>
+			</div>
+			<div class="father-face-show face-money" data-name="money" style="z-index:7;">
+				<div class="result-show"></div>
+				<div class="portrait-show">
+				</div>
+			</div>
+			<div class="father-face-show face-loveme" data-name="loveme" style="z-index:6;">
+				<div class="result-show"></div>
+				<div class="portrait-show">
+				</div>
+			</div>
+			<div class="father-face-show face-sayagain" data-name="sayagain" style="z-index:5;">
+				<div class="result-show"></div>
+				<div class="portrait-show">
+				</div>
+			</div>
+			<!-- <div class="father-face-show face-notafraid" data-name="notafraid" style="z-index:4;">
+				<div class="result-show"></div>
+				<div class="portrait-show">
+					<img src="" class="portrait">
+				</div>
+			</div> -->
+			<div class="father-face-show face-listen" data-name="listen" style="z-index:3;">
+				<div class="result-show"></div>
+				<div class="portrait-show">
+				</div>
+			</div>
+			<div class="father-face-show face-lovedad" data-name="lovedad" style="z-index:2;">
+				<div class="result-show"></div>
+				<div class="portrait-show">
+				</div>
+			</div>
+			<a href="javascript:void(0);" class="next-btn" >
+				<img alt="" src="/Public/images/father/next_btn.png">	
+			</a>
+			<div class="logo-con">
+				<img class="company_logo" src="/Public/images/father/logo.png" />
+				<img class="split" src="/Public/images/father/split.png" />
+				<img class="game_logo" src="/Public/images/father/game_logo.png" />
+			</div>
+			</div>
+		</div>
+	</div>
+	<div class="bottom-con">
+		<div class="bottom-fix"></div>
+		<a href="/father" class="back">
+			<img class="btn-bg" src="/Public/images/bra/share-play.png">
+			<img class="first" src="/Public/images/bra/wo.png">
+			<img class="second" src="/Public/images/bra/yao.png">
+			<img class="third" src="/Public/images/bra/play.png">
+		</a>
+	</div>
+
+<script src="/Public/js/jquery-1.11.2.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="/Public/js/father-resource.js"></script>
+<script>
+var g_shareData = {$key};
+g_resource.push({
+	className: "portrait",
+	src: [
+		   g_shareData.portrait_url
+	    ]
+});
+
+//g_resource.push(g_poseResource);
+
+var g_hasSticker = false;
+
+var g_frameCount = 1;
+
+$(function(){
+	$(window).resize(function(){
+		resizePicture();
+	});
+	resizePicture();
+	
+	$(".bg-music").click(function(){
+		if($(".bg-music").hasClass("silent"))
+		{
+			$(".bg-music").removeClass("silent");
+			$(".bg-music").addClass("rotate");
+			$(".bg-music > audio")[0].play();
+		}
+		else
+		{
+			$(".bg-music").addClass("silent");
+			$(".bg-music").removeClass("rotate");
+			$(".bg-music > audio")[0].pause();
+		}
+	});
+
+	$(".next-btn").click(function(e){
+		var $currentShowCon = $(".father-face-show:visible");
+		var $nextShowCon = $currentShowCon.next(".father-face-show");
+
+		if(window.giftimer)
+		{
+			clearTimeout(window.giftimer);
+		}
+		if($nextShowCon.length)
+		{
+			g_frameCount = 1;
+			$nextShowCon.find(".portrait-show").addClass("frame1");
+			$nextShowCon.find(".result-show").addClass("frame1");
+			$nextShowCon.show();
+			//showFaceGif();
+			$currentShowCon.slideUp("fast", function(){
+				showFaceGif();
+			});
+		}
+		if(!$nextShowCon.next(".father-face-show").length)
+		{
+			$(this).hide();
+			showFaceGif();
+		}
+	});
+
+	$(".picture-bg").on("touchstart", function(e) {
+		//e.stopPropagation();
+		if(window.giftimer)
+		{
+			clearTimeout(giftimer);
+		}
+		var touchObj = e.touches && e.touches.length? e.touches[0]:(e.changedTouches && e.changedTouches.length? e.changedTouches[0]:null);
+		if (e.originalEvent && e.originalEvent.touches && e.originalEvent.touches[0]) {
+			touchObj = e.originalEvent.touches[0];
+		}
+		if(touchObj == null && e.originalEvent && e.originalEvent.changedTouches && e.originalEvent.changedTouches[0])
+		{
+			touchObj = e.originalEvent.changedTouches[0];
+		}
+		lastY = touchObj.clientY; 
+		lastScrollTop = $(".picture-bg").scrollTop();
+	});
+	$(".picture-bg").on("touchmove", function(e) {
+		//e.stopPropagation();
+		var touchObj = e.touches && e.touches.length? e.touches[0]:(e.changedTouches && e.changedTouches.length? e.changedTouches[0]:null);
+		if (e.originalEvent && e.originalEvent.touches && e.originalEvent.touches[0]) {
+			touchObj = e.originalEvent.touches[0];
+		}
+		if(touchObj == null && e.originalEvent && e.originalEvent.changedTouches && e.originalEvent.changedTouches[0])
+		{
+			touchObj = e.originalEvent.changedTouches[0];
+		}
+
+		var nowY  = touchObj.clientY;  
+		var moveY = nowY - lastY;
+		var moveScroll = $(".picture-bg").scrollTop() - lastScrollTop;
+		//var contentLeft = content.style.left.replace('px', '');
+		
+		var thisH = $(".picture-bg").height();
+		var thisScrollH = $(".picture-bg")[0].scrollHeight;
+		var scrollH = thisScrollH - thisH;
+		if($(".picture-bg").scrollTop() >= scrollH && moveY <= 0 ||
+				$(".picture-bg").scrollTop() <= 0 && moveY >= 0 )
+		{
+			e.stopPropagation();
+			return false;
+		}
+		//return false;
+	});
+	$(".picture-bg").on("touchend", function(e) {
+		//e.stopPropagation();
+		var touchObj = e.touches && e.touches.length? e.touches[0]:(e.changedTouches && e.changedTouches.length? e.changedTouches[0]:null);
+		if (e.originalEvent && e.originalEvent.touches && e.originalEvent.touches[0]) {
+			touchObj = e.originalEvent.touches[0];
+		}
+		if(touchObj == null && e.originalEvent && e.originalEvent.changedTouches && e.originalEvent.changedTouches[0])
+		{
+			touchObj = e.originalEvent.changedTouches[0];
+		}
+		var nowY  = touchObj.clientY;  
+		var moveY = nowY - lastY;  
+		var moveScroll = $(".picture-bg").scrollTop() - lastScrollTop;
+		//var contentLeft = content.style.left.replace('px', '');
+		
+		var thisH = $(".picture-bg").height();
+		var thisScrollH = $(".picture-bg")[0].scrollHeight;
+		var scrollH = thisScrollH - thisH;
+		if($(".picture-bg").scrollTop() >= scrollH && Math.abs(moveY) > Math.abs(moveScroll) + 20 && moveY < 0)
+		{
+			if($(".show-con").is(":visible"))
+			{
+				$(".next-btn").click();
+			}
+			
+		}
+		else if($(".picture-bg").scrollTop() <= 0 && Math.abs(moveY) > Math.abs(moveScroll) + 20 && moveY > 0)
+		{
+			var $currentShowCon = $(".father-face-show:visible");
+			var $prevShowCon = $currentShowCon.prev(".father-face-show");
+
+			if(window.giftimer)
+			{
+				clearTimeout(window.giftimer);
+			}
+			if($prevShowCon.length)
+			{
+				g_frameCount = 1;
+				$prevShowCon.find(".portrait-show").addClass("frame1");
+				$prevShowCon.find(".result-show").addClass("frame1");
+				$currentShowCon.hide();
+				$prevShowCon.slideDown("fast", function(){
+					showFaceGif();
+				});
+			}
+			else
+			{
+				showFaceGif();
+			}
+		}
+		else
+		{
+			showFaceGif();
+		}
+		//return false;
+	});
+
+	
+	var preLoadImg = new PreLoadImg({
+		imgInfoArr: g_resource,
+		container: "loading"
+	}, onLoadImgFinish); 
+	
+	//微信JS SDK 类设置
+	wx.config({
+		debug: false,
+		appId: '{$wxkey.appId}',
+		timestamp: {$wxkey.timeStamp},
+		nonceStr: '{$wxkey.nonceStr}',
+		signature: '{$wxkey.signature}',
+		jsApiList: [
+		//  'checkJsApi',
+		  'onMenuShareTimeline',          //朋友圈
+		  'onMenuShareAppMessage',       //朋友
+		  'onMenuShareQQ',
+		  'onMenuShareWeibo'
+		]
+	});
+	wx.ready(function(){
+		var shareObj = {
+				title: "带你回忆那些爸爸的口头禅", // 分享标题
+			    desc: "【锋尚爸爸】那些爸爸的口头禅你还记得吗？", // 分享描述
+			    link: top.location.protocol + "//" + top.location.host + "/" + top.location.pathname, // 分享链接
+			    imgUrl: top.location.protocol + "//" + top.location.host + "/Public/images/father/share.jpg", // 分享图标
+			    success: function () { 
+			        // 用户确认分享后执行的回调函数
+			    },
+			    cancel: function () { 
+			        // 用户取消分享后执行的回调函数
+			    }
+			}
+		wx.onMenuShareAppMessage(shareObj);
+		wx.onMenuShareTimeline(shareObj);
+		wx.onMenuShareQQ(shareObj);
+		wx.onMenuShareQQ(shareObj);
+		wx.onMenuShareQZone(shareObj);
+	});
+	
+	
+});//end
+
+
+function resizePicture(){
+	var w = $(".main-con").width();
+	var h = $(window).height() - $(".bottom-con").height() - 20;
+	$(".main-con").height(h);
+	//if(w > 640) w=640;
+	var min_h = w*1080/640;
+	if(w < h)  //竖屏
+	{
+		$(".picture-bg").height(h);
+		if(min_h > h)
+		{
+			$(".show-con").height(h);
+			$(".show-con").width(h*640/1080);
+		}
+		else
+		{
+			$(".show-con").height(min_h);
+			$(".show-con").width(w);
+		}
+	}
+	else
+	{
+		$(".picture-bg").height(min_h);
+		$(".show-con").height(min_h);
+		$(".show-con").width(w);
+	}
+}
+
+function rand(rMi, rMa) {
+	return ~~((Math.random()*(rMa-rMi+1))+rMi);
+}  
+
+function onLoadImgFinish(result) {
+	if(result.status != "ok")
+	{
+		return;
+	}
+	
+	//$(".result-show").css("background-image", "url(/Public/images/bra/pose/qingxin/frame1.png)");
+	//$(".portrait-show").css("-webkit-animation", "qingxin 1.2s linear infinite");
+	//$(".result-show").css("-webkit-animation", "qingxin_bg 1.2s linear infinite");
+	//var result_show_img = result.data["/Public/images/bra/pose/qingxin/qingxin.gif"];
+	//$(result_show_img).addClass("result-show");
+	//$(".show-con").append(result_show_img);
+	
+	//$(".picture-bg").css("background-image", "url(/Public/images/bra/pose/{$braClass}/{$braClass}_bg.png)")
+	
+	var portrait_show_img = result.data[g_shareData.portrait_url];
+	$(".portrait-show").append(portrait_show_img);
+	if(g_shareData.img_angle)
+	{
+		$(portrait_show_img).css({
+			"transform": "rotate(" + g_shareData.img_angle + "deg)",
+			"-webkit-transform": "rotate(" + g_shareData.img_angle + "deg)"
+		});
+	}
+	
+	$(portrait_show_img).addClass("portrait");
+	$(".portrait-show").addClass("frame" + g_frameCount);
+	
+	$(".result-show")[0].className = "result-show";
+	$(".result-show").addClass("frame" + g_frameCount);
+	
+	$(".father-face-show").hide();
+	$(".father-face-show:first-child").show();
+	var frameNum = g_faceInfo[$(".father-face-show:first-child").attr("data-name")].frameNum;
+	if(window.giftimer)
+	{
+		clearTimeout(window.giftimer);
+	}
+	g_frameCount = g_frameCount >= frameNum? 1:g_frameCount;
+	window.giftimer = setTimeout(showFaceGif, 100);
+	
+	$("#loading").hide();
+	
+	$(".main-con").show();
+	$(".bottom-con").show();
+}
+
+
+function showFaceGif() {
+	if(window.giftimer)
+	{
+		clearTimeout(window.giftimer);
+	}
+	var $currentShowCon = $(".father-face-show:visible");
+	if(!$currentShowCon.length)
+	{
+		window.giftimer = setTimeout(showFaceGif, 100);
+		return;
+	}
+	var faceName = $currentShowCon.attr("data-name");
+	var frameNum = g_faceInfo[faceName].frameNum;
+	$currentShowCon.find(".portrait-show")[0].className = "portrait-show";
+	$currentShowCon.find(".portrait-show").addClass("frame" + g_frameCount);
+	$currentShowCon.find(".result-show")[0].className = "result-show";
+	$currentShowCon.find(".result-show").addClass("frame" + g_frameCount);
+	g_frameCount = g_frameCount >= frameNum? 1:g_frameCount+1;
+	var timeout = 100;
+	switch(faceName)
+	{
+	case "strong":
+		{
+			if(g_frameCount === 1)
+			{
+				timeout = 500;
+			}
+		}
+		break;
+	case "loveme":
+	case "lovedad":
+		{
+			if(g_frameCount === 4)
+			{
+				timeout = 500;
+			}
+			else if(g_frameCount === 1)
+			{
+				timeout = 1000;
+			}
+		}
+		break;
+	case "sleep":
+	case "sayagain":
+		{
+			if(g_frameCount === 1)
+			{
+				timeout = 1000;
+			}
+		}
+		break;
+	case "loveme":
+		{
+			if(g_frameCount === 4)
+			{
+				timeout = 500;
+			}
+			else if(g_frameCount === 1)
+			{
+				timeout = 1000;
+			}
+		}
+		break;
+	default:
+		{
+			timeout = 100;
+		}
+	}
+	window.giftimer = setTimeout(showFaceGif, timeout);
+}
+
+function PreLoadImg(opts, callback) {
+	if(PreLoadImg.self) 
+	{
+		return PreLoadImg.self;
+	}
+	opts.imgInfoArr = opts.imgInfoArr || g_resource;
+	if(!opts || !opts.imgInfoArr || !opts.imgInfoArr.length)
+	{
+		if( typeof callback == 'function'){
+			callback({
+				status: "ok",
+				data: {},
+				success: 0,
+				failed: 0
+			});
+        }  	
+		return;
+	}
+	var self = this;
+	PreLoadImg.self = self;
+	self.loadImgInfoArr = opts.imgInfoArr;
+	self.finishCallBack = callback;
+	self.imgTotalNum = 0;
+	self.imgLoadedCnt = 0;
+	self.imgLoadedOkCnt = 0;
+	self.imgLoadedFailCnt = 0;
+	self.loadPercent = "0%";
+	self.loading = null;
+	self.imgDomObj = {};
+	self.progressBar = document.getElementById("percent-tips");
+	self.init = function() {
+		if(opts.container)
+		{
+			self.loading = document.getElementById(opts.container);
+		}
+		for(var i = 0; i < self.loadImgInfoArr.length; i++)
+		{
+			self.imgTotalNum += self.loadImgInfoArr[i].src.length;
+		}
+		self.startLoad();
+		//self.startLoopCheckTimer();
+	}
+	self.isLoadFinish = function() {
+		if(self.imgLoadedCnt >= self.imgTotalNum)
+		{
+			return true;  //已加载完成
+		}
+		else
+		{
+			return false;
+		}
+	};
+	self.onLoadedFinish = function(){
+		//加载完成后处理函数
+		if(self.loading)
+		{
+			self.loading.style.display = "none";
+		}
+		//g_imgDomObj = self.imgDomObj;
+		if( typeof self.finishCallBack == 'function'){
+			self.finishCallBack({
+				status: "ok",
+				data: self.imgDomObj,
+				success: self.imgLoadedOkCnt,
+				failed: self.imgLoadedFailCnt
+			});
+        }
+	};
+	self.setProgress = function() {
+		if(self.isLoadFinish())
+		{
+			self.loadPercent = "100%";
+			self.onLoadedFinish();
+		}
+		else
+		{
+			self.loadPercent = Math.round(100 * self.imgLoadedCnt / self.imgTotalNum) + "%";
+		}
+		if(self.loading)
+		{
+			self.progressBar.innerHTML = self.loadPercent;
+		}
+	}
+	self.startLoopCheckTimer = function() {
+		if(self.isLoadFinish())
+		{
+			self.onLoadedFinish();
+		}
+		else
+		{
+			self.checkTimer = setTimeout(self.startLoopCheckTimer, 100);
+		}
+		self.setProgress();
+	};
+	self.onLoadStart = function() {
+		if(self.loading)
+		{
+			self.progressBar.innerHTML = "0%";
+			self.loading.style.display = "block";
+		}
+		for(var i = 0; i < self.loadImgInfoArr.length; i++)
+		{
+			var imgInfo = self.loadImgInfoArr[i];
+			var className = imgInfo.className;
+			for(var j=0; j < imgInfo.src.length; j++)
+			{
+				var image = new Image();
+				var src = imgInfo.src[j];
+				var first = src.lastIndexOf("/");
+				var second = src.lastIndexOf(".");
+				image.className = className + "-" + (src.substr(first + 1, second - first-1));
+				image.onload  = function() {
+					this.onload = null;
+					self.imgLoadedCnt++;
+					self.imgLoadedOkCnt++;
+					var srcKey = this["data-src"];
+					self.imgDomObj[srcKey] = this;
+					self.setProgress();
+					
+				};
+				image.onerror  = function() {
+					this.onerror = null;
+					self.imgLoadedCnt++;
+					self.imgLoadedFailCnt++;
+					
+					self.setProgress();
+				};
+				image["data-src"] = imgInfo.src[j];
+				image.src = imgInfo.src[j];
+			}
+			
+		}
+	};
+	self.startLoad = function() {
+		self.onLoadStart();
+	}
+	
+	self.init();
+}
+</script>
+</body>
+</html>

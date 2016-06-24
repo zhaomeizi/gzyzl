@@ -1,0 +1,263 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>猴年大“技”</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<link rel="stylesheet" href="/Public/css/cloth.css">
+<style>
+html,body{
+	width:100%;
+	max-width:640px;
+	min-width:320px;
+	height:100%;
+	overflow-x:hidden;
+	box-sizing:border-box;
+	margin:0 auto;
+	padding:0;
+	min-height:480px;
+}
+body{
+	background:url(/Public/images/share/bg.png);
+	position:relative;
+	background-size: cover;
+	background-repeat:no-repeat;
+}
+header{
+	position:absolute;
+	width:30px;
+	height:30px;
+	line-height:30px;
+	top:15px;
+	left:15px;
+	border-radius:50%;
+	background:#fff;
+    box-shadow: 2px 4px 10px #333;
+}
+header  img{
+	width:50%;
+	margin-left:20%;
+	margin-top:15%;
+}
+a {
+	text-decoration: none;
+	outline: none !important;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+a:focus, a:active, a:hover, img:focus, img:active, img:hover {
+	outline: none !important;
+}
+.wish{
+	background:#fff;
+	width:38%;
+	box-shadow: -2px 4px 18px #333;
+    padding: 3px;
+    margin-top: 34%;
+    transform: rotate(-5deg);
+    -webkit-transform: rotate(-5deg);
+    margin-left: 10px;	
+	position:absolute;
+	z-index:11;
+}
+.wish > .inner{
+	background:#c83c3d;
+	width:100%;
+	min-height:150px;
+	color:#fff;
+	text-align:center;
+	line-height:1.2;
+}
+.inner > .title{
+	width:100%;
+	transform: rotate(7deg);
+	-webkit-transform: rotate(7deg);
+}
+.inner > .title > img{
+    width: 70%;
+    margin-top: 10%;
+}
+.words {
+	margin-top: 5px;
+}
+
+.play-btn {
+	display: block;
+	position: absolute;
+	bottom:5%;
+	right: 26%;
+	margin-right: 15px;
+	width:25%;
+	z-index: 25;
+}
+.play-btn > img {
+	width: 100%;
+}
+
+.share-btn{
+	position:absolute;
+	bottom:5%;
+	right:15px;
+	width:25%;
+}
+.share-btn > img{
+	width:100%;
+}
+.lzl{
+    position: absolute;
+    bottom: 0;
+    left: 5%;
+    width: 50%;
+    height: 70%;
+    z-index: 20;
+}
+.lzl > img:first-child{
+    width: 90%;
+    position: absolute;
+    bottom: 0;
+    left: 1%;	
+}
+.lzl > img:nth-child(2){
+position: absolute;
+    bottom: 32%;
+    width: 103%;
+    left: 45%;
+}
+.share-tip{
+	display:none;
+	width:100%;
+	height:100%;
+	position:absolute;
+	z-index:100;
+}
+.share-tip .shape{
+	background:rgba(0,0,0,0.7);
+	width:100%;
+	height:100%;
+}
+.share-tip img{
+	position:absolute;
+	right:10px;
+	top:0;
+	width:90%;
+	z-index:25;
+}
+.wx-logo {
+	display: none;
+}
+.logo {
+	position: absolute;
+	width: 100px;
+	right: 5px;
+	top: 22px;
+	transform: rotate(1deg);
+	-webkit-transform: rotate(1deg);
+	z-index: 15;
+}
+</style>
+</head>
+
+<body>
+<div class="wx-logo">
+	<img alt="猴年大“技”" src="/Public/images/share/wx-share-logo.jpg" >
+</div>
+
+<a href="/cloth/game">
+<header>
+<img src="/Public/images/share/back.png">
+</header>
+</a>
+<!-- 祝福语 -->
+<div class="wish">
+<div class="inner">
+<div class="title">
+<img src="/Public/images/share/dear.png">
+</div>
+<div class="name">
+{$data.friend}
+</div>
+<div class="words">
+{$data.greetings}
+</div>
+</div>
+
+</div>
+<!-- 祝福语 end-->
+
+<img alt="都市丽人" src="/Public/images/share/logo.png" class="logo">
+<!-- 人物装备 -->
+<div class="picture">
+<div class="picture-bg">
+
+<img class="hair-ornament-{$data.hair_ornaments_class}" src="{$data.hair_ornaments}">
+<img class="hair-{$data.hair_class}" src="{$data.hair}">
+<img class="grassess-{$data.grasses_class}" src="{$data.grasses}">
+<img class="underwear-{$data.underwear_class}" src="{$data.underwear}">
+<img class="girl" src="{$data.girl_url}">
+<img class="pants-{$data.pants_class}" src="{$data.pants}">
+</div>
+</div>
+<!-- 人物装备 end-->
+
+<!-- 林志玲 -->
+<div class="lzl">
+<img src="/Public/images/share/lin.png">
+<img src="/Public/images/share/word.png">
+
+</div>
+<!-- 林志玲 -->
+
+<!-- 我要玩btn -->
+<a href="/cloth" class="play-btn">
+<img src="/Public/images/share/play.png">
+</a>
+
+<!-- 分享btn -->
+<div class="share-btn">
+<img src="/Public/images/share/btn.png">
+</div>
+
+<!-- 分享图层 -->
+<div class="share-tip">
+<div class="shape"></div>
+<img src="/Public/images/share/righttop.png">
+</div>
+
+<script src="/Public/js/jquery-1.11.2.min.js"></script>
+
+<script>
+$(function(){
+	$(window).resize(function(){
+		resizePicture();
+	});
+	$('.share-btn').click(function(e){
+		$('.share-tip').show();
+	})//end click
+	
+	$('.share-tip').click(function(e){
+		e.stopPropagation();
+		$(this).hide();
+	})//end click
+	resizePicture();
+})//end
+
+function resizePicture(){
+	var w = $(window).width();
+	var h = $(window).height();
+	var min_h = w*1.4;
+	if(w > 640) w=640;
+	if(w < 320) w=320;
+	$('.picture-bg').height(w*0.9);
+	if( w > h){
+		  $('body').height(min_h);
+	}else{
+		if( h < min_h ){
+			$('body').height(min_h);
+		}else{
+			$('body').height(h);
+		}
+	}
+	
+}
+</script>
+</body>
+</html>

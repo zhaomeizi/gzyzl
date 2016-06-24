@@ -1,0 +1,112 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>我距离结婚还有：2080天</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<style>
+html,body{
+	width:100%;
+	max-width:640px;
+	min-width:320px;
+	height:100%;
+	overflow-x:hidden;
+	box-sizing:border-box;
+	margin:0 auto;
+	padding:0;
+}
+body{
+	position:relative;
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+	background-color: #fff;
+	background-position:center center;
+	min-height: 480px;
+	text-align: center;
+}
+.wx-logo {
+	width: 100%;
+}
+.wx-logo > img {
+	width: 100%;
+	height: auto;
+}
+.logo-con {
+	width: 200px;
+	height: 200px;
+	border-radius: 50%;
+	margin: 30px auto 20px;
+}
+.logo-con img {
+	width: 100%;
+	height: 100%;
+	border-radius: 50%;
+}
+p {
+	color: #000;
+	font-size: 20px;
+	font-weight: bold;
+	margin: 10px;
+}
+</style>
+</head>
+
+
+<body>
+<div class="wx-logo">
+	<img class="" src="/Public/images/father/phf1.png" />
+</div>
+
+<div class="logo-con">
+	<img class="" src="/Public/images/father/phf2.jpg" />
+</div>
+<p>2080天内</p>
+<div style="padding: 0 20px;"><div style="width: 100%;height: 3px; background:#b1afb2;"></div></div>
+<div style="font-size: 18px;color: #666467;text-align: left;padding: 10px 20px;	line-height: 1.5;">
+&nbsp;&nbsp;你崇尚爱情，为爱坚持，家人的催婚，你无动于衷；朋友一个个幸福成家，而你仍在努力；其实你早已具备结婚的基础，之所以等这么久只是因为你的另一半还在等待。
+</div>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+
+window.onload = function(){
+	//微信JS SDK 类设置
+	wx.config({
+		debug: false,
+		appId: '{$wxkey.appId}',
+		timestamp: {$wxkey.timeStamp},
+		nonceStr: '{$wxkey.nonceStr}',
+		signature: '{$wxkey.signature}',
+		jsApiList: [
+		//  'checkJsApi',
+		  'onMenuShareTimeline',          //朋友圈
+		  'onMenuShareAppMessage',       //朋友
+		  'onMenuShareQQ',
+		  'onMenuShareWeibo'
+		]
+	});
+	wx.ready(function(){
+		//var shareUrl = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx33c182aa7e4ad93c&redirect_uri=http%3A%2F%2Fwww.kohian.com" + 
+					//encodeURI(top.location.pathname) + "&response_type=code&scope=snsapi_base&state=aaabcd#wechat_redirect";
+		
+		var shareObj = {
+				title: "你距离结婚还有多少天", // 分享标题
+			    desc: "我距离结婚还有2080天，你呢？", // 分享描述
+			    link: top.location.protocol + "//" + top.location.host + "/" + top.location.pathname, // 分享链接
+			    imgUrl: top.location.protocol + "//" + top.location.host + "/Public/images/father/phf2.jpg", // 分享图标
+			    success: function () { 
+			        // 用户确认分享后执行的回调函数
+			    },
+			    cancel: function () { 
+			        // 用户取消分享后执行的回调函数
+			    }
+			}
+		wx.onMenuShareAppMessage(shareObj);
+		wx.onMenuShareTimeline(shareObj);
+		wx.onMenuShareQQ(shareObj);
+		wx.onMenuShareQQ(shareObj);
+		wx.onMenuShareQZone(shareObj);
+	});
+}//end
+</script>
+</body>
+</html>

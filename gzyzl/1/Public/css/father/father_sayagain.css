@@ -1,0 +1,40 @@
+@CHARSET "UTF-8";
+.face-sayagain .portrait-show {
+	width: 37%;
+}
+.face-sayagain .portrait-show.frame1 {
+	left: 29.3%;
+	bottom: 40.6%;
+	transform: rotate(-11deg);
+	-webkit-transform: rotate(-11deg);
+}
+.face-sayagain .portrait-show.frame2 {
+	left: 34.2%;
+	bottom: 39.5%;
+	transform: rotate(10deg);
+	-webkit-transform: rotate(10deg);
+}
+.face-sayagain .portrait-show.frame3 {
+	left: 34.8%;
+	bottom: 39.6%;
+	transform: rotate(-3deg);
+	-webkit-transform: rotate(-3deg);
+}
+.face-sayagain .portrait-show.frame4 {
+	left: 32.8%;
+	bottom: 40.6%;
+	transform: rotate(-2deg);
+	-webkit-transform: rotate(-2deg);
+}
+.face-sayagain div.result-show.frame1 {
+	background-image: url(/Public/images/father/sayagain/frame1.png);
+}
+.face-sayagain div.result-show.frame2 {
+	background-image: url(/Public/images/father/sayagain/frame2.png);
+}
+.face-sayagain div.result-show.frame3 {
+	background-image: url(/Public/images/father/sayagain/frame3.png);
+}
+.face-sayagain div.result-show.frame4 {
+	background-image: url(/Public/images/father/sayagain/frame4.png);
+}

@@ -1,0 +1,59 @@
+@CHARSET "UTF-8";
+
+.face-loveme .portrait-show {
+	width: 40%;
+}
+.face-loveme .portrait-show.frame1 {
+	left: 26.5%;
+	bottom: 45.1%;
+	transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+}
+.face-loveme .portrait-show.frame2 {
+	left: 33.5%;
+	bottom: 44.9%;
+	transform: rotate(10deg);
+	-webkit-transform: rotate(10deg);
+}
+.face-loveme .portrait-show.frame3 {
+	left: 39.8%;
+	bottom: 43.9%;
+	transform: rotate(25deg);
+	-webkit-transform: rotate(25deg);
+}
+.face-loveme .portrait-show.frame4 {
+	left: 33.3%;
+	bottom: 44.9%;
+	transform: rotate(9deg);
+	-webkit-transform: rotate(9deg);
+}
+.face-loveme .portrait-show.frame5 {
+	left: 27.3%;
+	bottom: 44.9%;
+	transform: rotate(-6deg);
+	-webkit-transform: rotate(-6deg);
+}
+.face-loveme .portrait-show.frame6 {
+	left: 26.3%;
+	bottom: 44.9%;
+	transform: rotate(-48deg);
+	-webkit-transform: rotate(-48deg);
+}
+.face-loveme div.result-show.frame1 {
+	background-image: url(/Public/images/father/loveme/frame1.png);
+}
+.face-loveme div.result-show.frame2 {
+	background-image: url(/Public/images/father/loveme/frame2.png);
+}
+.face-loveme div.result-show.frame3 {
+	background-image: url(/Public/images/father/loveme/frame3.png);
+}
+.face-loveme div.result-show.frame4 {
+	background-image: url(/Public/images/father/loveme/frame4.png);
+}
+.face-loveme div.result-show.frame5 {
+	background-image: url(/Public/images/father/loveme/frame5.png);
+}
+.face-loveme div.result-show.frame6 {
+	background-image: url(/Public/images/father/loveme/frame6.png);
+}

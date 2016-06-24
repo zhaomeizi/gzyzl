@@ -1,0 +1,58 @@
+@CHARSET "UTF-8";
+.face-listen .portrait-show {
+	width: 35%;
+}
+.face-listen .portrait-show.frame1 {
+	left: 22.5%;
+	bottom: 41.5%;
+	transform: rotate(6deg);
+	-webkit-transform: rotate(6deg);
+}
+.face-listen .portrait-show.frame2 {
+	left: 24%;
+	bottom: 40.5%;
+	transform: rotate(13deg);
+	-webkit-transform: rotate(13deg);
+}
+.face-listen .portrait-show.frame3 {
+	left: 25%;
+	bottom: 39.5%;
+	transform: rotate(14deg);
+	-webkit-transform: rotate(14deg);
+}
+.face-listen .portrait-show.frame4 {
+	left: 23%;
+	bottom: 40%;
+	transform: rotate(5deg);
+	-webkit-transform: rotate(5deg);
+}
+.face-listen .portrait-show.frame5 {
+	left: 23.5%;
+	bottom: 39.5%;
+	transform: rotate(11deg);
+	-webkit-transform: rotate(11deg);
+}
+.face-listen .portrait-show.frame6 {
+	left: 23%;
+	bottom: 40%;
+	transform: rotate(5deg);
+	-webkit-transform: rotate(5deg);
+}
+.face-listen div.result-show.frame1 {
+	background-image: url(/Public/images/father/listen/frame1.png);
+}
+.face-listen div.result-show.frame2 {
+	background-image: url(/Public/images/father/listen/frame2.png);
+}
+.face-listen div.result-show.frame3 {
+	background-image: url(/Public/images/father/listen/frame3.png);
+}
+.face-listen div.result-show.frame4 {
+	background-image: url(/Public/images/father/listen/frame4.png);
+}
+.face-listen div.result-show.frame5 {
+	background-image: url(/Public/images/father/listen/frame5.png);
+}
+.face-listen div.result-show.frame6 {
+	background-image: url(/Public/images/father/listen/frame6.png);
+}

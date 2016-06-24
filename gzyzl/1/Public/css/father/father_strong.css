@@ -1,0 +1,31 @@
+@CHARSET "UTF-8";
+.face-strong .portrait-show {
+	width: 37%;
+}
+.face-strong .portrait-show.frame1 {
+	left: 27%;
+	bottom: 39.5%;
+	transform: rotate(-25deg);
+	-webkit-transform: rotate(-25deg);
+}
+.face-strong .portrait-show.frame2 {
+	left: 24.5%;
+	bottom: 40.2%;
+	transform: rotate(-34deg);
+	-webkit-transform: rotate(-34deg);
+}
+.face-strong .portrait-show.frame3 {
+	left: 23.5%;
+	bottom: 41%;
+	transform: rotate(-34deg);
+	-webkit-transform: rotate(-34deg);
+}
+.face-strong div.result-show.frame1 {
+	background-image: url(/Public/images/father/strong/frame1.png);
+}
+.face-strong div.result-show.frame2 {
+	background-image: url(/Public/images/father/strong/frame2.png);
+}
+.face-strong div.result-show.frame3 {
+	background-image: url(/Public/images/father/strong/frame3.png);
+}

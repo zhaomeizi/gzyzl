@@ -1,0 +1,55 @@
+@CHARSET "UTF-8";
+.portrait-show.frame1 {
+	left: 24.8%;
+	bottom: 52.4%;
+	transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+}
+.portrait-show.frame2 {
+	left: 27.8%;
+	bottom: 53.4%;
+	transform: rotate(5deg);
+	-webkit-transform: rotate(5deg);
+}
+.portrait-show.frame3 {
+	left: 26.8%;
+	bottom: 54.4%;
+	transform: rotate(5deg);
+	-webkit-transform: rotate(5deg);
+}
+.portrait-show.frame4 {
+	left: 26.8%;
+	bottom: 56%;
+	transform: rotate(11deg);
+	-webkit-transform: rotate(11deg);
+}
+.portrait-show.frame5 {
+	left: 23.8%;
+	bottom: 56.2%;
+	transform: rotate(10deg);
+	-webkit-transform: rotate(10deg);
+}
+.portrait-show.frame6 {
+	left: 20.8%;
+	bottom: 56.5%;
+	transform: rotate(12deg);
+	-webkit-transform: rotate(12deg);
+}
+div.result-show.frame1 {
+	background-image: url(/Public/images/bra/pose/double/frame1.png);
+}
+div.result-show.frame2 {
+	background-image: url(/Public/images/bra/pose/double/frame2.png);
+}
+div.result-show.frame3 {
+	background-image: url(/Public/images/bra/pose/double/frame3.png);
+}
+div.result-show.frame4 {
+	background-image: url(/Public/images/bra/pose/double/frame4.png);
+}
+div.result-show.frame5 {
+	background-image: url(/Public/images/bra/pose/double/frame5.png);
+}
+div.result-show.frame6 {
+	background-image: url(/Public/images/bra/pose/double/frame6.png);
+}

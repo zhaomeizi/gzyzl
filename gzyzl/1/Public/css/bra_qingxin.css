@@ -1,0 +1,110 @@
+@CHARSET "UTF-8";
+.portrait-show.frame1 {
+	left: 17.3%;
+	bottom: 55.9%;
+	transform: rotate(-14deg);
+	-webkit-transform: rotate(-14deg);
+}
+.portrait-show.frame2 {
+	left: 17.3%;
+	bottom: 55.9%;
+	transform: rotate(-14deg);
+	-webkit-transform: rotate(-14deg);
+}
+.portrait-show.frame3 {
+	left: 17.3%;
+	bottom: 55.9%;
+	transform: rotate(-14deg);
+	-webkit-transform: rotate(-14deg);
+}
+.portrait-show.frame4 {
+	left: 19.8%;
+	bottom: 57.8%;
+	transform: rotate(-8deg);
+	-webkit-transform: rotate(-8deg);
+}
+.portrait-show.frame5 {
+	left: 14%;
+	bottom: 64%;
+	transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+}
+.portrait-show.frame6 {
+	left: 12.5%;
+	bottom: 61%;
+	transform: rotate(5deg);
+	-webkit-transform: rotate(5deg);
+}
+.portrait-show.frame7 {
+	left: 13.8%;
+	bottom: 58.3%;
+	transform: rotate(14deg);
+	-webkit-transform: rotate(14deg);
+}
+.portrait-show.frame8 {
+	left: 13.8%;
+	bottom: 58.3%;
+	transform: rotate(14deg);
+	-webkit-transform: rotate(14deg);
+}
+.portrait-show.frame9 {
+	left: 13.8%;
+	bottom: 58.3%;
+	transform: rotate(14deg);
+	-webkit-transform: rotate(14deg);
+}
+.portrait-show.frame10 {
+	left: 12.5%;
+	bottom: 61%;
+	transform: rotate(5deg);
+	-webkit-transform: rotate(5deg);
+}
+.portrait-show.frame11 {
+	left: 14%;
+	bottom: 64%;
+	transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+}
+.portrait-show.frame12 {
+	left: 19.8%;
+	bottom: 57.8%;
+	transform: rotate(-8deg);
+	-webkit-transform: rotate(-8deg);
+}
+
+div.result-show.frame1 {
+	background-image: url(/Public/images/bra/pose/qingxin/frame1.png);
+}
+div.result-show.frame2 {
+	background-image: url(/Public/images/bra/pose/qingxin/frame2.png);
+}
+div.result-show.frame3 {
+	background-image: url(/Public/images/bra/pose/qingxin/frame3.png);
+}
+div.result-show.frame4 {
+	background-image: url(/Public/images/bra/pose/qingxin/frame4.png);
+}
+div.result-show.frame5 {
+	background-image: url(/Public/images/bra/pose/qingxin/frame5.png);
+}
+div.result-show.frame6 {
+	background-image: url(/Public/images/bra/pose/qingxin/frame6.png);
+}
+div.result-show.frame7 {
+	background-image: url(/Public/images/bra/pose/qingxin/frame7.png);
+}
+div.result-show.frame8 {
+	background-image: url(/Public/images/bra/pose/qingxin/frame8.png);
+}
+div.result-show.frame9 {
+	background-image: url(/Public/images/bra/pose/qingxin/frame9.png);
+}
+div.result-show.frame10 {
+	background-image: url(/Public/images/bra/pose/qingxin/frame6.png);
+}
+div.result-show.frame11 {
+	background-image: url(/Public/images/bra/pose/qingxin/frame5.png);
+}
+div.result-show.frame12 {
+	background-image: url(/Public/images/bra/pose/qingxin/frame4.png);
+}

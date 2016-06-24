@@ -1,0 +1,46 @@
+@CHARSET "UTF-8";
+.face-homework .portrait-show.frame1 {
+	left: 19.4%;
+	bottom: 46%;
+	transform: rotate(-6deg);
+	-webkit-transform: rotate(-6deg);
+}
+.face-homework .portrait-show.frame2 {
+	left: 22.5%;
+	bottom: 45.3%;
+	transform: rotate(-1deg);
+	-webkit-transform: rotate(-1deg);
+}
+.face-homework .portrait-show.frame3 {
+	left: 23.3%;
+	bottom: 45%;
+	transform: rotate(4deg);
+	-webkit-transform: rotate(4deg);
+}
+.face-homework .portrait-show.frame4 {
+	left: 23.3%;
+	bottom: 45%;
+	transform: rotate(4deg);
+	-webkit-transform: rotate(4deg);
+}
+.face-homework .portrait-show.frame5 {
+	left: 23.3%;
+	bottom: 45.1%;
+	transform: rotate(3deg);
+	-webkit-transform: rotate(3deg);
+}
+.face-homework div.result-show.frame1 {
+	background-image: url(/Public/images/father/homework/frame1.png);
+}
+.face-homework div.result-show.frame2 {
+	background-image: url(/Public/images/father/homework/frame2.png);
+}
+.face-homework div.result-show.frame3 {
+	background-image: url(/Public/images/father/homework/frame3.png);
+}
+.face-homework div.result-show.frame4 {
+	background-image: url(/Public/images/father/homework/frame4.png);
+}
+.face-homework div.result-show.frame5 {
+	background-image: url(/Public/images/father/homework/frame5.png);
+}

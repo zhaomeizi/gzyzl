@@ -1,0 +1,1008 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>猴年大“技”</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<link rel="stylesheet" href="/Public/css/swiper-3.3.0.min.css">
+<link rel="stylesheet" href="/Public/css/cloth_game.css">
+<style>
+* {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+}
+html,body{
+	width:100%;
+	/*max-width:640px;*/
+	min-width:320px;
+	height:100%;
+	overflow-x:hidden;
+	box-sizing:border-box;
+	margin:0 auto;
+	padding:0;
+	min-height:480px;
+}
+body{
+	background:url(/Public/images/share/bg-center.jpg);
+	position:relative;
+	background-size: contain;
+	background-repeat:no-repeat;
+	background-color: #c82e3b;
+	background-position:center center;
+}
+a, input {
+	text-decoration: none;
+	outline: none !important;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+a:focus, a:active, a:hover, img:focus, img:active, img:hover, input:focus, input:active, input:hover {
+	outline: none !important;
+}
+.confirm-btn {
+	display: block;
+	height: 45px;
+	width: 120px;
+	position: absolute;
+	left: 50%;
+	top: 20px;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	z-index: 16;
+}
+.confirm-btn > img {
+	height: 100%;
+	width: 100%;
+}
+.help-tips {
+	height: 100%;
+	position: relative;
+	display: none;
+}
+.help-tips > img {
+	bottom: 5px;
+	right: 20px;
+	width:200px;
+	height: auto;
+	z-index: 1016;
+}
+#loading {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	line-height: 1;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,0.75);
+	text-align: center;
+	vertical-align: middle;
+	z-index: 1000;
+	color: white;
+	font-size: 24px;
+}
+.loading-body {
+	position: absolute;
+	width: 200px;
+	height: 200px;
+	left: 50%;
+	top: 50%;
+	margin-left: -75px;
+	margin-top: -70px;
+}
+.loading-body > img {
+	width:200px;
+	height:160px;
+	/* margin-left: -75px;
+	margin-top: -50px; */
+}
+#percent-tips {
+	margin: 0;
+	padding: 5px;
+	line-height: 1;
+}
+.picture-bg{
+	width:100%;
+	height:100%;
+	position:relative;
+}
+.picture-bg .header {
+	height: 17%;
+	width: 100%;
+}
+.swiper-container {
+	border-top: 2px dashed rgba(255,255,255,0.7);
+	width: 100%;
+	display: none;
+}
+.swiper-container > img {
+	display: block;
+	width: 40px;
+	height: auto;
+	right: 10px;
+	top: 50%;
+	transform: translateY(-50%);
+	-webkit-transform: translateY(-50%);
+}
+.picture-bg .girl {
+  width: 100%;
+  margin: 0 auto;
+}
+.hair-ornament {
+	height: 17%;
+}
+.hair {
+	height: 9%;
+}
+.grassess {
+	height: 20%;
+}
+.underwear {
+	height: 25%;
+}
+.pants {
+	height: 12%;
+}
+
+.part-con {
+	width: 100%;
+	position: absolute;
+	height: 100%;
+	left: 0;
+	top: 0;
+	pointer-events: none;
+	z-index: 10;
+}
+.part-con.hair-ornament-con {
+	z-index: 15;
+}
+.hair-con.higher {
+	z-index: 12;
+}
+.part-con.grassess-con{
+	z-index: 9;
+}
+
+.focus{
+	background-color: rgba(0,0,0,0.3);
+}
+.wx-logo {
+	display: none;
+}
+
+.mask {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	background: rgba(0,0,0,0.75);
+	z-index: 1000;
+}
+.alert-con {
+	display: none;
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	left: 50%;
+	top: 50%;
+	background: #fff;
+	/* transform: translate(-50%, -50%)  rotate(-5deg);
+	-webkit-transform: translate(-50%, -50%)  rotate(-5deg); */
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	box-shadow: -2px 4px 18px #333;
+	padding: 3px;
+	z-index: 1010;
+}
+.inner {
+	height: 100%;
+	width: 100%;
+	background: #c83c3d;
+}
+.inner > .title {
+	width: 100%;
+	/* transform: rotate(7deg);
+	-webkit-transform: rotate(7deg); */
+}
+.inner > .title > img {
+	width: 50%;	
+	margin-left: 25%;
+	margin-top: 10%;
+}
+.friend-info {
+	/* padding-top: 90px; */
+	transform: rotate(-5deg);
+	-webkit-transform: rotate(-5deg);
+}
+.form-con {
+	font-size: 18px;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+}
+.form-con input {
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: none;
+	color: #fff;
+	text-align: center;
+	font-size: 20px;
+	border-radius: 0;
+}
+.btn-con {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+}
+.ensure-btn {
+	padding: 5px 20px;
+	color: #fff;
+	border: 1px solid #fff;
+	border-radius: 4px;
+}
+.close-btn {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	top: -10px;
+	right: -10px;
+	border-radius: 50%;
+	background: #fff;
+	font-size: 24px;
+	text-align: center;
+	font-weight: bold;
+	color: #000;
+}
+.bg-music {
+	display: none;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 30px;
+	height: 30px;
+	background: url("/Public/images/clothing/normalmusic.svg") no-repeat;
+	background-size: 100% 100%;
+	z-index: 1200;
+}
+.bg-music.silent {
+	/* background: url("/Public/images/silent.png") no-repeat;
+	background-size: 100% 100%; */
+}
+.rotate {
+	-webkit-animation:rotating 1.2s linear infinite;
+	-moz-animation:rotating 1.2s linear infinite;
+	-o-animation:rotating 1.2s linear infinite;
+	animation:rotating 1.2s linear infinite;
+}
+@-webkit-keyframes rotating {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform:rotate(360deg);
+	}
+}
+@keyframes rotating {
+	from {
+		transform:rotate(0deg);
+	}
+	to {
+		transform:rotate(360deg);
+	}
+}
+@-moz-keyframes rotating {
+	from {
+		-moz-transform:rotate(0deg);
+	}
+	to {
+		-moz-transform:rotate(360deg);
+	}
+}
+</style>
+
+</head>
+
+<body>
+	<div class="wx-logo" data-src="/Public/images/clothing/wx-cloth-logo.jpg">
+		<img alt="猴年大“技”" src="/Public/images/clothing/wx-cloth-logo.jpg" >
+	</div>
+	<a href="javascript:void(0);" class="bg-music">
+		<audio loop="loop" style="display:none;"> 
+			<source src="/Public/music/cloth/LenkaTheShow.ogg" type="audio/ogg">
+			<source src="/Public/music/cloth/LenkaTheShow.mp3" type="audio/mpeg">
+		</audio>
+	</a>
+	<div id="loading">
+		<div class="loading-body" data-src="/Public/images/clothing/tips/loading_tip.png">
+			<p id="percent-tips"></p>
+		</div>
+	</div>
+	<a href="javascript:void(0);" class="confirm-btn" data-src="/Public/images/clothing/tips/confirm.png"></a>
+	<div class="picture-bg">
+		<div class="header">
+			<div class="help-tips" data-src="/Public/images/clothing/tips/btn.png"></div>
+		</div>
+		<div class="hair-ornament swiper-container" data-src="/Public/images/clothing/tips/ornament.png">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+				</div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+			</div>
+		</div>
+		<div class="hair swiper-container" data-src="/Public/images/clothing/tips/hair.png">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+				</div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+			</div>
+		</div>
+		<div class="grassess swiper-container" data-src="/Public/images/clothing/tips/grasses.png">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+				</div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+			</div>
+		</div>
+		<div class="underwear swiper-container" data-src="/Public/images/clothing/tips/underwear.png">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+				</div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+			</div>
+		</div>
+		<div class="pants swiper-container" data-src="/Public/images/clothing/tips/underpants.png">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide">
+				</div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+		        <div class="swiper-slide">
+		        </div>
+			</div>
+		</div>
+		
+		<div class="part-con hair-ornament-con">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" data-src="/Public/images/clothing/hair_ornaments/brother.png">
+				</div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/hair_ornaments/bath.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/hair_ornaments/cultural.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/hair_ornaments/gold.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/hair_ornaments/happy.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/hair_ornaments/headset.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/hair_ornaments/monkey.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/hair_ornaments/pirate.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/hair_ornaments/sister.png">
+		        </div>
+			</div>
+		</div>
+		<div class="part-con hair-con">
+			<div class="swiper-wrapper">
+				<div class="swiper-slide" data-src="/Public/images/clothing/hair/dreadlock.png">
+				</div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/hair/bomb.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/hair/hairpin.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/hair/pink.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/hair/short.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/hair/wave.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/hair/whip.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/hair/white.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/hair/yellow.png">
+		        </div>
+			</div>
+		</div>
+		<div class="part-con grassess-con">
+			<div class="swiper-wrapper">
+		        <div class="swiper-slide" data-src="/Public/images/clothing/grasses/bluenet.png">
+		        </div>
+				<div class="swiper-slide" data-src="/Public/images/clothing/grasses/black.png">
+				</div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/grasses/circle.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/grasses/dive.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/grasses/money.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/grasses/pirate.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/grasses/rainbow.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/grasses/red.png">
+		        </div>
+			</div>
+		</div>
+		<div class="part-con underwear-con">
+			<div class="swiper-wrapper">
+		        <div class="swiper-slide" data-src="/Public/images/clothing/underwear/chest.png">
+		        </div>
+				<div class="swiper-slide" data-src="/Public/images/clothing/underwear/butterfly.png">
+				</div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/underwear/ch.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/underwear/fried.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/underwear/happy.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/underwear/monkey.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/underwear/orange.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/underwear/sex.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/underwear/swim.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/underwear/white.png">
+		        </div>
+			</div>
+		</div>
+		<div class="part-con pants-con">
+			<div class="swiper-wrapper">
+		        <div class="swiper-slide" data-src="/Public/images/clothing/pants/socks.png">
+		        </div>
+				<div class="swiper-slide" data-src="/Public/images/clothing/pants/ch.png">
+				</div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/pants/duck.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/pants/fabric.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/pants/fire.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/pants/garter.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/pants/monkey.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/pants/orange.png">
+		        </div>
+		        <div class="swiper-slide" data-src="/Public/images/clothing/pants/running.png">
+		        </div>
+			</div>
+		</div>
+	<!-- <img class="hair-ornament-brother" src="/Public/images/clothing/hair_ornaments/brother.png">
+	<img class="hair-dreadlock" src="/Public/images/clothing/hair/dreadlock.png">
+	<img class="grassess-bluenet" src="/Public/images/clothing/grasses/bluenet.png">
+	<img class="underwear-chest" src="/Public/images/clothing/underwear/chest.png"> -->
+	<img class="girl" src="/Public/images/clothing/girl.png">
+	<!-- <img class="pants-socks" src="/Public/images/clothing/pants/socks.png"> -->
+	</div>
+
+	<div class="mask"></div>
+	<div class="alert-con">
+		<div class="inner">
+			<div class="title" data-src="/Public/images/share/dear.png">
+				<a href="javascript:void(0);" class="close-btn">&times;</a>
+			</div>
+			<div class="friend-info">
+				<div class="form-con">
+					<input name="name" id="name" class="friend-name" placeHolder="(好基友姓名)" >
+				</div>
+				<div class="form-con">
+					<input name="tip" id="tip" class="friend-tip" value="春节来啦！" readonly="readonly" >
+				</div>
+				<div class="form-con">
+					<input name="greetings" id="greetings" class="friend-greetings" placeHolder="点击输入祝福语吧" >
+				</div>
+			</div>
+			<div class="form-con btn-con">
+				<a href="javascript:void(0);" class="ensure-btn">确定</a>
+			</div>
+		</div>
+	</div>
+
+<script src="/Public/js/jquery-1.11.2.min.js"></script>
+<script src="/Public/js/swiper-3.3.0.jquery.min.js"></script>
+<script src="/Public/js/resource.js"></script>
+<script>        
+    
+  </script>
+<script>
+//var g_imgDomObj = {};
+$(function(){
+	$(window).resize(function(){
+		resizePicture();
+	});
+	resizePicture();
+	
+	$(".bg-music").click(function(){
+		if($(".bg-music").hasClass("silent"))
+		{
+			$(".bg-music").removeClass("silent");
+			$(".bg-music").addClass("rotate");
+			$(".bg-music > audio")[0].play();
+		}
+		else
+		{
+			$(".bg-music").addClass("silent");
+			$(".bg-music").removeClass("rotate");
+			$(".bg-music > audio")[0].pause();
+		}
+	});
+	
+	var preLoadImg = new PreLoadImg({
+		imgInfoArr: g_resource,
+		container: "loading"
+	}, onLoadImgFinish);
+});//end
+
+function resizePicture(){
+	var w = $(window).width();
+	var h = $(window).height();
+	//if(w > 640) w=640;
+	if(w < 320) w=320;
+
+	var min_h = w*1.5;
+	$(".picture-bg").height(min_h);
+	//$('.picture-bg').height(w*0.9);
+	if( w > h){
+		$('body').height(min_h);
+		$(".picture-bg").css("margin-top", "0px");
+	}else{
+		if( h < min_h ){
+			$('body').height(min_h);
+			$(".picture-bg").css("margin-top", "0px");
+		}else{
+			$('body').height(h);
+			$(".picture-bg").css("margin-top", (h - min_h) + "px");
+		}
+	}
+	updateSwiper();
+}
+
+function rand(rMi, rMa) {
+	return ~~((Math.random()*(rMa-rMi+1))+rMi);
+}  
+
+function updateSwiper() {
+	window.ornamentSwiperControl && window.ornamentSwiperControl.update(true);
+	window.ornamentSwiper && window.ornamentSwiper.update(true);
+
+	window.hairSwiperControl && window.hairSwiperControl.update(true);
+	window.hairSwiper && window.hairSwiper.update(true);
+
+	window.grassessSwiperControl && window.grassessSwiperControl.update(true);
+	window.grassessSwiper && window.grassessSwiper.update(true);
+
+	window.underwearSwiperControl && window.underwearSwiperControl.update(true);
+	window.underwearSwiper && window.underwearSwiper.update(true);
+
+	window.pantsSwiperControl && window.pantsSwiperControl.update(true);
+	window.pantsSwiper && window.pantsSwiper.update(true);
+}
+
+function onLoadImgFinish(result) {
+	$(".bg-music").show();
+	if($(".bg-music").hasClass("silent"))
+	{
+		$(".bg-music").removeClass("rotate");
+		$(".bg-music > audio")[0].pause();
+	}
+	else
+	{
+		$(".bg-music").addClass("rotate");
+		$(".bg-music > audio")[0].play();
+	}
+	
+	if(result.status != "ok")
+	{
+		return;
+	}
+	$(".swiper-container").show();
+	$(".loading-body").html(result.data[$(".loading-body").attr("data-src")]);
+	$(".part-con .swiper-slide, .swiper-container, .help-tips, .confirm-btn, .title").each(function(){
+		self = $(this);
+		if(self.attr("data-src"))
+		{
+			self.append(result.data[self.attr("data-src")]);
+		}
+	}); 
+	window.ornamentSwiperControl = new Swiper ('.hair-ornament', {
+	    loop: true,
+	    onTouchStart: function(swiper,even){
+	        $(swiper.container[0]).addClass("focus");
+	    },
+	    onTouchEnd: function(swiper,even){
+	        $(swiper.container[0]).removeClass("focus");
+	    }
+	  });  
+	window.ornamentSwiper = new Swiper ('.hair-ornament-con', {
+	    loop: true,
+	    onSlideChangeEnd: function(swiper){
+	      //console.log(swiper);
+	    }
+	  });  
+	//hairSwiper.params.control = hairSwiperControl;
+	window.ornamentSwiperControl.params.control = ornamentSwiper;
+	window.ornamentSwiperControl.slideTo(rand(1,8), 1000, false);
+
+	window.hairSwiperControl = new Swiper ('.hair', {
+	    initialSlide: 8,
+	    loop: true,
+	    onTouchStart: function(swiper,even){
+	        $(swiper.container[0]).addClass("focus");
+	    },
+	    onTouchEnd: function(swiper,even){
+	        $(swiper.container[0]).removeClass("focus");
+	    }
+	  });  
+	window.hairSwiper = new Swiper ('.hair-con', {
+	    initialSlide: 8,
+	    loop: true,
+	    onSlideChangeEnd: function(swiper){
+	      //console.log(swiper);
+	      if($(".swiper-slide-active > img").hasClass("hair-wave"))
+	      {
+	    	  swiper.container.addClass("higher");
+	      }
+	      else
+	      {
+	    	  swiper.container.removeClass("higher");
+	      }
+	    }
+	  });  
+	//hairSwiper.params.control = hairSwiperControl;
+	window.hairSwiperControl.params.control = hairSwiper;
+	window.hairSwiperControl.slideTo(rand(0,7), 1000, false);
+
+	window.grassessSwiperControl = new Swiper ('.grassess', {
+	    loop: true,
+	    onTouchStart: function(swiper,even){
+	        $(swiper.container[0]).addClass("focus");
+	    },
+	    onTouchEnd: function(swiper,even){
+	        $(swiper.container[0]).removeClass("focus");
+	    }
+	  });  
+	window.grassessSwiper = new Swiper ('.grassess-con', {
+	    loop: true,
+	    onSlideChangeEnd: function(swiper){
+	      //console.log(swiper);
+	    }
+	  });  
+	//hairSwiper.params.control = hairSwiperControl;
+	window.grassessSwiperControl.params.control = grassessSwiper;
+	window.grassessSwiperControl.slideTo(rand(1,7), 1000, false);
+
+	window.underwearSwiperControl = new Swiper ('.underwear', {
+	    initialSlide: 9,
+	    loop: true,
+	    onTouchStart: function(swiper,even){
+	        $(swiper.container[0]).addClass("focus");
+	    },
+	    onTouchEnd: function(swiper,even){
+	        $(swiper.container[0]).removeClass("focus");
+	    }
+	  });  
+	window.underwearSwiper = new Swiper ('.underwear-con', {
+	    initialSlide: 9,
+	    loop: true,
+	    onSlideChangeEnd: function(swiper){
+	      //console.log(swiper);
+	    }
+	  });  
+	//hairSwiper.params.control = hairSwiperControl;
+	window.underwearSwiperControl.params.control = underwearSwiper;
+	window.underwearSwiperControl.slideTo(rand(0,8), 1000, false);
+
+	window.pantsSwiperControl = new Swiper ('.pants', {
+	    loop: true,
+	    onTouchStart: function(swiper,even){
+	        $(swiper.container[0]).addClass("focus");
+	    },
+	    onTouchEnd: function(swiper,even){
+	        $(swiper.container[0]).removeClass("focus");
+	    }
+	  });  
+	window.pantsSwiper = new Swiper ('.pants-con', {
+	    loop: true,
+	    onSlideChangeEnd: function(swiper){
+	      //console.log(swiper);
+	    }
+	  });  
+	//hairSwiper.params.control = hairSwiperControl;
+	window.pantsSwiperControl.params.control = pantsSwiper;
+	window.pantsSwiperControl.slideTo(rand(1,8), 1000, false);
+	/* var pictureBgList = ["/Public/images/clothing/hair_ornaments/brother.png",
+	                     "/Public/images/clothing/hair/dreadlock.png",
+	                     "/Public/images/clothing/grasses/bluenet.png",
+	                     "/Public/images/clothing/underwear/chest.png",
+	                     "/Public/images/clothing/pants/socks.png"
+	                     ];
+	for(var i = 0; i < pictureBgList.length; i++)
+	{
+		var imgSrcKey = pictureBgList[i];
+		$(".picture-bg").append(result.data[imgSrcKey]);
+	}  */
+
+	//$(".confirm-btn").show();
+	setTimeout(function(){
+		$(".confirm-btn").click(function(){
+			showSkill();
+		});
+	}, 1000);
+
+	$(".close-btn").click(function(){
+		$(".mask").fadeOut("fast");
+		$(".alert-con").fadeOut("fast");
+	});
+	
+	$(".ensure-btn").click(function(){
+		ensureGenCard();
+	});
+	$(".mask").fadeIn();
+	$(".help-tips").fadeIn();
+	$("body").on("touchstart", function(e){
+		$(".help-tips").fadeOut("fast");
+		$(".mask").fadeOut("fast");
+	}); 
+}
+
+function showSkill() {
+	$(".mask").fadeIn();
+	$(".alert-con").fadeIn();
+}
+
+function ensureGenCard() {
+	$(".mask").hide();
+	$(".alert-con").hide();
+	$("#loading").fadeIn();
+	var name = $("#name").val(); //基友名字
+	var greetings = $("#greetings").val(); //对基友说的祝福语
+	var oranment_url = $(".hair-ornament-con .swiper-slide-active").attr("data-src");
+	var hair_url = $(".hair-con .swiper-slide-active").attr("data-src");
+	var grasses_url = $(".grassess-con .swiper-slide-active").attr("data-src");
+	var underwear_url = $(".underwear-con .swiper-slide-active").attr("data-src");
+	var pants_url = $(".pants-con .swiper-slide-active").attr("data-src");
+	$.ajax({
+		type: "post",
+		url: "/cloth/gencard",
+		data: "name=" + encodeURI(name) + "&greetings=" + encodeURI(greetings) + "&oranment_url=" + oranment_url +
+				"&hair_url=" + hair_url + "&grasses_url=" + grasses_url + "&underwear_url=" + underwear_url + "&pants_url=" + pants_url,
+		dataType:'json',
+		timeout:20000,
+		success:function(data){
+			if(data.error=='0'){
+				top.location.href = data.url;
+			}
+			else {
+				$("#loading").fadeOut("fast");
+				alert(data.errormessage);
+			}
+			
+		},
+		error:function(xhr,state,err){
+			$("#loading").fadeOut("fast");
+			alert("哎呀，展现神技走火了，重试一次吧！");
+		}
+	});
+}
+
+function PreLoadImg(opts, callback) {
+	if(PreLoadImg.self) 
+	{
+		return PreLoadImg.self;
+	}
+	opts.imgInfoArr = opts.imgInfoArr || g_resource;
+	if(!opts || !opts.imgInfoArr || !opts.imgInfoArr.length)
+	{
+		if( typeof callback == 'function'){
+			callback({
+				status: "ok",
+				data: {},
+				success: 0,
+				failed: 0
+			});
+        }  	
+		return;
+	}
+	var self = this;
+	PreLoadImg.self = self;
+	self.loadImgInfoArr = opts.imgInfoArr;
+	self.finishCallBack = callback;
+	self.imgTotalNum = 0;
+	self.imgLoadedCnt = 0;
+	self.imgLoadedOkCnt = 0;
+	self.imgLoadedFailCnt = 0;
+	self.loadPercent = "0%";
+	self.loading = null;
+	self.imgDomObj = {};
+	self.progressBar = document.getElementById("percent-tips");
+	self.init = function() {
+		if(opts.container)
+		{
+			self.loading = document.getElementById(opts.container);
+		}
+		for(var i = 0; i < self.loadImgInfoArr.length; i++)
+		{
+			self.imgTotalNum += self.loadImgInfoArr[i].src.length;
+		}
+		self.startLoad();
+		//self.startLoopCheckTimer();
+	}
+	self.isLoadFinish = function() {
+		if(self.imgLoadedCnt >= self.imgTotalNum)
+		{
+			return true;  //已加载完成
+		}
+		else
+		{
+			return false;
+		}
+	};
+	self.onLoadedFinish = function(){
+		//加载完成后处理函数
+		if(self.loading)
+		{
+			self.loading.style.display = "none";
+		}
+		//g_imgDomObj = self.imgDomObj;
+		if( typeof self.finishCallBack == 'function'){
+			self.finishCallBack({
+				status: "ok",
+				data: self.imgDomObj,
+				success: self.imgLoadedOkCnt,
+				failed: self.imgLoadedFailCnt
+			});
+        }
+	};
+	self.setProgress = function() {
+		if(self.isLoadFinish())
+		{
+			self.loadPercent = "100%";
+			self.onLoadedFinish();
+		}
+		else
+		{
+			self.loadPercent = Math.round(100 * self.imgLoadedCnt / self.imgTotalNum) + "%";
+		}
+		if(self.loading)
+		{
+			self.progressBar.innerHTML = self.loadPercent;
+		}
+	}
+	self.startLoopCheckTimer = function() {
+		if(self.isLoadFinish())
+		{
+			self.onLoadedFinish();
+		}
+		else
+		{
+			self.checkTimer = setTimeout(self.startLoopCheckTimer, 100);
+		}
+		self.setProgress();
+	};
+	self.onLoadStart = function() {
+		if(self.loading)
+		{
+			self.progressBar.innerHTML = "0%";
+			self.loading.style.display = "block";
+		}
+		for(var i = 0; i < self.loadImgInfoArr.length; i++)
+		{
+			var imgInfo = self.loadImgInfoArr[i];
+			var className = imgInfo.className;
+			for(var j=0; j < imgInfo.src.length; j++)
+			{
+				var image = new Image();
+				var src = imgInfo.src[j];
+				var first = src.lastIndexOf("/");
+				var second = src.lastIndexOf(".");
+				image.className = className + "-" + (src.substr(first + 1, second - first-1));
+				image.onload  = function() {
+					this.onload = null;
+					self.imgLoadedCnt++;
+					self.imgLoadedOkCnt++;
+					var srcKey = this["data-src"];
+					self.imgDomObj[srcKey] = this;
+					self.setProgress();
+					
+				};
+				image.onerror  = function() {
+					this.onerror = null;
+					self.imgLoadedCnt++;
+					self.imgLoadedFailCnt++;
+					
+					self.setProgress();
+				};
+				image["data-src"] = imgInfo.src[j];
+				image.src = imgInfo.src[j];
+			}
+			
+		}
+	};
+	self.startLoad = function() {
+		self.onLoadStart();
+	}
+	
+	self.init();
+}
+</script>
+</body>
+</html>

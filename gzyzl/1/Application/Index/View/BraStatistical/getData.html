@@ -1,0 +1,60 @@
+<!doctype html>
+
+<html>
+<head>
+<title>七大杯游戏统计数据</title>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<style type="text/css">
+html,body{
+	box-sizing:border-box;
+}
+td{
+	border:1px solid;
+	text-align:center;
+}
+</style>
+</head>
+
+<body>
+<table>
+<caption>活动统计</caption>
+<tr>
+<th>活动pv</th>
+<th>活动ip</th>
+<th>活动uv(微信人数)</th>
+<th>平均停留时间</th>
+</tr>
+<tr>
+<td>{$result.braStat.pv_num}</td>
+<td>{$result.braStat.ip_num}</td>
+<td>{$result.braStat.uv_num}</td>
+<td>{$result.braStat.avg_time}</td>
+</tr>
+
+</table>
+
+<table>
+<caption>七大杯类型选择统计</caption>
+<tr>
+<volist name="result.braType" id="br">
+<th>
+{$br.bra_type}
+<br>
+{$br.bra_type_cn}
+</th>
+
+</volist>
+</tr>
+
+<tr>
+<volist name="result.braType" id="br">
+<td>{$br.bra_num}</td>
+
+</volist>
+</tr>
+
+</table>
+
+</body>
+</html>

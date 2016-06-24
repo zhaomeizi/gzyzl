@@ -1,0 +1,73 @@
+@CHARSET "UTF-8";
+.portrait-show.frame1 {
+	left: 14.8%;
+	bottom: 42.3%;
+	transform: rotate(-3deg);
+	-webkit-transform: rotate(-3deg);
+}
+.portrait-show.frame2 {
+	left: 14.8%;
+	bottom: 42.3%;
+	transform: rotate(-10deg);
+	-webkit-transform: rotate(-10deg);
+}
+.portrait-show.frame3 {
+	left: 14.8%;
+	bottom: 42.3%;
+	transform: rotate(-12deg);
+	-webkit-transform: rotate(-12deg);
+}
+.portrait-show.frame4 {
+	left: 14.8%;
+	bottom: 42.3%;
+	transform: rotate(-10deg);
+	-webkit-transform: rotate(-10deg);
+}
+.portrait-show.frame5 {
+	left: 14.8%;
+	bottom: 42.3%;
+	transform: rotate(-3deg);
+	-webkit-transform: rotate(-3deg);
+}
+.portrait-show.frame6 {	
+	left: 15.8%;
+	bottom: 42.3%;
+	transform: rotate(3deg);
+	-webkit-transform: rotate(3deg);
+}
+.portrait-show.frame7 {
+	left: 15.5%;
+	bottom: 42.3%;
+	transform: rotate(7deg);
+	-webkit-transform: rotate(5deg);
+}
+.portrait-show.frame8 {
+	left: 15.8%;
+	bottom: 42.3%;
+	transform: rotate(3deg);
+	-webkit-transform: rotate(3deg);
+}
+div.result-show.frame1 {
+	background-image: url(/Public/images/bra/pose/together/frame1.png);
+}
+div.result-show.frame2 {
+	background-image: url(/Public/images/bra/pose/together/frame2.png);
+}
+div.result-show.frame3 {
+	background-image: url(/Public/images/bra/pose/together/frame3.png);
+}
+div.result-show.frame4 {
+	background-image: url(/Public/images/bra/pose/together/frame2.png);
+}
+div.result-show.frame5 {
+	background-image: url(/Public/images/bra/pose/together/frame1.png);
+}
+div.result-show.frame6 {
+	background-image: url(/Public/images/bra/pose/together/frame6.png);
+}
+div.result-show.frame7 {
+	background-image: url(/Public/images/bra/pose/together/frame7.png);
+}
+div.result-show.frame8 {
+	background-image: url(/Public/images/bra/pose/together/frame6.png);
+}

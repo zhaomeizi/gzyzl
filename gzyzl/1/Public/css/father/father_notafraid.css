@@ -1,0 +1,76 @@
+@CHARSET "UTF-8";
+.face-notafraid .portrait-show {
+	width: 39%;
+}
+.face-notafraid .portrait-show.frame1 {
+	left: 21.4%;
+	bottom: 37%;
+	transform: rotate(20deg);
+	-webkit-transform: rotate(20deg);
+}
+.face-notafraid .portrait-show.frame2 {
+	left: 21.4%;
+	bottom: 37%;
+	transform: rotate(20deg);
+	-webkit-transform: rotate(20deg);
+}
+.face-notafraid .portrait-show.frame3 {
+	left: 21.4%;
+	bottom: 37%;
+	transform: rotate(20deg);
+	-webkit-transform: rotate(20deg);
+}
+.face-notafraid .portrait-show.frame4 {
+	left: 21.4%;
+	bottom: 37%;
+	transform: rotate(20deg);
+	-webkit-transform: rotate(20deg);
+}
+.face-notafraid .portrait-show.frame5 {
+	left: 21.4%;
+	bottom: 37%;
+	transform: rotate(20deg);
+	-webkit-transform: rotate(20deg);
+}
+.face-notafraid .portrait-show.frame6 {
+	left: 21.4%;
+	bottom: 37%;
+	transform: rotate(20deg);
+	-webkit-transform: rotate(20deg);
+}
+.face-notafraid .portrait-show.frame7 {
+	left: 21.4%;
+	bottom: 37%;
+	transform: rotate(20deg);
+	-webkit-transform: rotate(20deg);
+}
+.face-notafraid .portrait-show.frame8 {
+	left: 21.4%;
+	bottom: 37%;
+	transform: rotate(20deg);
+	-webkit-transform: rotate(20deg);
+}
+.face-notafraid div.result-show.frame1 {
+	background-image: url(/Public/images/father/notafraid/frame1.png);
+}
+.face-notafraid div.result-show.frame2 {
+	background-image: url(/Public/images/father/notafraid/frame2.png);
+}
+.face-notafraid div.result-show.frame3 {
+	background-image: url(/Public/images/father/notafraid/frame3.png);
+}
+.face-notafraid div.result-show.frame4 {
+	background-image: url(/Public/images/father/notafraid/frame4.png);
+}
+.face-notafraid div.result-show.frame5 {
+	background-image: url(/Public/images/father/notafraid/frame5.png);
+}
+.face-notafraid div.result-show.frame6 {
+	background-image: url(/Public/images/father/notafraid/frame6.png);
+}
+.face-notafraid div.result-show.frame7 {
+	background-image: url(/Public/images/father/notafraid/frame7.png);
+}
+.face-notafraid div.result-show.frame8 {
+	background-image: url(/Public/images/father/notafraid/frame8.png);
+}

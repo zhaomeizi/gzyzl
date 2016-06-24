@@ -1,0 +1,76 @@
+@CHARSET "UTF-8";
+.face-sleep .portrait-show {
+	width: 39%;
+}
+.face-sleep .portrait-show.frame1 {
+	left: 43%;
+	bottom: 42.5%;
+	transform: rotate(6deg);
+	-webkit-transform: rotate(6deg);
+}
+.face-sleep .portrait-show.frame2 {
+	left: 43.5%;
+	bottom: 42%;
+	transform: rotate(-12deg);
+	-webkit-transform: rotate(-12deg);
+}
+.face-sleep .portrait-show.frame3 {
+	left: 49.2%;
+	bottom: 41.5%;
+	transform: rotate(-20deg);
+	-webkit-transform: rotate(-20deg);
+}
+.face-sleep .portrait-show.frame4 {
+	left: 49.2%;
+	bottom: 41.5%;
+	transform: rotate(-20deg);
+	-webkit-transform: rotate(-20deg);
+}
+.face-sleep .portrait-show.frame5 {
+	left: 49.2%;
+	bottom: 41.5%;
+	transform: rotate(-20deg);
+	-webkit-transform: rotate(-20deg);
+}
+.face-sleep .portrait-show.frame6 {
+	left: 49.2%;
+	bottom: 41.5%;
+	transform: rotate(-20deg);
+	-webkit-transform: rotate(-20deg);
+}
+.face-sleep .portrait-show.frame7 {
+	left: 49.2%;
+	bottom: 41.5%;
+	transform: rotate(-20deg);
+	-webkit-transform: rotate(-20deg);
+}
+.face-sleep .portrait-show.frame8 {
+	left: 49.2%;
+	bottom: 41.5%;
+	transform: rotate(-20deg);
+	-webkit-transform: rotate(-20deg);
+}
+.face-sleep div.result-show.frame1 {
+	background-image: url(/Public/images/father/sleep/frame1.png);
+}
+.face-sleep div.result-show.frame2 {
+	background-image: url(/Public/images/father/sleep/frame2.png);
+}
+.face-sleep div.result-show.frame3 {
+	background-image: url(/Public/images/father/sleep/frame3.png);
+}
+.face-sleep div.result-show.frame4 {
+	background-image: url(/Public/images/father/sleep/frame4.png);
+}
+.face-sleep div.result-show.frame5 {
+	background-image: url(/Public/images/father/sleep/frame5.png);
+}
+.face-sleep div.result-show.frame6 {
+	background-image: url(/Public/images/father/sleep/frame6.png);
+}
+.face-sleep div.result-show.frame7 {
+	background-image: url(/Public/images/father/sleep/frame7.png);
+}
+.face-sleep div.result-show.frame8 {
+	background-image: url(/Public/images/father/sleep/frame8.png);
+}

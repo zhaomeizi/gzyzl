@@ -1,0 +1,64 @@
+@CHARSET "UTF-8";
+.portrait-show.frame1 {
+	left: 14.5%;
+	bottom: 59.5%;
+	transform: rotate(-25deg);
+	-webkit-transform: rotate(-25deg);
+}
+.portrait-show.frame2 {
+	left: 15.5%;
+	bottom: 58.3%;
+	transform: rotate(-25deg);
+	-webkit-transform: rotate(-25deg);
+}
+.portrait-show.frame3 {
+	left: 16.5%;
+	bottom: 57.5%;
+	transform: rotate(-25deg);
+	-webkit-transform: rotate(-25deg);
+}
+.portrait-show.frame4 {
+	left: 16.5%;
+	bottom: 57.5%;
+	transform: rotate(-25deg);
+	-webkit-transform: rotate(-25deg);
+}
+.portrait-show.frame5 {
+	left: 17%;
+	bottom: 59%;
+	transform: rotate(-22deg);
+	-webkit-transform: rotate(-22deg);
+}
+.portrait-show.frame6 {
+	left: 18.5%;
+	bottom: 60.2%;
+	transform: rotate(-15deg);
+	-webkit-transform: rotate(-15deg);
+}
+.portrait-show.frame7 {
+	left: 19%;
+	bottom: 62%;
+	transform: rotate(-26deg);
+	-webkit-transform: rotate(-10deg);
+}
+div.result-show.frame1 {
+	background-image: url(/Public/images/bra/pose/slide/frame1.png);
+}
+div.result-show.frame2 {
+	background-image: url(/Public/images/bra/pose/slide/frame2.png);
+}
+div.result-show.frame3 {
+	background-image: url(/Public/images/bra/pose/slide/frame3.png);
+}
+div.result-show.frame4 {
+	background-image: url(/Public/images/bra/pose/slide/frame4.png);
+}
+div.result-show.frame5 {
+	background-image: url(/Public/images/bra/pose/slide/frame5.png);
+}
+div.result-show.frame6 {
+	background-image: url(/Public/images/bra/pose/slide/frame6.png);
+}
+div.result-show.frame7 {
+	background-image: url(/Public/images/bra/pose/slide/frame7.png);
+}

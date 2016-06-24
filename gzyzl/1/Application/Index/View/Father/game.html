@@ -1,0 +1,2008 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>带你回忆那些爸爸的口头禅</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<link rel="stylesheet" href="/Public/css/swiper-3.3.0.min.css">
+<link rel="stylesheet" href="/Public/css/father/father.css">
+<link rel="stylesheet" href="/Public/css/father/father_homework.css">
+<link rel="stylesheet" href="/Public/css/father/father_strong.css">
+<link rel="stylesheet" href="/Public/css/father/father_sleep.css">
+<link rel="stylesheet" href="/Public/css/father/father_money.css">
+<link rel="stylesheet" href="/Public/css/father/father_loveme.css">
+<link rel="stylesheet" href="/Public/css/father/father_lovedad.css">
+<!-- <link rel="stylesheet" href="/Public/css/father/father_notafraid.css"> -->
+<link rel="stylesheet" href="/Public/css/father/father_sayagain.css">
+<link rel="stylesheet" href="/Public/css/father/father_listen.css">
+<style>
+* {
+	box-sizing:border-box;
+	-moz-box-sizing:border-box; /* Firefox */
+	-webkit-box-sizing:border-box; /* Safari */
+	-webkit-user-select: none;
+	-webkit-touch-callout: none;
+}
+html,body{
+	width:100%;
+	/*max-width:640px;*/
+	min-width:320px;
+	height:100%;
+	overflow-x:hidden;
+	box-sizing:border-box;
+	margin:0 auto;
+	padding:0;
+	min-height:320px;
+	font-family: "微软雅黑","Microsoft YaHei","MS Serif",serif;
+	-webkit-overflow-scrolling:touch;
+}
+body{
+	background:url(/Public/images/father/basic_bg.jpg);
+	position:relative;
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+	background-position:center center;
+	color: #333;
+}
+a, input {
+	text-decoration: none;
+	outline: none !important;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+a:focus, a:active, a:hover, img:focus, img:active, img:hover, input:focus, input:active, input:hover {
+	outline: none !important;
+}
+img {
+	width: 100%;
+	height: auto;
+}
+.confirm-btn {
+	display: block;
+	height: 45px;
+	width: 120px;
+	position: absolute;
+	left: 50%;
+	top: 20px;
+	transform: translateX(-50%);
+	-webkit-transform: translateX(-50%);
+	z-index: 16;
+}
+.confirm-btn > img {
+	height: 100%;
+	width: 100%;
+}
+.help-tips {
+	height: 100%;
+	position: relative;
+	display: none;
+}
+.help-tips > img {
+	bottom: 5px;
+	right: 20px;
+	width:200px;
+	height: auto;
+	z-index: 1016;
+}
+#loading {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	line-height: 1;
+	left: 0;
+	top: 0;
+	/* background: rgba(0,0,0,0.75); */
+	text-align: center;
+	vertical-align: middle;
+	z-index: 1000;
+	color: white;
+	font-size: 24px;
+}
+.loading-body {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+}
+.loading-gif {
+	position: absolute;
+	width: 70%;
+	height: auto;
+	left: 50%;
+	top: 50%;
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+}
+.loading-body > p {
+	position: absolute;
+	text-align: center;
+	color: #666;
+	line-height: 1;
+	width: 100%;
+}
+#percent-tips {
+	top: 10%;
+	padding: 5px;
+	font-size: 24px;
+}
+#loading-tips {
+	bottom: 10%;
+	padding: 5px;
+	font-size: 18px;
+	text-align: left;
+	width: 100px;
+	left: 50%;
+	margin-left: -50px;
+}
+
+.focus{
+	background-color: rgba(0,0,0,0.3);
+}
+.wx-logo {
+	display: none;
+}
+
+.mask {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 1000;
+}
+
+.share-tip{
+	display:none;
+	width:100%;
+	height:100%;
+	background:rgba(0,0,0,0.7);
+	position:absolute;
+	top: 0;
+	left: 0;
+	z-index:1000;
+}
+.share-tip img{
+	position:absolute;
+	right:10px;
+	top:0;
+	width:90%;
+	z-index:1004;
+}
+.alert-con {
+	display: none;
+	position: absolute;
+	width: 300px;
+	height: 300px;
+	left: 50%;
+	top: 50%;
+	background: #fff;
+	/* transform: translate(-50%, -50%)  rotate(-5deg);
+	-webkit-transform: translate(-50%, -50%)  rotate(-5deg); */
+	transform: translate(-50%, -50%);
+	-webkit-transform: translate(-50%, -50%);
+	box-shadow: -2px 4px 18px #333;
+	padding: 3px;
+	z-index: 1010;
+}
+.inner {
+	height: 100%;
+	width: 100%;
+	background: #c83c3d;
+}
+.inner > .title {
+	width: 100%;
+	/* transform: rotate(7deg);
+	-webkit-transform: rotate(7deg); */
+}
+.inner > .title > img {
+	width: 50%;	
+	margin-left: 25%;
+	margin-top: 10%;
+}
+.friend-info {
+	/* padding-top: 90px; */
+	transform: rotate(-5deg);
+	-webkit-transform: rotate(-5deg);
+}
+.form-con {
+	font-size: 18px;
+	text-align: center;
+	height: 40px;
+	line-height: 40px;
+}
+.form-con input {
+	border: none;
+	border-bottom: 1px solid #fff;
+	background: none;
+	color: #333;
+	text-align: center;
+	font-size: 20px;
+	border-radius: 0;
+}
+.btn-con {
+	position: absolute;
+	bottom: 20px;
+	width: 100%;
+}
+.ensure-btn {
+	padding: 5px 20px;
+	color: #333;
+	border: 1px solid #fff;
+	border-radius: 4px;
+}
+.close-btn {
+	position: absolute;
+	width: 30px;
+	height: 30px;
+	line-height: 30px;
+	top: -10px;
+	right: -10px;
+	border-radius: 50%;
+	background: #fff;
+	font-size: 24px;
+	text-align: center;
+	font-weight: bold;
+	color: #000;
+}
+.bg-music {
+	display: none;
+	position: absolute;
+	right: 20px;
+	top: 20px;
+	width: 30px;
+	height: 30px;
+	background: url("/Public/images/clothing/normalmusic.svg") no-repeat;
+	background-size: 100% 100%;
+	z-index: 1200;
+}
+.bg-music.silent {
+	/* background: url("/Public/images/silent.png") no-repeat;
+	background-size: 100% 100%; */
+}
+.rotate {
+	-webkit-animation:rotating 1.2s linear infinite;
+	-moz-animation:rotating 1.2s linear infinite;
+	-o-animation:rotating 1.2s linear infinite;
+	animation:rotating 1.2s linear infinite;
+}
+@-webkit-keyframes rotating {
+	from {
+		-webkit-transform: rotate(0deg);
+	}
+	to {
+		-webkit-transform:rotate(360deg);
+	}
+}
+@keyframes rotating {
+	from {
+		transform:rotate(0deg);
+	}
+	to {
+		transform:rotate(360deg);
+	}
+}
+@-moz-keyframes rotating {
+	from {
+		-moz-transform:rotate(0deg);
+	}
+	to {
+		-moz-transform:rotate(360deg);
+	}
+}
+
+a {
+	display: block;
+}
+
+.editphoto {
+	display: none;
+	position: absolute;
+	top: 0;
+	left: 0;
+	width: 100%;
+	height: 100%;
+}
+
+.cancel-choose {
+	display: none;
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	right: 20px;
+	top: 20px;
+	z-index: 100;
+}
+.add-photo {
+	position: absolute;
+	width: 100%;
+	height: 230px;
+	top: 50%;
+	margin-top: -150px;
+	text-align: center;
+}
+.choose-photo {
+	display: inline-block;
+	width: 150px;
+	height: 150px;
+}
+.add-photo p {
+	margin: 0;
+	padding: 0;
+	color: #333;
+	font-size: 15px;
+	font-weight: bold;
+}
+.add-photo .add-tips {
+	opacity: 0.7;
+	margin-top: -10px;
+	margin-bottom: 10px;
+	font-size: 16px;
+}
+.cutimg-photo {
+	display: none;
+}
+.image-editor {
+	position:absolute;
+	top: 50%;
+	left: 50%;
+	width: 200px;
+	height: 200px;
+	margin-top: -130px;
+	margin-left: -100px;
+}
+.cut-border-con {
+	width: 220px;
+	height: 220px;
+	background: none;
+	position: absolute;
+	left: 50%;
+	top: 50%;
+	margin-left: -110px;
+	margin-top: -163px;
+	pointer-events: none; 
+}
+.cropit-image-preview-container {
+	width: 100%;
+	height: 100%;
+	padding:0;
+	margin: 0;
+}
+.preview-container {
+  width:100%;
+  height: 100%;
+  border: 1px solid #fff;
+  border-radius: 50%;
+  padding:0;
+  margin: 0;
+}
+.cropit-image-preview {
+  width: 200px;
+  height: 200px;
+  background-size: cover;
+  cursor: move;
+  border-radius: 50%;
+}
+.cropit-image-background {
+  opacity: .6;
+  cursor: auto;
+}
+
+.opt-con {
+	position: absolute;
+	width: 100%;
+	height: 45px;
+	bottom: 10%;
+}
+.black-bg {
+	display: inline-block;
+	position: absolute;
+	width: 40px;
+	height: 40px;
+	top: 0;
+	left: 50%;
+	background: rgba(0,0,0,0.6);
+	border-radius: 50%;
+}
+.opt-con .black-bg > a {
+	width: 100%;
+	height: 100%;
+}
+.zoom-out {
+	margin-left: -120px;
+}
+.zoom-in {
+	margin-left: -70px;
+}
+.turn-left {
+	margin-left: -20px;
+}
+.turn-right {
+	margin-left: 30px;
+}
+.confirm {
+	margin-left: 80px;
+}
+
+.picture-bg{
+	display: none;
+	width:100%;
+	height:100%;
+	position:relative;
+	overflow-y: auto;
+}
+.back {
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	left: 20px;
+	top: 20px;
+	z-index: 100;
+}
+.submit-btn {
+	position: absolute;
+	width: 35px;
+	height: 35px;
+	right: 20px;
+	top: 20px;
+}
+.show-con {
+	position: relative;
+	width: 100%;
+	margin: 0 auto;
+}
+.portrait-show {
+	position: absolute;
+}
+.portrait-show > img {
+	position: relative;
+	border-radius: 50%;
+	vertical-align: top;
+}
+
+.choose-con {
+	position: relative;
+	width: 100%;
+	height: 80px;
+	margin-top: 10px;
+	overflow: hidden;
+}
+.pose-wrapper, .sticker-wrapper {
+	display: none;
+	position: absolute;
+	left: 50%;
+	top: 0;
+	width: auto;
+	height: 100%;
+	white-space: nowrap;
+	-webkit-transform: translateX(-50%);
+	-moz-transform: translateX(-50%);
+	transform: translateX(-50%);
+}
+.choose-con .pose-wrapper {
+	display: block;
+}
+.choose-con a {
+	display: inline-block;
+	width: 80px;
+	margin-left: -32px;
+}
+.pose-wrapper > a:first-child, .sticker-wrapper > a:first-child {
+	margin-left: 0;
+}
+.optbtn-con {
+	position: relative;
+	width: 100%;
+	height: 60px;
+	margin-top: 0;
+}
+.optbtn-con > a {
+	position: absolute;
+	width: 60px;
+	height: 60px;
+	line-height: 60px;
+	top: 0;
+	left: 50%;
+	font-size: 14px;
+	color: #c42559;
+	text-align: center;
+	vertical-align: middle;
+}
+.pose {
+	margin-left: -120px;
+}
+.sticker {
+	margin-left: 60px;
+}
+.btn-a {
+	background: url(/Public/images/bra/btn-bg.png) no-repeat;
+	background-size: 100% 100%;
+}
+
+.img-loading {
+	display: none;
+	position: absolute;
+	background: rgba(0,0,0,0.75);
+	padding: 5px;
+	color: #fff;
+	font-size: 18px;
+	text-align: left;
+	/* width: 75%; */
+	padding: 30px 15px;
+	left: 50%;
+	top: 50%;
+	-webkit-transform: translate(-50%, -50%);
+	-moz-transform: translate(-50%, -50%);
+	transform: translate(-50%, -50%);
+	border-radius: 5px;
+	z-index: 1001;
+}
+
+.father-face-show {
+	display: none;
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	top: 0;
+	left: 0;
+}
+div.result-show {
+	width: 100%;
+	height: 100%;
+	position: absolute;
+ 	background-repeat: no-repeat;
+	background-size: 100% 100%;
+}
+
+.share-con {
+	display: none;
+	position: relative;
+	width: 100%;
+	height: 100%;
+}
+
+.share-btn-con {
+	position: absolute;
+	bottom: 15px;
+	text-align: center;
+}
+.share-btn-con > a {
+	display: inline-block;
+	width: 30%;
+	margin-left: 15px;
+}
+.share-btn-con > a:first-child {
+	margin-left: 0;
+}
+.share-btn-con > a img {
+	width: 100%;
+	height: auto;
+}
+.share-mask {
+	position: absolute;
+	width: 100%;
+	height: 100%;
+	left: 0;
+	top: 0;
+	z-index: 120;
+}
+
+.logo-con {
+	position: absolute;
+	width: 100%;
+	top: 4%;
+	left: 0;
+	padding: 0 10px;
+	text-align: left;
+	z-index: 100;
+}
+.logo-con > img {
+	display: inline-block;
+	margin-left: 5px;
+	vertical-align: top;
+}
+.logo-con > img:first-child {
+	margin-left: 0;
+}
+.company_logo {
+	width: 30%;
+	height: auto;
+	margin-top: 5%;
+}
+.game_logo {
+	width: 22%;
+	height: auto;
+}
+.split {
+	width: 2px;
+	height:auto;
+}
+</style>
+
+</head>
+
+<body>
+	<!-- <div class="wx-logo preload" data-src="/Public/images/clothing/wx-cloth-logo.jpg">
+		<img alt="猴年大“技”" src="/Public/images/clothing/wx-cloth-logo.jpg" >
+	</div> -->
+	<!-- <a href="javascript:void(0);" class="bg-music">
+		<audio loop="loop" style="display:none;"> 
+			<source src="/Public/music/cloth/LenkaTheShow.ogg" type="audio/ogg">
+			<source src="/Public/music/cloth/LenkaTheShow.mp3" type="audio/mpeg">
+		</audio>
+	</a> -->
+	<div id="loading">
+		<div class="loading-body">
+			<img class="loading-gif" src="/Public/images/father/loading.gif">
+			<p id="percent-tips">0%</p>
+			<p id="loading-tips">loading.</p>
+		</div>
+	</div>
+	
+	<!-- 选择头像并编辑上传 -->
+	<div class="editphoto">
+		<a href="javascript:void(0);" class="cancel-choose preload" data-src="/Public/images/bra/logout.png" >	
+		</a>
+		<div class="add-photo">
+			<a href="javascript:void(0);" class="choose-photo preload" data-src="/Public/images/bra/add_image.png" >	
+			</a>
+			<p class="add-tips">添加图片</p>
+			<p class="">选择正面照</p>
+			<p class="">把脸调到圆圈大小会更帅喔</p>
+		</div>
+		<!-- 截取图片 -->
+		<div class="cutimg-photo">
+			<div class="image-editor">
+		      <div class="cropit-image-preview-container">
+		        <div class="preview-container">
+		        <div class="cropit-image-preview"></div>
+		        </div>
+		      </div>
+		    </div>
+		    <div class="cut-border-con preload" data-src="/Public/images/father/cut-border.png"></div>
+		    <form id="portraitForm" style="display:none;">
+		    	<input id="portrait" name="portrait" type="hidden" />
+		    </form>
+		</div>
+		<!-- end 截取图片 -->
+		<div class="opt-con">
+			<div class="zoom-out black-bg">
+			<a href="javascript:void(0);" class="preload img-bg" data-src="/Public/images/bra/zoom_out_btn.png" >	
+			</a>
+			</div>
+			<div class="zoom-in black-bg">
+			<a href="javascript:void(0);" class="preload img-bg" data-src="/Public/images/bra/zoom_in_btn.png" >	
+			</a>
+			</div>
+			<div class="turn-left black-bg">
+			<a href="javascript:void(0);" class="preload img-bg" data-src="/Public/images/bra/turn_left_btn.png" >	
+			</a>
+			</div>
+			<div class="turn-right black-bg">
+			<a href="javascript:void(0);" class="preload img-bg" data-src="/Public/images/bra/turn_right_btn.png" >	
+			</a>
+			</div>
+			<div class="confirm black-bg">
+			<a href="javascript:void(0);" class="preload img-bg" data-src="/Public/images/bra/confirm_btn.png" >	
+			</a>
+			</div>		
+		</div>
+	</div>
+	
+	<div class="picture-bg">
+		<!-- <a href="javascript:void(0);" class="back preload" data-src="/Public/images/bra/goback.png" >	
+		</a> -->
+		<div class="logo-con">
+			<img class="company_logo" src="/Public/images/father/logo.png" />
+			<img class="split" src="/Public/images/father/split.png" />
+			<img class="game_logo" src="/Public/images/father/game_logo.png" />
+		</div>
+		<div class="show-con">
+			<div class="father-face-show face-homework" data-name="homework" style="z-index:10;">
+				<div class="result-show"></div>
+				<div class="portrait-show">
+					<img src="" class="portrait">
+				</div>
+			</div>
+			<div class="father-face-show face-strong" data-name="strong" style="z-index:9;">
+				<div class="result-show"></div>
+				<div class="portrait-show">
+					<img src="" class="portrait">
+				</div>
+			</div>
+			<div class="father-face-show face-sleep" data-name="sleep" style="z-index:8;">
+				<div class="result-show"></div>
+				<div class="portrait-show">
+					<img src="" class="portrait">
+				</div>
+			</div>
+			<div class="father-face-show face-money" data-name="money" style="z-index:7;">
+				<div class="result-show"></div>
+				<div class="portrait-show">
+					<img src="" class="portrait">
+				</div>
+			</div>
+			<div class="father-face-show face-loveme" data-name="loveme" style="z-index:6;">
+				<div class="result-show"></div>
+				<div class="portrait-show">
+					<img src="" class="portrait">
+				</div>
+			</div>
+			<div class="father-face-show face-sayagain" data-name="sayagain" style="z-index:5;">
+				<div class="result-show"></div>
+				<div class="portrait-show">
+					<img src="" class="portrait">
+				</div>
+			</div>
+			<div class="father-face-show face-listen" data-name="listen" style="z-index:3;">
+				<div class="result-show"></div>
+				<div class="portrait-show">
+					<img src="" class="portrait">
+				</div>
+			</div>
+			<div class="father-face-show face-lovedad" data-name="lovedad" style="z-index:2;">
+				<div class="result-show"></div>
+				<div class="portrait-show">
+					<img src="" class="portrait">
+				</div>
+			</div>
+			<a href="javascript:void(0);" class="next-btn preload" data-src="/Public/images/father/next_btn.png" >	
+			</a>
+		</div>
+		<div class="share-con preload img-bg" data-src="/Public/images/father/share_bg.jpg">
+			<div class="share-btn-con" >
+				<a href="javascript:void(0);" class="play-again-btn preload" data-src="/Public/images/father/play-again.png" >	
+				</a>
+				<a href="javascript:void(0);" class="share-btn preload" data-src="/Public/images/father/share-btn.png" >	
+				</a>
+			</div>
+			<div class="share-mask preload img-bg" data-src="/Public/images/father/share-tips.png"></div>
+		</div>
+	</div>
+
+	<div class="mask"></div>
+	<div class="img-loading">
+	</div>
+	<!-- 分享图层 -->
+	
+<script src="/Public/js/jquery-1.11.2.min.js"></script>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script src="/Public/js/cropit.js?rnd=1929"></script>
+<script src="/Public/js/father-resource.js?v=201639"></script>
+<script>        
+    
+  </script>
+<script>
+//var g_imgDomObj = {};
+var loadingTimer = null;
+var cropitRotate = 0;
+var lastX = 0;
+var lastY = 0;
+var lastScrollTop = 0;
+var content_last_left;
+var content_last_top;
+var imgSource = {};
+var isChooseSticker = false;
+var g_frameCount = 1;
+
+/*    * 解析matrix矩阵，0°-360°，返回旋转角度    * 
+ * 
+ * 当a=b||-a=b,0<=deg<=180    
+ * 当-a+b=180,180<=deg<=270    
+ * 当a+b=180,270<=deg<=360    
+ * 当0<=deg<=180,deg=d;    
+ * 当180<deg<=270,deg=180+c;    
+ * 当270<deg<=360,deg=360-(c||d);    
+ * */    
+function getRotateFromMatrix(matrix){        
+	 var aa=Math.round(180*Math.asin(parseFloat(matrix[0]))/ Math.PI);        
+	 var bb=Math.round(180*Math.acos(parseFloat(matrix[1]))/ Math.PI);        
+	 var cc=Math.round(180*Math.asin(parseFloat(matrix[2]))/ Math.PI);        
+	 var dd=Math.round(180*Math.acos(parseFloat(matrix[3]))/ Math.PI);        
+	 var deg=0;        
+	 if(aa==bb||-aa==bb){            
+		 deg=dd;        
+	 }else if(-aa+bb==180){            
+		 deg=180+cc;        
+	 }else if(aa+bb==180){            
+		 deg=360-cc||360-dd;        
+	 }        
+	 return deg>=360?0:deg;        
+	 //return (aa+','+bb+','+cc+','+dd);    
+ }
+
+function showTips(msg, isLoop) {
+	if(loadingTimer)
+	{
+		clearInterval(loadingTimer);
+		loadingTimer = null;
+	}
+	$(".img-loading").html(msg);
+	$(".mask").show();
+	$(".img-loading").show();
+	if(isLoop)
+	{
+		loadingTimer = setInterval(function(){
+			var html = msg;
+			for(var i = 0; i < pointCount; i++)
+			{
+				html += "."
+			}
+			$(".img-loading").html(html);
+			pointCount++;
+			pointCount = pointCount > 3? 0:pointCount;
+			
+		}, 500);
+	}
+	else
+	{
+		setTimeout(function(){
+			hideTips();
+		}, 2000);
+	}
+}
+function hideTips() {
+	if(loadingTimer)
+	{
+		clearInterval(loadingTimer);
+		loadingTimer = null;
+	}
+	$(".mask").hide();
+	$(".img-loading").fadeOut("fast");
+}
+
+
+function rand(rMi, rMa) {
+	return ~~((Math.random()*(rMa-rMi+1))+rMi);
+}  
+
+$(function(){
+	$(window).resize(function(){
+		resizePicture();
+	});
+	resizePicture();
+	
+	$(".bg-music").click(function(){
+		if($(".bg-music").hasClass("silent"))
+		{
+			$(".bg-music").removeClass("silent");
+			$(".bg-music").addClass("rotate");
+			$(".bg-music > audio")[0].play();
+		}
+		else
+		{
+			$(".bg-music").addClass("silent");
+			$(".bg-music").removeClass("rotate");
+			$(".bg-music > audio")[0].pause();
+		}
+	});
+	
+	//微信JS SDK 类设置
+	wx.config({
+	debug: false,
+	appId: '{$wxkey.appId}',
+	timestamp: {$wxkey.timeStamp},
+	nonceStr: '{$wxkey.nonceStr}',
+	signature: '{$wxkey.signature}',
+	jsApiList: [
+	//  'checkJsApi',
+	  'chooseImage',
+	  'uploadImage',
+	  'onMenuShareTimeline',          //朋友圈
+	  'onMenuShareAppMessage',       //朋友
+	  'onMenuShareQQ',
+	  'onMenuShareWeibo'
+	]
+	});
+	
+	window.pointCount = 0;
+	loadingTimer = setInterval(function(){
+		var html = "loading";
+		for(var i = 0; i < pointCount; i++)
+		{
+			html += "."
+		}
+		$("#loading-tips").html(html);
+		pointCount++;
+		pointCount = pointCount > 3? 0:pointCount;
+		
+	}, 500);
+	
+	var preLoadImg = new PreLoadImg({
+		imgInfoArr: g_resource,
+		container: "loading"
+	}, onLoadImgFinish); 
+	
+	var imageBackgroundBorderWidth_h = (document.body.offsetHeight - $(".cropit-image-preview-container").height())/2;
+    $('.image-editor').cropit({
+	    exportZoom: 1,
+	    imageBackground: true,
+	    imageBackgroundBorderWidth: [0, 0, 0, 0],
+	    minZoom: 'fill',
+	    maxZoom: 3,
+	    //initialZoom: 'image',
+	    previewInImg: true,
+	    smallImage: 'allow',
+	    allowCrossOrigin: true,
+	    onImageError: function(params) {
+	    	hideTips();
+			$(".confirm").removeAttr("disabled");
+			showTips("加载所选图片失败，请重新选择", false);
+			$(".cancel-choose").hide();
+			$(".cutimg-photo").hide();
+			$(".add-photo").show();
+	    }
+	});
+});//end
+
+function initEvent() {
+	$(".confirm").click(function(e){
+		if($(".cutimg-photo").is(":hidden") || $(".confirm").attr("disabled") == "disabled")
+		{
+			return;
+		}
+		$(".confirm").attr("disabled", "disabled");
+		
+		var imageData = $('.image-editor').cropit('export');
+		
+		if(!imageData)
+		{
+			showTips("截取图片失败，请重新截取图片", false);
+			$(".confirm").removeAttr("disabled");
+			//$(".cancel-choose").click();
+			return;
+		}
+		var dataLen = imageData.length;
+		var quality = 1;
+		while(dataLen > 100000)
+		{
+			quality *= 100000 / dataLen;
+			imageData = $('.image-editor').cropit('export',{quality: quality});
+			dataLen = imageData.length;
+		}
+		$("#portrait").val(imageData);
+		saveSurfaceToAPP();
+	});
+	$(".choose-photo").click(function(e){
+		if(navigator.platform.indexOf("Win") != -1) {
+			$(".add-photo").hide();
+			$('.image-editor').cropit('setImageSrc', "/Public/images/clothing/girl.jpg");
+			$(".cutimg-photo").show();
+			$(".cancel-choose").show();
+		}
+	});
+	$(".cancel-choose").click(function(e){
+		cropitRotate = 0;
+		setCropitRotate(0);
+		$(".cancel-choose").hide();
+		$(".cutimg-photo").hide();
+		$(".add-photo").show();
+	});
+	$(".zoom-out").on("touchstart", function(e){
+		if($(".cutimg-photo").is(":hidden"))
+		{
+			return;
+		}
+		if(window.zoomtimer)
+		{
+			clearInterval(window.zoomtimer);
+			window.zoomtimer = null;
+		}
+		
+		var oldZoom = $('.image-editor').cropit('getZoom');
+		$('.image-editor').cropit('setZoom', oldZoom + 0.1);
+		
+		window.zoomtimer = setInterval(function(){
+			var oldZoom = $('.image-editor').cropit('getZoom');
+			$('.image-editor').cropit('setZoom', oldZoom + 0.1);
+		},100);
+	});
+	$(".zoom-in").on("touchstart", function(e){
+		if($(".cutimg-photo").is(":hidden"))
+		{
+			return;
+		}
+		if(window.zoomtimer)
+		{
+			clearInterval(window.zoomtimer);
+			window.zoomtimer = null;
+		}
+		
+		var oldZoom = $('.image-editor').cropit('getZoom');
+		$('.image-editor').cropit('setZoom', oldZoom - 0.1);
+		
+		window.zoomtimer = setInterval(function(){
+			var oldZoom = $('.image-editor').cropit('getZoom');
+			$('.image-editor').cropit('setZoom', oldZoom - 0.1);
+		},100);
+	});
+	$(".turn-left").on("touchstart", function(e){
+		if($(".cutimg-photo").is(":hidden"))
+		{
+			return;
+		}
+		if(window.zoomtimer)
+		{
+			clearInterval(window.zoomtimer);
+			window.zoomtimer = null;
+		}
+		
+		cropitRotate -= 5;
+		setCropitRotate(cropitRotate);
+		
+		window.zoomtimer = setInterval(function(){
+			cropitRotate -= 5;
+			setCropitRotate(cropitRotate);
+		},100);
+	});
+	$(".turn-right").on("touchstart", function(e){
+		if($(".cutimg-photo").is(":hidden"))
+		{
+			return;
+		}
+		if(window.zoomtimer)
+		{
+			clearInterval(window.zoomtimer);
+			window.zoomtimer = null;
+		}
+		cropitRotate += 5;
+		setCropitRotate(cropitRotate);
+		window.zoomtimer = setInterval(function(){
+			cropitRotate += 5;
+			setCropitRotate(cropitRotate);
+		},100);
+	});
+	$(".zoom-out, .zoom-in, .turn-left, .turn-right").on("touchend", function(e){
+		if(window.zoomtimer)
+		{
+			clearInterval(window.zoomtimer);
+			window.zoomtimer = null;
+		}
+	});
+
+	$(".back, .play-again-btn").click(function(e){
+		if(window.giftimer)
+		{
+			clearTimeout(window.giftimer);
+		}
+		cropitRotate = 0;
+		setCropitRotate(0);
+		$(".picture-bg").hide();
+		$(".show-con").show();
+		$(".share-con").hide();
+		$(".cancel-choose").click();
+		$(".editphoto").show();
+	});
+
+	$(".next-btn").click(function(e){
+		var $currentShowCon = $(".father-face-show:visible");
+		var $nextShowCon = $currentShowCon.next(".father-face-show");
+
+		if(window.giftimer)
+		{
+			clearTimeout(window.giftimer);
+		}
+		if($nextShowCon.length)
+		{
+			g_frameCount = 1;
+			$nextShowCon.find(".portrait-show").addClass("frame1");
+			$nextShowCon.find(".result-show").addClass("frame1");
+			$nextShowCon.show();
+			$currentShowCon.slideUp("fast", function(){
+				showFaceGif();
+			});
+		}
+		else
+		//if(!$nextShowCon.next(".father-face-show").length)
+		{
+			$(".show-con").slideUp();
+			$(".share-con").show();
+			$(".share-mask").fadeIn();
+		}
+	});
+	
+	$(".share-btn").click(function(e) {
+		$(".share-mask").fadeIn();
+	});
+	
+	$(".share-mask").click(function(e){
+		$(this).fadeOut();
+	});
+	
+	$(".submit-btn").click(function(e){
+		ensureSaveGame();
+	});
+	$(".pose").click(function(e){
+		$(".sticker-wrapper").hide();
+		$(".pose-wrapper").show();
+	});
+	$(".sticker").click(function(e){
+		$(".pose-wrapper").hide();
+		$(".sticker-wrapper").show();
+	});
+	
+	$(".pose-wrapper > a").click(function(e){
+		$(".pose-wrapper > .selected").removeClass("selected");
+		var self = $(this);
+		self.addClass("selected");
+		var resultClass = self.attr("data-showclass");
+		$(".result-show").remove();
+		$(".show-con")[0].className = "show-con";
+		$(".show-con").addClass(resultClass + "_show");
+		var poseImgRoot = "/Public/images/bra/pose/";
+		var result_show_img = imgSource[poseImgRoot + resultClass + "/" + resultClass + "_full.png"];
+		$(result_show_img).addClass("result-show");
+		$(".show-con").append(result_show_img);
+		//setPortraitRotate();
+
+		$(".logo-show").remove();
+		var logo_show_img = imgSource[poseImgRoot + resultClass + "/logo_full.png"];
+		$(logo_show_img).addClass("logo-show");
+		$(".show-con").append(logo_show_img);
+
+		$(".cup-show").remove();
+		var cup_show_img = imgSource[poseImgRoot + resultClass + "/cup_logo.png"];
+		$(cup_show_img).addClass("cup-show");
+		$(".show-con").append(cup_show_img);
+
+		$(".cup-name").remove();
+		var cup_name_img = imgSource[poseImgRoot + resultClass + "/cup_name.png"];
+		$(cup_name_img).addClass("cup-name");
+		$(".show-con").append(cup_name_img);
+		
+		//$(".result-show").attr("src", poseImgRoot + resultClass + "/" + resultClass + "_full.png");
+		//$(".girl-show").attr("src", poseImgRoot + resultClass + "/" + resultClass + "_girl.png");
+	});
+	$(".sticker-wrapper > a").click(function(e){
+		$(".sticker-wrapper > .selected").removeClass("selected");
+		var self = $(this);
+		self.addClass("selected");
+		var stickerSrc = self.attr("data-src").replace("_icon", "");
+		$(".sticker-show").remove();
+		var sticker_show_img = imgSource[stickerSrc];
+		$(sticker_show_img).addClass("sticker-show");
+		$(".show-con").append(sticker_show_img);
+		if(!isChooseSticker)
+		{
+			isChooseSticker = true;
+			var tips_img = imgSource["/Public/images/bra/tips.png"];
+			$(".show-con").append(tips_img);
+			$(".root-tips").css({
+				left: parseFloat($(".sticker-show").css("left")) - $(".root-tips").width() + $(".sticker-show").width()/2,
+				top: parseFloat($(".sticker-show").css("top")) - $(".root-tips").height()
+			});
+			$(".root-tips").fadeIn();
+			setTimeout(function(){
+				$(".root-tips").fadeOut("fast");
+			}, 2000);
+		}
+	});
+	
+	$(".picture-bg").on("touchstart", function(e) {
+		//e.stopPropagation();
+		if(window.giftimer)
+		{
+			clearTimeout(giftimer);
+		}
+		var touchObj = e.touches && e.touches.length? e.touches[0]:(e.changedTouches && e.changedTouches.length? e.changedTouches[0]:null);
+		if (e.originalEvent && e.originalEvent.touches && e.originalEvent.touches[0]) {
+			touchObj = e.originalEvent.touches[0];
+		}
+		if(touchObj == null && e.originalEvent && e.originalEvent.changedTouches && e.originalEvent.changedTouches[0])
+		{
+			touchObj = e.originalEvent.changedTouches[0];
+		}
+		lastY = touchObj.clientY; 
+		lastScrollTop = $(".picture-bg").scrollTop();
+	});
+	
+	$(".picture-bg").on("touchmove", function(e) {
+		//e.stopPropagation();
+		var touchObj = e.touches && e.touches.length? e.touches[0]:(e.changedTouches && e.changedTouches.length? e.changedTouches[0]:null);
+		if (e.originalEvent && e.originalEvent.touches && e.originalEvent.touches[0]) {
+			touchObj = e.originalEvent.touches[0];
+		}
+		if(touchObj == null && e.originalEvent && e.originalEvent.changedTouches && e.originalEvent.changedTouches[0])
+		{
+			touchObj = e.originalEvent.changedTouches[0];
+		}
+
+		var nowY  = touchObj.clientY;  
+		var moveY = nowY - lastY;
+		var moveScroll = $(".picture-bg").scrollTop() - lastScrollTop;
+		//var contentLeft = content.style.left.replace('px', '');
+		
+		var thisH = $(".picture-bg").height();
+		var thisScrollH = $(".picture-bg")[0].scrollHeight;
+		var scrollH = thisScrollH - thisH;
+		
+		if($(".picture-bg").scrollTop() >= scrollH && moveY <= 0 ||
+				$(".picture-bg").scrollTop() <= 0 && moveY >= 0 )
+		{
+			e.stopPropagation();
+			return false;
+		}
+		//return false;
+	});
+	$(".picture-bg").on("touchend", function(e) {
+		//e.stopPropagation();
+		var touchObj = e.touches && e.touches.length? e.touches[0]:(e.changedTouches && e.changedTouches.length? e.changedTouches[0]:null);
+		if (e.originalEvent && e.originalEvent.touches && e.originalEvent.touches[0]) {
+			touchObj = e.originalEvent.touches[0];
+		}
+		if(touchObj == null && e.originalEvent && e.originalEvent.changedTouches && e.originalEvent.changedTouches[0])
+		{
+			touchObj = e.originalEvent.changedTouches[0];
+		}
+		var nowY  = touchObj.clientY;  
+		var moveY = nowY - lastY;  
+		var moveScroll = $(".picture-bg").scrollTop() - lastScrollTop;
+		//var contentLeft = content.style.left.replace('px', '');
+		
+		var thisH = $(".picture-bg").height();
+		var thisScrollH = $(".picture-bg")[0].scrollHeight;
+		var scrollH = thisScrollH - thisH;
+		if(scrollH == 0 && moveY > 0 && !$(".show-con").is(":visible"))
+		{
+			$(".share-con").hide();
+			$(".show-con").slideDown("fast", function(){
+				showFaceGif();
+			});
+		}
+		else if($(".picture-bg").scrollTop() >= scrollH && Math.abs(moveY) > Math.abs(moveScroll) + 20 && moveY < 0)
+		{
+			if($(".show-con").is(":visible"))
+			{
+				$(".next-btn").click();
+			}
+			
+		}
+		else if($(".picture-bg").scrollTop() <= 0 && Math.abs(moveY) > Math.abs(moveScroll) + 20 && moveY > 0)
+		{
+			if($(".show-con").is(":visible"))
+			{
+				var $currentShowCon = $(".father-face-show:visible");
+				var $prevShowCon = $currentShowCon.prev(".father-face-show");
+
+				if(window.giftimer)
+				{
+					clearTimeout(window.giftimer);
+				}
+				if($prevShowCon.length)
+				{
+					g_frameCount = 1;
+					$prevShowCon.find(".portrait-show").addClass("frame1");
+					$prevShowCon.find(".result-show").addClass("frame1");
+					$currentShowCon.hide();
+					$prevShowCon.slideDown("fast", function(){
+						showFaceGif();
+					});
+				}
+				else
+				{
+					showFaceGif();
+				}
+			}
+			else
+			{
+				$(".share-con").hide();
+				$(".show-con").slideDown("fast", function(){
+					showFaceGif();
+				});
+			}
+		}
+		else
+		{
+			showFaceGif();
+		}
+		//return false;
+	});
+
+	$(".show-con").delegate(".sticker-show", "touchstart", function(e) {
+		e.stopPropagation();
+		var touchObj = e.touches && e.touches.length? e.touches[0]:(e.changedTouches && e.changedTouches.length? e.changedTouches[0]:null);
+		if (e.originalEvent && e.originalEvent.touches && e.originalEvent.touches[0]) {
+			touchObj = e.originalEvent.touches[0];
+		}
+		if(touchObj == null && e.originalEvent && e.originalEvent.changedTouches && e.originalEvent.changedTouches[0])
+		{
+			touchObj = e.originalEvent.changedTouches[0];
+		}
+		lastX = touchObj.clientX;
+		lastY = touchObj.clientY; 
+		
+		content_last_left = parseFloat($(this).css("left"));
+		content_last_top = parseFloat($(this).css("top"));
+		$(".root-tips").fadeOut("fast");
+	});
+	$(".show-con").delegate(".sticker-show", "touchmove", function(e) {
+		e.stopPropagation();
+		var touchObj = e.touches && e.touches.length? e.touches[0]:(e.changedTouches && e.changedTouches.length? e.changedTouches[0]:null);
+		if (e.originalEvent && e.originalEvent.touches && e.originalEvent.touches[0]) {
+			touchObj = e.originalEvent.touches[0];
+		}
+		if(touchObj == null && e.originalEvent && e.originalEvent.changedTouches && e.originalEvent.changedTouches[0])
+		{
+			touchObj = e.originalEvent.changedTouches[0];
+		}
+
+		var nowX  = touchObj.clientX;  
+		var moveX = nowX - lastX;
+		var contentX = content_last_left + moveX;
+
+		var nowY  = touchObj.clientY;  
+		var moveY = nowY - lastY;
+		var contentY = content_last_top + moveY;
+
+		if(contentX < 0)
+		{
+			contentX = 0;
+		}
+		else if(contentX > $(".show-con").width() - $(this).width())
+		{
+			contentX = $(".show-con").width() - $(this).width();
+		}
+
+		if(contentY < 0)
+		{
+			contentY = 0;
+		}
+		else if(contentY > $(".show-con").height() - $(this).height())
+		{
+			contentY = $(".show-con").height() - $(this).height();
+		}
+		
+		this.style.left =  contentX + 'px';
+		content_last_left = contentX;
+
+		this.style.top =  contentY + 'px';
+		content_last_top = contentY;
+		
+		lastX = startX = touchObj.clientX; 
+		lastY = startY = touchObj.clientY; 
+		return false;
+	});
+	$(".show-con").delegate(".sticker-show", "touchend", function(e) {
+		e.stopPropagation();
+		var touchObj = e.touches && e.touches.length? e.touches[0]:(e.changedTouches && e.changedTouches.length? e.changedTouches[0]:null);
+		if (e.originalEvent && e.originalEvent.touches && e.originalEvent.touches[0]) {
+			touchObj = e.originalEvent.touches[0];
+		}
+		if(touchObj == null && e.originalEvent && e.originalEvent.changedTouches && e.originalEvent.changedTouches[0])
+		{
+			touchObj = e.originalEvent.changedTouches[0];
+		}
+
+		var nowX  = touchObj.clientX;  
+		var moveX = nowX - lastX;  
+		var contentX = content_last_left + moveX;
+
+		var nowY  = touchObj.clientY;  
+		var moveY = nowY - lastY;  
+		var contentY = content_last_top + moveY;
+		
+		var showconW = $(".show-con").width();
+		var showconH = $(".show-con").height();
+		if(contentX < 0)
+		{
+			contentX = 0;
+		}
+		else if(contentX > showconW - $(this).width())
+		{
+			contentX = showconW - $(this).width();
+		}
+
+		if(contentY < 0)
+		{
+			contentY = 0;
+		}
+		else if(contentY > showconH - $(this).height())
+		{
+			contentY = showconH - $(this).height();
+		}
+		
+		this.style.left =  contentX * 100 / showconW + '%';
+		content_last_left = contentX;
+
+		this.style.top =  contentY * 100 / showconH + '%';
+		content_last_top = contentY;
+		
+		lastX = startX = touchObj.clientX; 
+		lastY = startY = touchObj.clientY; 
+	});
+	
+	$(".share-tip").on("touchstart", function(e) {
+		e.stopPropagation();
+		$(".share-tip").fadeOut("fast");
+		return false;
+	});
+}
+
+function setCropitRotate(newRotate) {
+	var rotate = "rotate(" + newRotate + "deg)"
+	$('.image-editor').css({
+		"transform": rotate,
+		"-webkit-transform": rotate
+	});
+}
+
+function resizePicture(){
+	fullScreenShow();
+}
+
+function onLoadImgFinish(result) {
+	/* $(".bg-music").show();
+	if($(".bg-music").hasClass("silent"))
+	{
+		$(".bg-music").removeClass("rotate");
+		$(".bg-music > audio")[0].pause();
+	}
+	else
+	{
+		$(".bg-music").addClass("rotate");
+		$(".bg-music > audio")[0].play();
+	} */
+	
+	if(result.status != "ok")
+	{
+		return;
+	}
+	imgSource = result.data;
+	$(".preload").each(function(){
+		self = $(this);
+		if(self.attr("data-src"))
+		{
+			if(self.hasClass("img-bg"))
+			{
+				self.css({
+					"background":"url(" + self.attr("data-src") + ") no-repeat",
+					"background-size":"100% 100%"
+				})
+			}
+			else
+			{
+				self.append(result.data[self.attr("data-src")]);
+			}
+		}
+	}); 
+
+	initEvent();
+	$("#loading").hide();
+	clearInterval(loadingTimer);
+	$(".editphoto").show();
+}
+
+function showSkill() {
+	$(".mask").fadeIn();
+	$(".alert-con").fadeIn();
+}
+
+function ensureSaveGame() {
+	if($(".submit-btn").attr("disabled") == "disabled")
+	{
+		return;
+	}
+	$(".submit-btn").attr("disabled", "disabled");
+	showTips("正在保存", true);
+	var bra_type = $(".pose-wrapper .selected").attr("data-showclass");
+	var pose_girl_url = $(".result-show").attr("src");
+	if($(".sticker-show").length)
+	{
+		var sticker_url = $(".sticker-show").attr("src");
+		var sticker_top = Math.round( (parseFloat($(".sticker-show").css("top")) / $(".show-con").height()) * 10000) / 100;
+		var sticker_left = Math.round( (parseFloat($(".sticker-show").css("left")) / $(".show-con").width()) * 10000) / 100;
+	}
+	else
+	{
+		var sticker_url = "null";
+		var sticker_top = 0;
+		var sticker_left = 0;
+	}
+	$.ajax({
+		type: "post",
+		url: "/bra/saveGame",
+		data: "pose_girl_url=" + encodeURI(pose_girl_url) + "&sticker_url=" + encodeURI(sticker_url) + 
+				"&sticker_top=" + sticker_top + "&sticker_left=" + sticker_left + "&bra_type=" + bra_type,
+		dataType:'json',
+		timeout:20000,
+		success:function(data){
+			$(".submit-btn").removeAttr("disabled");
+			if(data.error=='0'){
+				
+				fullScreenShow();
+				
+				showTips("保存成功！即将展示动图喔", false);
+				var gameInfo = g_gameInfo[bra_type];
+
+				var shareUrl = data.shareUrl;
+				var shareObj = {
+						title: "带你回忆那些爸爸的口头禅", // 分享标题
+					    desc: "【锋尚爸爸】那些爸爸的口头禅你还记得吗？", // 分享描述
+					    link: shareUrl,//top.location.protocol + "//" + top.location.host + "/" + data.url, // 分享链接
+					    imgUrl: top.location.protocol + "//" + top.location.host + "/Public/images/father/share.jpg", // 分享图标
+					    success: function () { 
+					        // 用户确认分享后执行的回调函数
+					        //alert(data.url);
+					        top.location.href = data.shareUrl;
+					    },
+					    cancel: function () { 
+					        // 用户取消分享后执行的回调函数
+					        //alert(data.url);
+					        $(".share-mask").fadeOut();
+					    }
+					}
+				share(shareObj);
+				//$(".share-tip").fadeIn();
+				setTimeout(function(){
+					top.location.href = data.url;
+				}, 2000);
+			}
+			else {
+				showTips("保存失败，请稍后重试喔！", false);
+			}
+			
+		},
+		error:function(xhr,state,err){
+			$(".submit-btn").removeAttr("disabled");
+			showTips("哎呀，生成海报失败了，重试一次吧！", false);
+		}
+	});
+}
+
+function fullScreenShow() {
+	$(".choose-con, .optbtn-con, .submit-btn").hide();
+	var w = $(window).width();
+	var h = $(window).height();
+	//if(w > 640) w=640;
+	var min_h = w*1080/640;
+	var show_h = min_h;
+	var show_w = w;
+	/* if(w < h)  //竖屏
+	{
+		if(min_h > h)
+		{
+			show_h = h;
+			show_w = h / 1.575;
+		}
+	} */
+	$(".show-con").css({
+		width: show_w + "px",
+		height: show_h + "px"
+	});
+}
+
+var localId='';
+var serverId='';
+
+function share(shareObj) {
+	
+	wx.onMenuShareAppMessage(shareObj);
+	wx.onMenuShareTimeline(shareObj);
+	wx.onMenuShareQQ(shareObj);
+	wx.onMenuShareQQ(shareObj);
+	wx.onMenuShareQZone(shareObj);
+}
+
+wx.ready(function(){
+	var shareObj = {
+			title: "带你回忆那些爸爸的口头禅", // 分享标题
+		    desc: "【锋尚爸爸】那些爸爸的口头禅你还记得吗？", // 分享描述
+		    link: top.location.protocol + "//" + top.location.host + "/" + top.location.pathname, // 分享链接
+		    imgUrl: top.location.protocol + "//" + top.location.host + "/Public/images/father/share.jpg", // 分享图标
+		    success: function () { 
+		        // 用户确认分享后执行的回调函数
+		    },
+		    cancel: function () { 
+		        // 用户取消分享后执行的回调函数
+		    }
+		}
+	wx.onMenuShareAppMessage(shareObj);
+	wx.onMenuShareTimeline(shareObj);
+	wx.onMenuShareQQ(shareObj);
+	wx.onMenuShareQQ(shareObj);
+	wx.onMenuShareQZone(shareObj);
+	//点击拍照上传
+	$(".choose-photo").click(function(e){
+		showTips("加载中", true);
+		wx.chooseImage({
+			count: 1, // 默认9
+			success: function (res) { 
+				localId=res.localIds;
+				
+		        showTips("加载中", true);
+				setTimeout(uploadwxImage,100);
+				
+				//$('.image-editor').cropit('setImageSrc', localId[0]);
+		    },
+		    cancel: function () { 
+		    	hideTips();
+		    },
+		    fail: function (res) {
+		    	hideTips();
+		    }
+		});
+	});
+	
+});//end ready
+
+var length = localId.length, i = 0;
+function uploadwxImage(){
+	wx.uploadImage({
+	    localId: localId[i], // 需要上传的图片的本地ID，由chooseImage接口获得
+	    isShowProgressTips: 0, // 默认为1，显示进度提示
+	    success: function (res) {
+	        serverId = res.serverId; // 返回图片的服务器端ID
+	        setTimeout(uploadToAPP,10);
+	    },
+	    fail: function (res) {
+	        //alert(JSON.stringify(res));
+	        hideTips();
+	    }
+	});
+	
+}
+
+function uploadToAPP(){
+	$.ajax({
+		type:'post',
+		url:'/wx/saveImg',
+		data:'wxservid=' + serverId,
+		dataType:'json',
+		success:function(data){
+			//alert(JSON.stringify(data));
+			if(data.error == "0")
+			{
+				$(".add-photo").hide();
+				$(".cutimg-photo").show();
+				$(".cancel-choose").show();
+				
+				if($(".preview-image").length)
+				{
+					$(".preview-image").load(function(){
+						hideTips();
+						$(".confirm").removeAttr("disabled");
+					});
+					$(".preview-image").error(function(){
+						//hideTips();
+						$(".confirm").removeAttr("disabled");
+						showTips("加载所选图片失败，请重新选择", false);
+					});
+					hideTips();
+					$(".confirm").removeAttr("disabled");
+				}
+				else
+				{
+					hideTips();
+					$(".confirm").removeAttr("disabled");
+				}
+				$('.image-editor').cropit('setImageSrc', "data:image/jpeg;base64," + data.file);
+			}
+			else
+			{
+				//hideTips();
+				$(".confirm").removeAttr("disabled");
+				showTips(data.errormessage, true);
+			}
+		},
+		error:function(xhr,state,err){
+			//hideTips();
+			$(".confirm").removeAttr("disabled");
+			showTips("选取图片失败", false);
+		}
+	});//end ajax
+}//end function
+
+function dlwxImage(){
+	wx.downloadImage({
+	    serverId: serverId, // 需要下载的图片的服务器端ID，由uploadImage接口获得
+	    isShowProgressTips: 1, // 默认为1，显示进度提示
+	    success: function (res) {
+	        localId = res.localId; // 返回图片下载后的本地ID
+	        //alert(localId);
+	    }
+	});	
+}
+
+function saveSurfaceToAPP(){
+	$.ajax({
+		type:'post',
+		url:'/father/savePortrait',
+		data:$("#portraitForm").serialize() + "&angle=" + (cropitRotate % 360),
+		dataType:'json',
+		beforeSend:function(){
+			showTips("正在上传", true);
+		},
+		success:function(data){
+			$(".confirm").removeAttr("disabled");
+			hideTips();
+			if(data.error == '0')
+			{
+				$(".editphoto").hide();
+				$(".portrait-show img").each(function(){
+					this.src = data.fileUrl;
+					$(this).css({
+						"transform": "rotate(" + cropitRotate % 360 + "deg)",
+						"-webkit-transform": "rotate(" + cropitRotate % 360 + "deg)"
+					});
+				});
+				$(".father-face-show").hide();
+				$(".father-face-show:first-child").show();
+				var frameNum = g_faceInfo[$(".father-face-show:first-child").attr("data-name")].frameNum;
+				if(window.giftimer)
+				{
+					clearTimeout(window.giftimer);
+				}
+				g_frameCount = g_frameCount >= frameNum? 1:g_frameCount;
+				window.giftimer = setTimeout(showFaceGif, 100);
+				$(".picture-bg").show();
+				//setPortraitRotate();
+	
+				var shareUrl = data.shareUrl;
+				var shareObj = {
+						title: "带你回忆那些爸爸的口头禅", // 分享标题
+					    desc: "【锋尚爸爸】那些爸爸的口头禅你还记得吗？", // 分享描述
+					    link: shareUrl,//top.location.protocol + "//" + top.location.host + "/" + data.url, // 分享链接
+					    imgUrl: top.location.protocol + "//" + top.location.host + "/Public/images/father/share.jpg", // 分享图标
+					    success: function () { 
+					        // 用户确认分享后执行的回调函数
+					        //alert(data.url);
+					        top.location.href = data.shareUrl;
+					    },
+					    cancel: function () { 
+					        // 用户取消分享后执行的回调函数
+					        //alert(data.url);
+					        $(".share-mask").fadeOut();
+					    }
+					}
+				share(shareObj);
+			}
+			else
+			{
+				showTips(data.errormessage, false);
+			}
+		},
+		error:function(xhr,state,err){
+			//alert(JSON.stringify(xhr));
+			//hideTips();
+			$(".confirm").removeAttr("disabled");
+			showTips("保存截图失败，请稍后再试", false);
+		}
+	});//end ajax
+}//end function
+
+function showFaceGif() {
+	if(window.giftimer)
+	{
+		clearTimeout(window.giftimer);
+	}
+	var $currentShowCon = $(".father-face-show:visible");
+	if(!$currentShowCon.length)
+	{
+		window.giftimer = setTimeout(showFaceGif, 100);
+		return;
+	}
+	var faceName = $currentShowCon.attr("data-name");
+	var frameNum = g_faceInfo[faceName].frameNum;
+	$currentShowCon.find(".portrait-show")[0].className = "portrait-show";
+	$currentShowCon.find(".portrait-show").addClass("frame" + g_frameCount);
+	$currentShowCon.find(".result-show")[0].className = "result-show";
+	$currentShowCon.find(".result-show").addClass("frame" + g_frameCount);
+	g_frameCount = g_frameCount >= frameNum? 1:g_frameCount+1;
+	var timeout = 100;
+	switch(faceName)
+	{
+	case "strong":
+		{
+			if(g_frameCount === 1)
+			{
+				timeout = 500;
+			}
+		}
+		break;
+	case "loveme":
+	case "lovedad":
+		{
+			if(g_frameCount === 4)
+			{
+				timeout = 500;
+			}
+			else if(g_frameCount === 1)
+			{
+				timeout = 1000;
+			}
+		}
+		break;
+	case "sleep":
+	case "sayagain":
+		{
+			if(g_frameCount === 1)
+			{
+				timeout = 1000;
+			}
+		}
+		break;
+	case "loveme":
+		{
+			if(g_frameCount === 4)
+			{
+				timeout = 500;
+			}
+			else if(g_frameCount === 1)
+			{
+				timeout = 1000;
+			}
+		}
+		break;
+	default:
+		{
+			timeout = 100;
+		}
+	}
+	window.giftimer = setTimeout(showFaceGif, timeout);
+}
+
+function setPortraitRotate() {
+	$('.portrait-show').addClass("rotateimportant"); //使bra.css中的旋转样式覆盖动态添加的样式，从而取得css中的旋转角度
+	var rotate = 0;
+	var reg = /^matrix\((.*)\)$/
+	var matrix = reg.exec($('.portrait-show').css("transform"));
+	if(matrix)
+	{
+		var matrixValue = matrix[1];
+		if(matrixValue)
+		{
+			var matrixValueArr = matrixValue.replace(/\s/g, "").split(",");
+			//console.log(matrixValueArr);
+			rotate = getRotateFromMatrix(matrixValueArr);
+		}
+	}
+	
+	rotate += cropitRotate;
+	var portraitRotate = "rotate(" + rotate + "deg)";
+	$('.portrait-show').removeClass("rotateimportant");
+	$('.portrait-show').css({
+		"transform": portraitRotate,
+		"-webkit-transform": portraitRotate
+	});
+}
+
+function PreLoadImg(opts, callback) {
+	if(PreLoadImg.self) 
+	{
+		return PreLoadImg.self;
+	}
+	opts.imgInfoArr = opts.imgInfoArr || g_resource;
+	if(!opts || !opts.imgInfoArr || !opts.imgInfoArr.length)
+	{
+		if( typeof callback == 'function'){
+			callback({
+				status: "ok",
+				data: {},
+				success: 0,
+				failed: 0
+			});
+        }  	
+		return;
+	}
+	var self = this;
+	PreLoadImg.self = self;
+	self.loadImgInfoArr = opts.imgInfoArr;
+	self.finishCallBack = callback;
+	self.imgTotalNum = 0;
+	self.imgLoadedCnt = 0;
+	self.imgLoadedOkCnt = 0;
+	self.imgLoadedFailCnt = 0;
+	self.loadPercent = "0%";
+	self.loading = null;
+	self.imgDomObj = {};
+	self.progressBar = document.getElementById("percent-tips");
+	self.init = function() {
+		if(opts.container)
+		{
+			self.loading = document.getElementById(opts.container);
+		}
+		for(var i = 0; i < self.loadImgInfoArr.length; i++)
+		{
+			self.imgTotalNum += self.loadImgInfoArr[i].src.length;
+		}
+		self.startLoad();
+		//self.startLoopCheckTimer();
+	}
+	self.isLoadFinish = function() {
+		if(self.imgLoadedCnt >= self.imgTotalNum)
+		{
+			return true;  //已加载完成
+		}
+		else
+		{
+			return false;
+		}
+	};
+	self.onLoadedFinish = function(){
+		//加载完成后处理函数
+		if(self.loading)
+		{
+			self.loading.style.display = "none";
+		}
+		//g_imgDomObj = self.imgDomObj;
+		if( typeof self.finishCallBack == 'function'){
+			self.finishCallBack({
+				status: "ok",
+				data: self.imgDomObj,
+				success: self.imgLoadedOkCnt,
+				failed: self.imgLoadedFailCnt
+			});
+        }
+	};
+	self.setProgress = function() {
+		if(self.isLoadFinish())
+		{
+			self.loadPercent = "100%";
+			self.onLoadedFinish();
+		}
+		else
+		{
+			self.loadPercent = Math.round(100 * self.imgLoadedCnt / self.imgTotalNum) + "%";
+		}
+		if(self.loading)
+		{
+			self.progressBar.innerHTML = self.loadPercent;
+		}
+	}
+	self.startLoopCheckTimer = function() {
+		if(self.isLoadFinish())
+		{
+			self.onLoadedFinish();
+		}
+		else
+		{
+			self.checkTimer = setTimeout(self.startLoopCheckTimer, 100);
+		}
+		self.setProgress();
+	};
+	self.onLoadStart = function() {
+		if(self.loading)
+		{
+			self.progressBar.innerHTML = "0%";
+			self.loading.style.display = "block";
+		}
+		for(var i = 0; i < self.loadImgInfoArr.length; i++)
+		{
+			var imgInfo = self.loadImgInfoArr[i];
+			var className = imgInfo.className;
+			for(var j=0; j < imgInfo.src.length; j++)
+			{
+				var image = new Image();
+				var src = imgInfo.src[j];
+				var first = src.lastIndexOf("/");
+				var second = src.lastIndexOf(".");
+				image.className = className + "-" + (src.substr(first + 1, second - first-1));
+				image.onload  = function() {
+					this.onload = null;
+					self.imgLoadedCnt++;
+					self.imgLoadedOkCnt++;
+					var srcKey = this["data-src"];
+					self.imgDomObj[srcKey] = this;
+					self.setProgress();
+					
+				};
+				image.onerror  = function() {
+					this.onerror = null;
+					self.imgLoadedCnt++;
+					self.imgLoadedFailCnt++;
+					
+					self.setProgress();
+				};
+				image["data-src"] = imgInfo.src[j];
+				image.src = imgInfo.src[j];
+			}
+			
+		}
+	};
+	self.startLoad = function() {
+		self.onLoadStart();
+	}
+	
+	self.init();
+}
+</script>
+</body>
+</html>

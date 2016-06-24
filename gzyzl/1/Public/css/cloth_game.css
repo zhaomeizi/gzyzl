@@ -1,0 +1,315 @@
+@CHARSET "UTF-8";
+.picture{
+	background:#fff;
+	width:56%;
+	box-shadow: -2px 4px 10px #333;
+    padding: 6px;
+    top: 3px;
+    right:4px;
+    transform: rotate(7deg);
+    -webkit-transform: rotate(7deg);
+    position:absolute;	
+    border-radius:5px;
+    z-index:5;
+    overflow:hidden;
+}
+.picture-bg{
+	/* background:url(/Public/images/share/bg-center.jpg);
+	background-size:contain;
+	background-position:center center;
+	background-color:#c82e3b;
+	background-repeat: no-repeat; */
+	position:relative;
+	width:100%;
+}
+.picture-bg img{
+	width:90%;
+	margin-left:5%;
+	position:absolute;
+	pointer-events: none;
+}
+
+.picture-bg .girl{
+    bottom: 0;
+    width:100%;
+    margin:0;
+  	z-index: 5;
+}
+
+.picture-bg .hair-ornament-bath{
+    bottom: 51%;
+    z-index: 15;
+    width: 70%;
+    left: 10%;
+}
+.picture-bg .hair-ornament-cultural{
+    bottom: 52%;
+    z-index: 16;
+    width: 90%;
+    left: 0%;	
+}
+.picture-bg .hair-ornament-brother{
+  z-index: 15;
+  bottom: 60%;
+  width: 63%;
+  left: 14%;
+}
+.picture-bg .hair-ornament-gold{
+  bottom: 54%;
+  z-index: 15;
+  width: 56%;
+  left: 17%;
+}
+.picture-bg .hair-ornament-happy{
+  bottom: 54%;
+  width: 53%;
+  z-index: 15;
+  left: 18%;
+}
+.picture-bg .hair-ornament-headset{
+  z-index: 15;
+  width: 68%;
+  left: 10%;
+  bottom: 43%;
+}
+.picture-bg .hair-ornament-monkey{
+bottom: 28%;
+  z-index: 12;
+}
+.picture-bg .hair-ornament-pirate{
+  bottom: 63%;
+  z-index: 15;
+  width: 84%;
+  left: 3%;
+}
+.picture-bg .hair-ornament-sister{
+  z-index: 15;
+  bottom: 40%;
+  width: 72%;
+  left: 9%;
+}
+.picture-bg .hair-pink{
+    bottom: 14%;
+    width: 64%;
+    z-index: 15;
+    left: 13%;	
+
+	}
+.picture-bg .hair-bomb{
+	bottom: 42%;
+    z-index: 10;
+    width: 88%;
+    left: 1%;
+}
+.picture-bg .hair-dreadlock{
+  bottom: 17.3%;
+  z-index: 11;
+  width: 72%;
+  left: 6%;
+}
+.picture-bg .hair-hairpin{
+  bottom: 53%;
+  z-index: 10;
+  width: 88%;
+  left: 1%;
+}
+.picture-bg .hair-short{
+  bottom: 43%;
+  width: 69%;
+  z-index: 10;
+  left: 10%;
+}
+.picture-bg .hair-wave{
+bottom: 16%;
+  z-index: 11;
+  width: 63%;
+  left: 15%;
+}
+.picture-bg .hair-whip{
+  bottom: 20%;
+  z-index: 11;
+  width: 62%;
+  left: 14%;
+}
+.picture-bg .hair-white{
+bottom: 41%;
+  z-index: 11;
+  width: 66%;
+  left: 14%;
+}
+.picture-bg .hair-yellow{
+  bottom: 22%;
+  z-index: 11;
+  width: 60%;
+  left: 15%;
+}
+.picture-bg .grassess-pirate{
+    width: 44%;
+    bottom: 47%;
+    z-index: 15;
+    left: 25%;
+}
+.picture-bg .grassess-black{
+    bottom: 45%;
+    z-index: 10;
+    width: 52%;
+    left: 19%;
+}
+.picture-bg .grassess-bluenet{
+  bottom: 44%;
+  z-index: 10;
+  width: 50%;
+  left: 20%;
+}
+.picture-bg .grassess-circle{
+  z-index: 10;
+  bottom: 43%;
+  width: 48%;
+  left: 21%;
+}
+.picture-bg .grassess-dive{
+  bottom: 44%;
+  left: 21%;
+  width: 48%;
+  z-index: 10;
+}
+.picture-bg .grassess-money{
+  z-index: 11;
+  width: 45%;
+  bottom: 41%;
+  left: 22%;
+}
+.picture-bg .grassess-rainbow{
+  bottom: 44%;
+  width: 48%;
+  z-index: 10;
+  left: 21%;
+}
+.picture-bg .grassess-red{
+bottom: 43%;
+  z-index: 12;
+  width: 56%;
+  left: 17%;
+}
+.picture-bg .underwear-fried{
+    bottom: 20%;
+    width: 21%;
+    left: 34%;
+    z-index: 10;
+}
+.picture-bg .underwear-white{
+    bottom: 19.6%;
+    width: 20%;
+    left: 35%;
+    z-index: 15;
+}
+.picture-bg .underwear-swim{
+bottom: 20.2%;
+  width: 21%;
+  left: 34%;
+  z-index: 10;
+}
+.picture-bg .underwear-butterfly{
+  bottom: 16.5%;
+  width: 24%;
+  z-index: 10;
+  left: 32.8%;
+}
+.picture-bg .underwear-ch{
+  bottom: 19.8%;
+  width: 24.5%;
+  left: 32.8%;
+  z-index: 10;
+}
+.picture-bg .underwear-happy{
+  bottom: 19%;
+  z-index: 10;
+  width: 24%;
+  left: 32.8%;
+}
+.picture-bg .underwear-monkey{
+  bottom: 19.9%;
+  z-index: 10;
+  width: 26%;
+  left: 31.9%;
+}
+.picture-bg .underwear-orange{
+  bottom: 21%;
+  width: 18%;
+  left: 36%;
+  z-index: 10;
+}
+.picture-bg .underwear-sex{
+  z-index: 10;
+  bottom: 9.2%;
+  width: 37%;
+  left: 26.3%;
+}
+.picture-bg .underwear-chest{
+z-index: 10;
+  width: 20%;
+  bottom: 14%;
+  left: 35%;
+}
+.picture-bg .pants-garter{
+    bottom: 1.2%;
+    width: 18%;
+    left: 35.9%;
+  	z-index: 10;
+}
+.picture-bg .pants-happy{
+  bottom: 18%;
+  z-index: 10;
+  left: 34%;
+  width: 22%;
+}
+.picture-bg .pants-fire{
+    bottom: 5%;
+    width: 26%;
+    left: 32%;
+  	z-index: 10;
+}
+.picture-bg .pants-socks{
+  bottom: 1%;
+  width: 19%;
+  left: 35.5%;
+  z-index: 10;
+}
+.picture-bg .pants-ch{
+  bottom: 5.7%;
+  width: 22%;
+  left: 33.9%;
+  z-index: 10;
+}
+.picture-bg .pants-duck{
+  bottom: 5%;
+  width: 26%;
+  left: 32%;
+  z-index: 10;
+}
+.picture-bg .pants-fabric{
+  bottom: 6%;
+  width: 21%;
+  left: 33.7%;
+  z-index: 10;
+}
+.picture-bg .pants-monkey{
+	bottom: 2%;
+  	width: 44%;
+  	left: 36.5%;
+  	z-index: 10;
+}
+.picture-bg .pants-orange{
+bottom: 4%;
+  width: 34%;
+  left: 28%;
+  z-index: 10;
+}
+.picture-bg .pants-running{
+  bottom: 1%;
+  width: 19%;
+  left: 35.7%;
+  z-index: 10;
+}
+
+

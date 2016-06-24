@@ -1,0 +1,58 @@
+@CHARSET "UTF-8";
+
+.face-money .portrait-show {
+	width: 39%;
+}
+.face-money .portrait-show.frame1 {
+	left: 29%;
+	bottom: 42.5%;
+	transform: rotate(11deg);
+	-webkit-transform: rotate(11deg);
+}
+.face-money .portrait-show.frame2 {
+	left: 28.2%;
+	bottom: 42.5%;
+	transform: rotate(10deg);
+	-webkit-transform: rotate(10deg);
+}
+.face-money .portrait-show.frame3 {
+	left: 27.1%;
+	bottom: 42.5%;
+	transform: rotate(0deg);
+	-webkit-transform: rotate(0deg);
+}
+.face-money .portrait-show.frame4 {
+	/* left: 28.4%;
+	bottom: 42.5%;
+	transform: rotate(10deg);
+	-webkit-transform: rotate(10deg); */
+	left: 28.2%;
+	bottom: 42.5%;
+	transform: rotate(10deg);
+	-webkit-transform: rotate(10deg);
+}
+.face-money .portrait-show.frame5 {
+	/* left: 29.5%;
+	bottom: 42.1%;
+	transform: rotate(14deg);
+	-webkit-transform: rotate(14deg); */
+	left: 29%;
+	bottom: 42.5%;
+	transform: rotate(11deg);
+	-webkit-transform: rotate(11deg);
+}
+.face-money div.result-show.frame1 {
+	background-image: url(/Public/images/father/money/frame1.png);
+}
+.face-money div.result-show.frame2 {
+	background-image: url(/Public/images/father/money/frame2.png);
+}
+.face-money div.result-show.frame3 {
+	background-image: url(/Public/images/father/money/frame3.png);
+}
+.face-money div.result-show.frame4 {
+	background-image: url(/Public/images/father/money/frame2.png);
+}
+.face-money div.result-show.frame5 {
+	background-image: url(/Public/images/father/money/frame1.png);
+}

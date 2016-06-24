@@ -1,0 +1,1188 @@
+
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>胸怀天下内衣世界—都市丽人</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+
+<style>
+	html, body {
+		height: 100%;
+		width: 100%;
+		background-color: #333;
+		padding: 0;
+		margin: 0;
+		font-family: 微软雅黑, Arial, Helvetica, sans-serif;
+		overflow: hidden;
+	}
+	a {
+		text-decoration: none;
+		outline: none !important;
+		-webkit-tap-highlight-color:rgba(0,0,0,0);
+	}
+	a:focus, a:active, a:hover, img:focus, img:active, img:hover {
+		outline: none !important;
+	}
+	div {
+		vertical-align: baseline;
+	}
+	.index {
+		width: 100%;
+		height: 100%;
+		background: url("/Public/images/index_bg.jpg") no-repeat;
+		background-size: 100% 100%;
+	}
+	.tips {
+		color: #fff;
+		font-size: 24px;
+		text-align: center;
+		text-shadow: 1px 1px 1px #000;
+		position: absolute;
+		width: 100%;
+		top: 50%;
+		margin-top: 72px;
+	}
+	.start-btn {
+		display: block;
+		position: absolute;
+		height: 120px;
+		width: 120px;
+		left: 50%;
+		top: 50%;
+		margin-left: -60px;
+		margin-top: 20px;
+		background: url("/Public/images/start_bg.png") no-repeat;
+		background-size: 100% 100%;
+		
+	}
+	.start-btn.click {
+		opacity: 0;
+		transition: all 0.5s linear;
+		-webkit-transition: all 0.5s linear;
+	}
+	.start-btn > img{
+		width: 100%;
+		height: 100%;
+		cursor:pointer;
+		-webkit-animation: scaleinout 1.3s infinite ease-in-out;
+		animation: scaleinout 1.3s infinite ease-in-out;
+		text-decoration: none;
+		border:none;
+		border-radius:0;
+	}
+	@-webkit-keyframes scaleinout {
+		0% { -webkit-transform: scale(1.0) }
+		100% {
+			-webkit-transform: scale(1.2);
+			opacity: 0;
+		}
+	}
+	@keyframes scaleinout {
+		0% {
+			transform: scale(1.0);
+			-webkit-transform: scale(1.0);
+		} 100% {
+			transform: scale(1.2);
+			opacity: 0;
+		  }
+	}
+	.mapContainer {
+		height: 100%;
+		width: 100%;
+		overflow: hidden;
+		position:relative;
+		display: none;
+	}
+	.allmap {
+		padding: 0;
+		margin: 0;
+		overflow: hidden;
+		position: absolute;
+	}
+	.logo {
+		position: absolute;
+		height: 198px;
+		width: 200px;
+		left: 50%;
+		top: 50%;
+		margin-left: -91px;
+		margin-top: -120px;
+	}
+	.allmap img {
+		-webkit-user-select: none;
+	}
+	.overview_map {
+		width: 100px;
+		max-height: 200px;
+		position: absolute;
+		bottom: 0;
+		right: 0;
+		border: 1px solid #fff;
+		box-shadow: 1px 1px 2px #000;
+		background-size: 100% 100%;
+		pointer-events: none;
+	}
+	.view_bound {
+		border: 1px solid #fff;
+		box-shadow: 1px 1px 2px #000;
+		position: absolute;
+	}
+	.star {
+		position: absolute;
+		width: 25px;
+		height: 25px; 
+		/* background: url("/Public/images/add-btn.png") no-repeat; */
+		background: url("/Public/images/add-btn.png") no-repeat;
+		background-size: 100% 100%; 
+		transition: all 1s linear 0.5s;
+		-moz-transition: all 1s linear 0.5s;
+		-webkit-transition: all 1s linear 0.5s;
+		-o-transition: all 1s linear 0.5s;
+		text-align: center;
+	}
+	.init .star {
+		left: 50% !important;
+		top: 50% !important;
+		margin-left: -20px;
+		margin-top: -20px;
+	}
+	.afterInit .star {
+		transition: all 1s linear;
+		-moz-transition: all 1s linear;
+		-webkit-transition: all 1s linear;
+		-o-transition: all 1s linear;
+	}
+	.star > img {
+		border:none;
+		border-radius:0;
+		cursor:pointer;
+		width:100%;
+		height:100%;
+	}
+	.star-name {
+		display: none;
+		position: absolute;
+		color: #fff;
+		border: 1px solid #fff;
+		border-radius: 6px;
+		background: none;
+		padding: 2px 5px;
+		margin: 0;
+		border-color: rgba(255,255,255,0.3);	
+		font-weight: 600;
+		text-shadow: 1px 2px 2px #000;
+		font-size: 16px;
+		text-align: center;
+	}
+	.star .blink{
+		/* -webkit-animation: scaleout 1.3s infinite ease-in-out;
+		animation: scaleout 1.3s infinite ease-in-out; */
+	}
+	@-webkit-keyframes scaleout {
+		0% { -webkit-transform: scale(1.0) }
+		100% {
+			-webkit-transform: scale(1.5);
+			opacity: 0;
+		}
+	}
+	@keyframes scaleout {
+		0% {
+			transform: scale(1.0);
+			-webkit-transform: scale(1.0);
+		} 100% {
+			transform: scale(1.5);
+			opacity: 0;
+		  }
+	}
+	.alert-dlg {
+		width: 100%;
+		height: 100%;
+		display: none;
+	}
+	.dialog {
+		width: 100%;
+		position: absolute;
+		top: 0;
+		bottom: 0;
+		display: -webkit-box !important;
+		/* background: url("/Public/images/dialog_bg.png") no-repeat; */
+		background-size: 100% 100%;
+		overflow: hidden;
+		-webkit-box-align: center;
+		-webkit-box-pack: center;
+	}
+	.dialog.show {
+		display: -webkit-box !important;
+	}
+	.dialogCon {
+		position: relative;
+		width: 80%;
+		height: 80%;
+		max-width: 320px;
+		padding: 15px;
+		background-color: rgba(0,0,0,0.75);
+		/* background: url("/Public/images/dialog_bg.png") no-repeat; */
+		background-size: 100% 100%;
+		color: #fff;
+		font-size: 12px;
+		overflow: hidden;
+		border: 1px solid #fff;
+		border-color: rgba(255, 255, 255,0.3);
+		border-radius: 4px;
+	}
+	.photoCon {
+		width: 100%;
+		height: 100%;
+		overflow: auto;
+		/* -webkit-overflow-scrolling: touch; */
+	}
+	.bottomfix {
+		position: absolute;
+		left: 50%;
+		bottom: 10px;
+		text-align: center;
+		margin-left: -30px;
+		padding: 10px 0;
+	}
+	.close-btn {
+		display: block;
+		width: 80px;
+		height: 32px;
+		line-height: 32px;
+		border: 1px solid #fff;
+		border-radius: 8px;
+		font-family: "黑体";
+		font-size: 18px;
+		color: #fff;
+		letter-spacing: 4px;
+		text-align: center;
+		vertical-align: middle;
+		background-color: rgba(0,0,0,1);
+	}
+	.photoCon img {
+		width: 100%;
+		height: auto;
+		display: block;
+		border: none;
+	}
+	.info {
+		margin-top: 20px;
+		margin-bottom: 40px;
+		font-size: 14px;
+		text-align: center;
+		text-shadow: 1px 1px 1px #333;
+	}
+	.info p {
+		margin: 0;
+		padding: 0;
+		text-shadow: 1px 1px 1px #000;
+		font-size: 16px;
+	}
+	
+	.user-guide {
+		display: none;
+		position: absolute;
+		width: 80%;
+		height: 80%;
+		left: 10%;
+		top: 10%;
+		background-color: rgba(0, 0, 0, 0.8);
+		pointer-events: none;
+	}
+	.guide-tips {
+		position: absolute;
+		width:150px;
+		height: 50px;
+		left: 50%;
+		top: 50%;
+		margin-left: -75px;
+		margin-top: -90px;
+		color: #fff;
+		font-weight: 600;
+		text-shadow: 1px 2px 2px #000;
+		font-size: 16px;
+		text-align: center;
+	}
+	.guide-tips > p {
+		margin: 0;
+		padding: 3px;
+		line-height: 1.2;
+	}
+	.guide-logo {
+		position: absolute;
+		width: 100px;
+		height: 30px;
+		bottom: 20px;
+		left: 50%;
+		margin-left: -50px;
+	}
+	.guide-img {
+		height: 20px;
+		width: 20px;
+		display: block;
+		margin-left: 146px;
+		margin-top: -21px;
+	}
+	.guide-logo img {
+		height: 100%;
+		width: 100%;
+	}
+	.bg-music {
+		display: block;
+		position: absolute;
+		right: 20px;
+		top: 20px;
+		width: 30px;
+		height: 30px;
+		background: url("/Public/images/music.png") no-repeat;
+		background-size: 100% 100%;
+		z-index: 1000;
+	}
+	.bg-music.silent {
+		background: url("/Public/images/silent.png") no-repeat;
+		background-size: 100% 100%;
+	}
+	.wx-logo {
+		display: none;
+	}
+</style>
+
+</head>
+<body>
+	<div class="wx-logo">
+		<img alt="胸怀天下-都市丽人" src="/Public/images/wx-logo.jpg" >
+	</div>
+	<a href="javascript:void(0);" class="bg-music">
+		<audio loop="loop" autoplay="autoplay" style="display:none;"> 
+			<source src="/Public/music/map/music.ogg" type="audio/ogg">
+			<source src="/Public/music/map/music.mp3" type="audio/mpeg">
+		</audio>
+	</a>
+	<div class="index">
+    	<div class="tips"></div>
+    	<a href="javascript:void(0);" class="start-btn">
+        	<img src="/Public/images/start_bg.png" >
+        </a>
+    </div>
+	<div class="mapContainer">
+        <div class="allmap init">
+        	<img class="logo" src="/Public/images/logo.png" alt="都市丽人" />
+        	
+        	<div class="star-name" style="left: 195px;top: 74px;">夏日海滩</div>
+        	<a href="javascript:void(0);" class="star" onclick="showStarInfo('start_0', '/Public/images/map/xiariht.jpg', '内衣成岛,令人流连忘返')" style="left: 220px;top: 106px;">
+        		<!-- <img src="/Public/images/add-btn.png" class="blink"> -->
+        	</a>
+        	
+        	<div class="star-name" style="left: 280px;top: 70px;">蜿蜒山路</div>
+        	<a href="javascript:void(0);" class="star" onclick="showStarInfo('start_1', '/Public/images/map/wanyansl.jpg', '孤独旅人行走在,凹凸不平的山路')" style="left: 305px;top: 102px;">
+        		<!-- <img src="/Public/images/add-btn.png" class="blink"> -->
+        	</a>
+        	
+        	<div class="star-name" style="left: 75px;top: 690px;">垂钓</div>
+        	<a href="javascript:void(0);" class="star" onclick="showStarInfo('start_2', '/Public/images/map/chuidiao.jpg', '一汪水遇见内衣化作湖泊,垂钓人正耐心等候')" style="left: 85px;top: 722px;">
+        		<!-- <img src="/Public/images/add-btn.png" class="blink"> -->
+        	</a>
+        	
+        	<div class="star-name" style="left: 148px;top: 835px;">山洞</div>
+        	<a href="javascript:void(0);" class="star" onclick="showStarInfo('start_3', '/Public/images/map/shandong.jpg', '点点星光笼罩山洞')" style="left: 158px;top: 867px;">
+        		<!-- <img src="/Public/images/add-btn.png" class="blink"> -->
+        	</a>
+        	
+        	<div class="star-name" style="left: 208px;top: 954px;">峭壁</div>
+        	<a href="javascript:void(0);" class="star" onclick="showStarInfo('start_4', '/Public/images/map/qiaobi.jpg', '峭壁骑行,向险而生')" style="left: 218px;top: 986px;">
+        		<!-- <img src="/Public/images/add-btn.png" class="blink"> -->
+        	</a>
+        	
+        	<div class="star-name" style="left: 240px;top: 847px;">跳水</div>
+        	<a href="javascript:void(0);" class="star" onclick="showStarInfo('start_5', '/Public/images/map/tiaoshui.jpg', '一跃而下,跳入“波”涛汹涌的水面')" style="left: 250px;top: 879px;">
+        		<!-- <img src="/Public/images/add-btn.png" class="blink"> -->
+        	</a>
+        	
+        	<div class="star-name" style="left: 244px;top: 790px;">攀岩</div>
+        	<a href="javascript:void(0);" class="star" onclick="showStarInfo('start_6', '/Public/images/map/panyan.jpg', '人生路之艰辛,免不了会遇上几座“xiong”峰')" style="left: 254px;top: 822px;">
+        		<!-- <img src="/Public/images/add-btn.png" class="blink"> -->
+        	</a>
+        	
+        	<div class="star-name" style="left: 315px;top: 757px;">雪山</div>
+        	<a href="javascript:void(0);" class="star" onclick="showStarInfo('start_7', '/Public/images/map/xueshan.jpg', '蔚蓝的天空，纯净的雪山,用内衣造就一场梦境幻景')" style="left: 325px;top: 789px;">
+        		<!-- <img src="/Public/images/add-btn.png" class="blink"> -->
+        	</a>
+        	
+        	<div class="star-name" style="left: 614px;top: 276px;">门店</div>
+        	<a href="javascript:void(0);" class="star" onclick="showStarInfo('start_8', '/Public/images/map/mendian.jpg', '到底是门店里装着内衣,还是内衣里装着门店')" style="left: 624px;top: 308px;">
+        		<!-- <img src="/Public/images/add-btn.png" class="blink"> -->
+        	</a>
+        	
+        	<div class="star-name" style="left: 686px;top: 220px;">婚礼</div>
+        	<a href="javascript:void(0);" class="star" onclick="showStarInfo('start_9', '/Public/images/map/hunli.jpg', '红色地毯，白色礼堂,是我许你的一世诺言')" style="left: 696px;top: 252px;">
+        		<!-- <img src="/Public/images/add-btn.png" class="blink"> -->
+        	</a>
+        	
+        	<div class="star-name" style="left: 853px;top: 126px;">独木桥</div>
+        	<a href="javascript:void(0);" class="star" onclick="showStarInfo('start_10', '/Public/images/map/dumuqiao.jpg', '一把钥匙连接内衣,愿能走进你的心房')" style="left: 871px;top: 158px;">
+        		<!-- <img src="/Public/images/add-btn.png" class="blink"> -->
+        	</a>
+        	
+        	<div class="star-name" style="left: 1065px;top: 240px;">T台秀</div>
+        	<a href="javascript:void(0);" class="star" onclick="showStarInfo('start_11', '/Public/images/map/Ttaixiu.jpg', '穿上内衣是最性感的模特,脱下内衣是最闪耀的舞台')" style="left: 1080px;top: 272px;">
+        		<!-- <img src="/Public/images/add-btn.png" class="blink"> -->
+        	</a>
+        	
+        	<div class="star-name" style="left: 976px;top: 335px;">施工队</div>
+        	<a href="javascript:void(0);" class="star" onclick="showStarInfo('start_12', '/Public/images/map/shigongdui.jpg', '认真施工,只为成就更大的胸怀')" style="left: 994px;top: 367px;">
+        		<!-- <img src="/Public/images/add-btn.png" class="blink"> -->
+        	</a>
+        	
+        	<div class="star-name" style="left: 858px;top: 507px;">踢足球</div>
+        	<a href="javascript:void(0);" class="star" onclick="showStarInfo('start_13', '/Public/images/map/zuqiu.jpg', '进球的那一刻,你俘获了我的心')" style="left: 876px;top: 539px;">
+        		<!-- <img src="/Public/images/add-btn.png" class="blink"> -->
+        	</a>
+        	
+        	<div class="star-name" style="left: 920px;top: 589px;">自行车</div>
+        	<a href="javascript:void(0);" class="star" onclick="showStarInfo('start_14', '/Public/images/map/zixingche.jpg', '绕峰而行,看遍大好风光')" style="left: 938px;top: 621px;">
+        		<!-- <img src="/Public/images/add-btn.png" class="blink"> -->
+        	</a>
+        	
+        	<div class="star-name" style="left: 798px;top: 597px;">热气球</div>
+        	<a href="javascript:void(0);" class="star" onclick="showStarInfo('start_15', '/Public/images/map/jiangluos.jpg', '一场热气球的奇妙冒险,两片内衣的无限性感')" style="left: 816px;top: 629px;">
+        		<!-- <img src="/Public/images/add-btn.png" class="blink"> -->
+        	</a>
+        	
+        	<div class="star-name" style="left: 747px;top: 937px;">汪洋大海</div>
+        	<a href="javascript:void(0);" class="star" onclick="showStarInfo('start_16', '/Public/images/map/wangyangdh.jpg', '不惧“波”涛汹涌,全为漂洋过海来看你')" style="left: 772px;top: 969px;">
+        		<!-- <img src="/Public/images/add-btn.png" class="blink"> -->
+        	</a>
+        	<div class="star-name" style="left: 796px;top: 879px;">士兵出征</div>
+        	<a href="javascript:void(0);" class="star" onclick="showStarInfo('start_17', '/Public/images/map/shibingcj.jpg', '突出重重胸围,士兵即将出征')" style="left: 821px;top: 911px;">
+        		<!-- <img src="/Public/images/add-btn.png" class="blink"> -->
+        	</a>
+        	
+        	<div class="star-name" style="left: 945px;top: 879px;">耳环宝藏</div>
+        	<a href="javascript:void(0);" class="star" onclick="showStarInfo('start_18', '/Public/images/map/erhuanbc.jpg', '耳环散落在内衣上,变成夺目的宝藏')" style="left: 970px;top: 911px;">
+        		<!-- <img src="/Public/images/add-btn.png" class="blink"> -->
+        	</a>
+        	
+        	<div class="star-name" style="left: 902px;top: 1046px;">沙滩排球</div>
+        	<a href="javascript:void(0);" class="star" onclick="showStarInfo('start_19', '/Public/images/map/shatanpq.jpg', '内衣慵懒散开,变成沙滩排球的竞技场')" style="left: 927px;top: 1078px;">
+        		<!-- <img src="/Public/images/add-btn.png" class="blink"> -->
+        	</a>
+       	</div>
+        <div class="overview_map">
+        	<div class="view_bound"></div>
+        </div>
+    </div>
+    <div class="user-guide">
+    	<div class="guide-tips">
+    		<p>滑动屏幕 点击加号</p>
+    		<img alt="" src="/Public/images/add-btn.png" class="guide-img">
+    		<p>开始内衣世界之旅</p>
+    	</div>
+    	<div class="guide-logo">
+    		<img alt="" src="/Public/images/logo-img.png">
+    	</div>
+    </div>
+    <div class="alert-dlg">
+	    <div class="dialog">
+	        <div class="dialogCon">
+	        	<div class="photoCon">
+		        	<img src="" alt="内衣微缩摄影"/>
+		            <div class="info">
+		            	
+		            </div>
+	        	</div>
+	            <div class="bottomfix">
+	            	<a href="javascript:void(0);" class="close-btn" onClick="closeDlg();">继续</a>
+	            </div>
+	        </div>
+	    </div>
+    </div>
+</body>
+<script type="text/javascript" src="/Public/js/jquery-1.11.2.min.js"></script>
+<script>
+	function loadImage(url) {       
+		var img =new Image();
+		$(img).addClass("mapimg");
+		/* $(img).css({
+			"min-width": $(window).width() * 3,
+			"min-height": $(window).height() * 1.5
+		});  */
+		img.onload =function(){  
+			img.onload = null; 
+			$(".index").hide(); 
+			$(".start-btn").removeClass("click");
+			$(".start-btn").show();
+			$(".tips").html("");
+			$(".mapContainer").show();
+			$(".allmap").prepend(img);
+			setTimeout(function(){
+				$(".allmap").removeClass("init");
+				setTimeout(function(){
+					$(".star-name").fadeIn();
+				}, 1000);
+			}, 100);
+			var left = -1*((img.width - $(window).width()) / 2);
+			var top = -1*(img.height - $(window).height()) / 2;
+			$(".allmap").css({
+				top: (-1*(img.height - $(window).height()) / 2) + "px",
+				left: (-1*(img.width - $(window).width()) / 2) + "px"
+			});
+			$(".overview_map").height($(".overview_map").width() * img.height / img.width);
+			$(".overview_map").css("background-image", "url(" + img.src + ")");
+
+			onWinResize();
+			initEvent();
+			$(".user-guide").fadeIn();
+			setTimeout(function(){
+				$(".user-guide").fadeOut();
+			}, 5000);
+		}  
+		img.src = url;
+	}  
+	
+	var aspect_ratio;
+	var scale_ratio_x;
+	var scale_ratio_y;
+	var win_width;
+	var win_height;
+	function onWinResize() {
+		/* $(".mapimg").css({
+			"min-width": $(window).width() * 3,
+			"min-height": $(window).height() * 1.5
+		});  */
+		win_width = $(window).width();
+		win_height = $(window).height();
+		var mapLeft = parseFloat($(".allmap").css("left"));
+		var mapTop = parseFloat($(".allmap").css("top"));
+		if(mapLeft >= 0)
+		{
+			$(".allmap")[0].style.left =  0 + 'px'; 
+		}
+		else if(mapLeft <= $(".mapContainer").width() - $(".allmap").width())
+		{
+			$(".allmap")[0].style.left =  ($(".mapContainer").width() - $(".allmap").width()) + 'px'; 
+		}
+		if(mapTop >= 0)
+		{
+			$(".allmap")[0].style.top =  0 + 'px'; 
+		}
+		else if(mapTop <= $(".mapContainer").height() - $(".allmap").height())
+		{
+			$(".allmap")[0].style.top =  ($(".mapContainer").height() - $(".allmap").height()) + 'px'; 
+		}
+		
+		/* $(".allmap a").remove();
+		var starArr = [{
+				name: "start_0",
+				photoUrl: "/Public/images/photo.png",
+				description: "胸怀天下  内衣微缩摄影展介绍1"
+			}, {
+				name: "start_1",
+				photoUrl: "/Public/images/photo.png",
+				description: "胸怀天下  内衣微缩摄影展介绍2"
+			},{
+				name: "start_2",
+				photoUrl: "/Public/images/photo.png",
+				description: "胸怀天下  内衣微缩摄影展介绍3"
+			},{
+				name: "start_3",
+				photoUrl: "/Public/images/photo.png",
+				description: "胸怀天下  内衣微缩摄影展介绍4"
+			},{
+				name: "start_4",
+				photoUrl: "/Public/images/photo.png",
+				description: "胸怀天下  内衣微缩摄影展介绍5"
+			},{
+				name: "start_5",
+				photoUrl: "/Public/images/photo.png",
+				description: "胸怀天下  内衣微缩摄影展介绍6"
+			},{
+				name: "start_6",
+				photoUrl: "/Public/images/photo.png",
+				description: "胸怀天下  内衣微缩摄影展介绍7"
+			},{
+				name: "start_7",
+				photoUrl: "/Public/images/photo.png",
+				description: "胸怀天下  内衣微缩摄影展介绍8"
+			},{
+				name: "start_8",
+				photoUrl: "/Public/images/photo.png",
+				description: "胸怀天下  内衣微缩摄影展介绍9"
+			},{
+				name: "start_9",
+				photoUrl: "/Public/images/photo.png",
+				description: "胸怀天下  内衣微缩摄影展介绍10"
+			},{
+				name: "start_10",
+				photoUrl: "/Public/images/photo.png",
+				description: "胸怀天下  内衣微缩摄影展介绍11"
+			},{
+				name: "start_11",
+				photoUrl: "/Public/images/photo.png",
+				description: "胸怀天下  内衣微缩摄影展介绍12"
+			}];
+		createRandStars(starArr); */
+		
+		aspect_ratio = $(window).width() / $(window).height();
+		scale_ratio_x = $(".mapimg").width() / $(".overview_map").width();
+		scale_ratio_y = $(".mapimg").height() / $(".overview_map").height();
+		var viewboundW = $(window).width() / scale_ratio_x;
+		var viewboundH = viewboundW / aspect_ratio;
+		$(".view_bound").width(viewboundW);
+		$(".view_bound").height(viewboundH);
+		var left = -1 * parseFloat($(".allmap").css("left")) / scale_ratio_x;
+		var top = -1 * parseFloat($(".allmap").css("top")) / scale_ratio_y;
+		$(".view_bound").css({
+			top: top,
+			left: left
+		});
+		/*if(aspect_ratio > 1)  //横屏
+		{
+		}
+		else
+		{
+			var maxW = $(".overview_map").width() / aspect_ratio;
+			viewboundW = maxW / 3;
+			viewboundH = viewboundW * aspect_ratio;
+		}*/
+	}
+	function rand(rMi, rMa) {
+		return ~~((Math.random()*(rMa-rMi+1))+rMi);
+	}  
+	//创建星星，位置固定
+	function createStars(starList)
+	{
+		
+	}
+	//创建星星，位置随机
+	function createRandStars(starList) {
+		if(!starList || !starList.length)
+		{
+			return;
+		}
+		var leftTopMap = [];
+		var isLeftTopCanUse = function(left,top) {
+			for(var i = 0; i < leftTopMap.length; i++)
+			{
+				if(left > leftTopMap[i].left - 40 && 
+				   left < leftTopMap[i].left + 60 &&
+				   top > leftTopMap[i].top - 40 && 
+				   top < leftTopMap[i].top + 60)
+				{
+					return false;
+				}
+			}
+			return true;
+		}
+		var areaNum = 6; //把图片平均分成6个区域,没个区域随机生成星星，创建完为止
+		var leftScale = $(".mapimg").width() / 3;
+		var topScale = $(".mapimg").height() / 2;
+		var tryCount = 10;
+		for(var col = 0; col < 3; col++)
+		{
+			for(var row = 0; row < 2; row++)
+			{
+				var starNum = rand(1,3);
+				var left_min = col * leftScale;
+				var left_max = (col+1) * leftScale;
+				var top_min = row * topScale;
+				var top_max = (row+1) * topScale;
+				if(col == 2&&row==1)
+				{
+					while(starList.length)
+					{
+						var left = 0;
+						var top = 0;
+						tryCount = 10;
+						do {
+							left = rand(left_min, left_max);
+							top = rand(top_min, top_max);
+							left = left <= 20? 20:left;
+							left = left >= $(".allmap").width() - $(".overview_map").width() - 50? $(".allmap").width() - $(".overview_map").width() - 50:left;
+							top = top <= 20? 20:top;
+							top = top >= $(".allmap").height() - $(".overview_map").height() - 50? $(".allmap").height() - $(".overview_map").height() - 50:top;
+						}while(tryCount-- && !isLeftTopCanUse(left, top));
+						
+						var $newStarHtml = $('<a href="javascript:void(0);" class="star" onclick="showStarInfo(\'' + 
+												starList[0].name + '\', \'' + 
+												starList[0].photoUrl + '\', \'' + 
+												starList[0].description + 
+											'\')"><img src="/Public/images/add-btn.png" class="blink" /></a>');
+						$newStarHtml.css({
+							"left": left + "px",
+							"top": top + "px"
+						});
+						$(".allmap").append($newStarHtml);
+						starList.splice(0,1);
+						leftTopMap.push({left:left, top:top});
+					}
+					return;
+				}
+				for(var j = 0; j < starNum; j++)
+				{
+					if(!starList.length)
+					{
+						return;
+					}
+					var left = 0;
+					var top = 0;
+					tryCount = 10;
+					do {
+						left = rand(left_min, left_max);
+						top = rand(top_min, top_max);
+						left = left <= 20? 20:left;
+						left = left >= $(".allmap").width() - $(".overview_map").width() - 50? $(".allmap").width() - $(".overview_map").width() - 50:left;
+						top = top <= 20? 20:top;
+						top = top >= $(".allmap").height() - $(".overview_map").height() - 50? $(".allmap").height() - $(".overview_map").height() - 50:top;
+					}while(tryCount-- && !isLeftTopCanUse(left, top));
+					
+					var $newStarHtml = $('<a href="javascript:void(0);" class="star" onclick="showStarInfo(\'' + 
+											starList[0].name + '\', \'' + 
+											starList[0].photoUrl + '\', \'' + 
+											starList[0].description + 
+										'\')"><img src="/Public/images/add-btn.png" class="blink" /></a>');
+					$newStarHtml.css({
+						"left": left + "px",
+						"top": top + "px"
+					});
+					$(".allmap").append($newStarHtml);
+					starList.splice(0,1);
+					leftTopMap.push({left:left, top:top});
+				}
+			}
+		}
+	}
+	
+	function showMap() {
+		if($(".start-btn").hasClass("click"))
+		{
+			return;
+		}
+		$(".start-btn").addClass("click");
+		setTimeout(function(){
+			$(".tips").html("加载中...");
+		}, 500);
+		if(!$(".mapimg").length)
+		{
+			loadImage("/Public/images/xingkong.jpg");
+			$(window).resize(function(){
+				onWinResize();
+			});
+		}
+	}
+	
+	function showStarInfo(starName, starPhotoUrl, description) {
+		var photoImg = $(".photoCon > img")[0];
+		$(".photoCon").hide();
+		photoImg.onload = function() {
+			photoImg.onload = null;
+			$(".photoCon").show();
+			if(description != "")
+			{
+				var sectionArr = description.split(",");
+				var infoHtml ="";
+				for(var i = 0; i < sectionArr.length; i++)
+				{
+					infoHtml += '<p>' + sectionArr[i] + '</p>';
+				}
+				$(".info").html(infoHtml);
+			}
+		};
+		photoImg.onerror = function() {
+			photoImg.onerror = null;
+			$(".photoCon").show();
+			if(description != "")
+			{
+				var sectionArr = description.split(",");
+				var infoHtml ="";
+				for(var i = 0; i < sectionArr.length; i++)
+				{
+					infoHtml += '<p>' + sectionArr[i] + '</p>';
+				}
+				$(".info").html(infoHtml);
+			}
+		};
+		$(".photoCon > img").attr("src", starPhotoUrl);
+		
+		$(".alert-dlg").fadeIn();
+	}
+	
+	function closeDlg() {
+		$(".alert-dlg").fadeOut("fast");
+	}
+	$(function(){
+		$(".start-btn").click(function(){
+			showMap();
+		});
+		$(".index, .alert-dlg, .dialog, .dialogCon,.photoCon").on('touchmove', function(e) {
+			e = e || window.event;
+			e.stopPropagation();
+			var scrollHeight = $(this).hasClass("index")? this.scrollHeight:$(".photoCon")[0].scrollHeight;
+			if(this.scrollHeight <= $(this).parent().height())
+			{
+				e.preventDefault();
+				return false;
+			}
+		});
+		
+		$(".bg-music").click(function(){
+			if($(".bg-music").hasClass("silent"))
+			{
+				$(".bg-music").removeClass("silent");
+				$(".bg-music > audio")[0].play();
+			}
+			else
+			{
+				$(".bg-music").addClass("silent");
+				$(".bg-music > audio")[0].pause();
+			}
+		});
+		//$("html, body, .index").height($(window).height());
+		//$("html, body, .index").width($(window).width());
+		/*var move_lastY = 0; // 上一次位置  
+		$(".index, .dialog").on('touchmove', function(e) {
+			e = e || window.event;
+			if(this.scrollHeight <= $(window).height())
+			{
+				e.stopPropagation();
+				e.preventDefault();
+				return false;
+			}
+			var touchObj = e.touches && e.touches.length? e.touches[0]:(e.changedTouches && e.changedTouches.length? e.changedTouches[0]:null);
+			if (e.originalEvent && e.originalEvent.touches && e.originalEvent.touches[0]) {
+				touchObj = e.originalEvent.touches[0];
+			}
+			
+			var moveY = touchObj.clientX - move_lastY;  
+			var newScrollTop = $(this).scrollTop() + moveY;
+			move_lastY = touchObj.clientX;
+			if(newScrollTop <= 0 || newScrollTop >= this.scrollHeight - $(window).height() - 15)
+			{
+				e.stopPropagation();
+				e.preventDefault();
+				return false;
+			} 
+		});*/
+	});
+	window.requestAnimFrame=function(){
+		return window.requestAnimationFrame    ||
+			window.webkitRequestAnimationFrame ||
+			window.mozRequestAnimationFrame	   ||
+			window.oRequestAnimationFrame	   ||
+			window.msRequestAnimationFrame	   ||
+			function(a){window.setTimeout(a,1E3/60)}
+	}();
+	var inertiaMoveTimer = null;
+	function initEvent() {
+		var parent = $('.allmap')[0];  
+		var content = parent;//document.getElementById('content')  
+		var startX = 0;
+		var lastX = 0;
+		var startY = 0; // 初始位置  
+		var lastY = 0; // 上一次位置  
+		var max_vx = 1;
+		var max_vy =1;
+		
+		var content_last_left = parseFloat(content.style.left);
+		var content_last_top = parseFloat(content.style.top);
+		
+		var content_width = $(".mapimg").width();
+		var content_height = $(".mapimg").height();
+		win_width = $(window).width();
+		win_height = $(window).height();
+		  
+		/** 
+		 * 用于缓动的变量 
+		 */  
+		var lastMoveTime = 0;  
+		var lastMoveStartX = 0;
+		var lastMoveStartY = 0;  
+		var stopInertiaMove = false; // 是否停止缓动  
+		  
+		parent.addEventListener('touchstart', function(e) {
+			var touchObj = e.touches && e.touches.length? e.touches[0]:(e.changedTouches && e.changedTouches.length? e.changedTouches[0]:null);
+			if (e.originalEvent && e.originalEvent.touches && e.originalEvent.touches[0]) {
+				touchObj = e.originalEvent.touches[0];
+			}
+			if($(".user-guide").css("display") != "none")
+			{
+				$(".user-guide").fadeOut();
+			}
+			$(".star > img").removeClass("blink");
+			
+			lastX = startX = touchObj.clientX;  
+			lastY = startY = touchObj.clientY;  
+			
+			content_last_left = parseFloat(content.style.left);
+			content_last_top = parseFloat(content.style.top);
+			/** 
+			 * 缓动代码 
+			 */  
+			lastMoveStartX = lastX; 
+			lastMoveStartY = lastY;  
+			lastMoveTime = Date.now();  
+			stopInertiaMove = true;  
+		});  
+		parent.addEventListener('touchmove', function(e) {
+			e = e || window.event;
+			e.stopPropagation();
+			e.preventDefault();
+			var touchObj = e.touches && e.touches.length? e.touches[0]:(e.changedTouches && e.changedTouches.length? e.changedTouches[0]:null);
+			if (e.originalEvent && e.originalEvent.touches && e.originalEvent.touches[0]) {
+				touchObj = e.originalEvent.touches[0];
+			}
+			var nowX  = touchObj.clientX;  
+			var moveX = nowX - lastX;  
+			//var contentLeft = content.style.left.replace('px', '');
+			var contentX = content_last_left + moveX;//parseInt(contentLeft) + moveX;
+			if(contentX >= 0)
+			{
+				content.style.left =  0 + 'px'; 
+				content_last_left = 0;
+			}
+			else if(contentX <= win_width - content_width)
+			{
+				content_last_left = win_width - content_width;
+				content.style.left =  content_last_left + 'px';
+			}
+			else
+			{
+				content.style.left =  contentX + 'px';
+				content_last_left = contentX;
+			}
+			var nowY = touchObj.clientY;  
+			var moveY = nowY - lastY;  
+			//var contentTop = content.style.top.replace('px', ''); 
+			var contentY = content_last_top + moveY;//(parseInt(contentTop) + moveY); 
+			if(contentY >= 0)
+			{
+				content.style.top =  0 + 'px'; 
+				content_last_top = 0;
+			}
+			else if(contentY <= win_height - content_height)
+			{
+				content_last_top = win_height - content_height;
+				content.style.top =  content_last_top + 'px';
+			}
+			else
+			{
+				// 设置top值移动content
+				content.style.top =  contentY + 'px';
+				content_last_top = contentY;
+			}
+			
+			//移动鹰眼视图
+			var viewLeft = (-1 * content_last_left / scale_ratio_x) + "px";
+			var viewTop = (-1 * content_last_top / scale_ratio_y) + "px";
+			$(".view_bound").css({
+				top: viewTop,
+				left: viewLeft
+			});
+			
+			lastX = nowX;
+			lastY = nowY; 
+
+			/** 
+			 * 缓动代码 
+			 */  
+			var nowTime = Date.now();  
+			stopInertiaMove = true;  
+			/* if(nowTime - lastMoveTime > 100) {  
+				lastMoveTime = nowTime;  
+				lastMoveStartX = nowX;  
+				lastMoveStartY = nowY;  
+			}   */
+		    return false;
+		});  
+		parent.addEventListener('touchend', function(e) {  
+			// do touchend 
+			e =  e || window.event; 
+			e.stopPropagation();
+			//e.preventDefault(); 
+			var touchObj = e.touches && e.touches.length? e.touches[0]:(e.changedTouches && e.changedTouches.length? e.changedTouches[0]:null);
+			if (e.originalEvent && e.originalEvent.touches && e.originalEvent.touches[0]) {
+				touchObj = e.originalEvent.touches[0];
+			}
+			var nowX = touchObj.clientX;  
+			var moveX = nowX - lastX;  
+			//var contentLeft = content.style.left.replace('px', ''); 
+			//var contentX = (parseInt(contentLeft) + moveX);
+			
+			var contentX = content_last_left + moveX;
+			var needReturn = false;
+			if(contentX >= 0)
+			{
+				content.style.left =  0 + 'px';
+				content_last_left = 0;
+				needReturn = true;
+			}
+			else if(contentX <= win_width - content_width)
+			{
+				content_last_left = win_width - content_width;
+				content.style.left =  content_last_left + 'px'; 
+				needReturn = true;
+			}
+			else
+			{
+				content.style.left =  contentX + 'px'; 
+				content_last_left = contentX;
+			}
+			var nowY = touchObj.clientY;  
+			var moveY = nowY - lastY;  
+			//var contentTop = content.style.top.replace('px', ''); 
+			//var contentY = (parseInt(contentTop) + moveY); 
+			var contentY = content_last_top + moveY; 
+			if(contentY >= 0)
+			{
+				content.style.top =  0 + 'px'; 
+				content_last_top = 0;
+				needReturn = true;
+			}
+			else if(contentY <= win_height - content_height)
+			{
+				content_last_top = win_height - content_height;
+				content.style.top =  content_last_top + 'px'; 
+				needReturn = true;
+			}
+			else
+			{
+				// 设置top值移动content
+				content.style.top =  contentY + 'px';
+				content_last_top = contentY;
+			}
+			//移动鹰眼视图
+			var viewLeft = (-1 * content_last_left / scale_ratio_x) + "px";
+			var viewTop = (-1 * content_last_top / scale_ratio_y) + "px";
+			$(".view_bound").css({
+				"top": viewTop,
+				"left": viewLeft
+			});
+			
+			if(needReturn)
+			{
+				$(".star > img").addClass("blink");
+				return;
+			}
+			 
+			  
+			lastY = nowY;  
+			lastX = nowX;
+		  
+			/** 
+			 * 缓动代码 
+			 */  
+			var nowTime = Date.now(); 
+			var vx = (nowX - lastMoveStartX) / (nowTime - lastMoveTime); //最后一段时间手指划动速
+			var vy = (nowY - lastMoveStartY) / (nowTime - lastMoveTime); //最后一段时间手指划动速度  
+
+			//console.log("before:vx=" + vx + ";  vy=" + vy);
+			var minification = 1;
+			if(Math.abs(vx) > max_vx)
+			{
+				minification = max_vx / Math.abs(vx);
+				vx = vx < 0? -1 * max_vx:max_vx;
+				vy = minification * vy;
+			}
+			if(Math.abs(vy) > max_vy)
+			{
+				minification = max_vy / Math.abs(vy);
+				vy = vy < 0? -1 * max_vy:max_vy;
+				vx = minification * vx;
+			}
+			//console.log("after:vx=" + vx + ";  vy=" + vy + ";  minification=" + minification);
+			stopInertiaMove = false;  
+			(function(vx, vy, startTime, contentX, contentY) { 
+				var dirX = vx > 0 ? -1 : 1; //加速度方向
+				dirX = vx == 0? 0:dirX;
+				var decelerationX = dirX*0.002;  
+				
+				var dirY = vy > 0 ? -1 : 1; //加速度方向  
+				dirY = vy == 0? 0:dirY;
+				var decelerationY = dirY*0.002;  
+				function inertiaMove() { 
+					if(stopInertiaMove) 
+					{
+						$(".star > img").addClass("blink");
+						clearTimeout(inertiaMoveTimer);
+						return; 
+					}
+					//window.requestAnimFrame(inertiaMove);
+					inertiaMoveTimer = setTimeout(inertiaMove, 1000/60);
+					var nowTime = Date.now();  
+					var t = nowTime-startTime; 
+					var nowVx = vx + t*decelerationX;  
+					var nowVy = vy + t*decelerationY;
+					//console.log("nowVx=" + nowVx + "nowVy=" + nowVy);
+					// 速度方向变化表示速度达到0了  
+					if(nowVx == 0 && nowVy == 0 || dirY*nowVy > 0 || nowVx*dirX > 0) {
+						stopInertiaMove = true;
+						return;  
+					} 
+					var moveX = (vx + nowVx)/2 * t;
+					var needReturn = false; 
+					//var moveToX = parseFloat(content.style.left) + moveX;
+					var moveToX = content_last_left + moveX;
+					if(moveToX >= 0)
+					{
+						content.style.left =  0 + 'px'; 
+						content_last_left = 0;
+						needReturn = true;
+					}
+					else if(moveToX <= win_width - content_width)
+					{
+						content_last_left = win_width - content_width;
+						content.style.left =  content_last_left + 'px'; 
+						needReturn = true;
+					}
+					else
+					{
+						content.style.left = moveToX + "px";
+						content_last_left = moveToX;
+					}
+					var moveY = (vy + nowVy)/2 * t; 
+					//var moveToY = parseFloat(content.style.top) + moveY;
+					var moveToY = content_last_top + moveY;
+					if(moveToY >= 0)
+					{
+						content.style.top = "0px";
+						content_last_top = 0;
+						needReturn = true;
+					}
+					else if(moveToY <= win_height - content_height)
+					{
+						content_last_top = win_height - content_height;
+						content.style.top =  content_last_top + 'px'; 
+						needReturn = true;
+					}
+					else
+					{
+						content.style.top = moveToY + "px";
+						content_last_top = moveToY;
+					}
+					//移动鹰眼视图
+					var viewLeft = (-1 * content_last_left / scale_ratio_x) + "px";
+					var viewTop = (-1 * content_last_top / scale_ratio_y) + "px";
+					$(".view_bound").css({
+						top: viewTop,
+						left: viewLeft
+					});
+			
+					if(needReturn)
+					{
+						stopInertiaMove = true;
+					} 
+					vx = nowVx;
+					vy= nowVy;
+					startTime = nowTime; 
+				}  
+				if(inertiaMoveTimer)
+				{
+					clearTimeout(inertiaMoveTimer);
+				} 
+				inertiaMoveTimer = setTimeout(inertiaMove, 1000/60); 
+			})(vx, vy, nowTime, contentX, contentY); 
+			//return false;
+		}); 
+	}
+</script>
+</html>

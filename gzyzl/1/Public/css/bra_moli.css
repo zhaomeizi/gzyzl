@@ -1,0 +1,102 @@
+@CHARSET "UTF-8";
+.portrait-show.frame1 {
+	width: 37.8%;
+	left: 46.3%;
+	bottom: 57.3%;
+	transform: rotate(10deg);
+	-webkit-transform: rotate(10deg);
+}
+.portrait-show.frame2 {
+	width: 38.8%;
+	left: 41%;
+	bottom: 55.2%;
+	transform: rotate(5deg);
+	-webkit-transform: rotate(5deg);
+}
+.portrait-show.frame3 {
+	width: 40.8%;
+	left: 38.8%;
+	bottom: 53.5%;
+	transform: rotate(3deg);
+	-webkit-transform: rotate(3deg);
+}
+.portrait-show.frame4 {
+	width: 40.8%;
+	left: 36%;
+	bottom: 51.2%;
+	transform: rotate(2deg);
+	-webkit-transform: rotate(2deg);
+}
+.portrait-show.frame5 {
+	width: 41.8%;
+	left: 32%;
+	bottom: 46.8%;
+	transform: rotate(2deg);
+	-webkit-transform: rotate(2deg);
+}
+.portrait-show.frame6 {
+	width: 42.8%;
+	left: 31%;
+	bottom: 43.4%;
+	transform: rotate(2deg);
+	-webkit-transform: rotate(2deg);
+}
+.portrait-show.frame7 {
+	width: 43.8%;
+	left: 30%;
+	bottom: 42.4%;
+	transform: rotate(1deg);
+	-webkit-transform: rotate(1deg);
+}
+.portrait-show.frame8 {
+	width: 43.8%;
+	left: 30%;
+	bottom: 42.4%;
+	transform: rotate(1deg);
+	-webkit-transform: rotate(1deg);
+}
+.portrait-show.frame9 {
+	width: 43.8%;
+	left: 30%;
+	bottom: 42.4%;
+	transform: rotate(1deg);
+	-webkit-transform: rotate(1deg);
+}
+.portrait-show.frame10 {
+	width: 43.8%;
+	left: 30%;
+	bottom: 42.4%;
+	transform: rotate(1deg);
+	-webkit-transform: rotate(1deg);
+}
+
+div.result-show.frame1 {
+	background-image: url(/Public/images/bra/pose/moli/frame1.png);
+}
+div.result-show.frame2 {
+	background-image: url(/Public/images/bra/pose/moli/frame2.png);
+}
+div.result-show.frame3 {
+	background-image: url(/Public/images/bra/pose/moli/frame3.png);
+}
+div.result-show.frame4 {
+	background-image: url(/Public/images/bra/pose/moli/frame4.png);
+}
+div.result-show.frame5 {
+	background-image: url(/Public/images/bra/pose/moli/frame5.png);
+}
+div.result-show.frame6 {
+	background-image: url(/Public/images/bra/pose/moli/frame6.png);
+}
+div.result-show.frame7 {
+	background-image: url(/Public/images/bra/pose/moli/frame7.png);
+}
+div.result-show.frame8 {
+	background-image: url(/Public/images/bra/pose/moli/frame8.png);
+}
+div.result-show.frame9 {
+	background-image: url(/Public/images/bra/pose/moli/frame9.png);
+}
+div.result-show.frame10 {
+	background-image: url(/Public/images/bra/pose/moli/frame10.png);
+}

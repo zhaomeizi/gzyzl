@@ -1,0 +1,177 @@
+<!DOCTYPE HTML>
+<html lang="zh-cn">
+<head>
+<meta charset="utf-8" />
+<title>带你回忆那些爸爸的口头禅</title>
+<meta name="viewport" content="width=device-width,initial-scale=1.0,minimum-scale=1.0,maximum-scale=1.0,user-scalable=no" />
+<style>
+html,body{
+	width:100%;
+	max-width:640px;
+	min-width:320px;
+	height:100%;
+	overflow-x:hidden;
+	box-sizing:border-box;
+	margin:0 auto;
+	padding:0;
+	background:url(/Public/images/father/basic_bg.jpg);
+}
+body{
+	background:url(/Public/images/father/index_bg.jpg);
+	position:relative;
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+	background-color: #c82e3b;
+	background-position:center center;
+	min-height: 480px;
+}
+a {
+	text-decoration: none;
+	outline: none !important;
+	-webkit-tap-highlight-color:rgba(0,0,0,0);
+}
+a:focus, a:active, a:hover, img:focus, img:active, img:hover {
+	outline: none !important;
+}
+.title{
+	position: absolute;
+	width:240px;
+	top: 50%;
+	left: 50%;
+	margin-left: -120px;
+	margin-top:-90px;
+}
+.title img{
+	width:100%;
+}
+
+.btn{
+	display:block;
+	position:absolute;
+	bottom:2.5%;
+	width:150px;
+	left: 50%;
+	margin-left: -75px;
+	background:url(/Public/images/father/start_bg.png);
+	background-size: 100% 100%;
+	background-repeat:no-repeat;
+}
+.btn-bg{
+	width:100%;
+	height: auto;
+	-webkit-animation: scaleout 1.3s infinite ease-in-out;
+	animation: scaleout 1.3s infinite ease-in-out;
+}
+
+@-webkit-keyframes scaleout {
+    0% { -webkit-transform: scale(1.0) }
+    100% {
+        -webkit-transform: scale(1.1);
+        opacity: 0;
+    }
+}
+@keyframes scaleout {
+    0% {
+        transform: scale(1.0);
+        -webkit-transform: scale(1.0);
+    } 100% {
+          transform: scale(1.1);
+          -webkit-transform: scale(1.1);
+          opacity: 0;
+      }
+}
+.wx-logo {
+	display: none;
+}
+.logo-con {
+	position: absolute;
+	width: 100%;
+	top: 0;
+	left: 0;
+	padding: 10px;
+	text-align: center;
+}
+.logo-con > img {
+	display: inline-block;
+	margin-left: 5px;
+	vertical-align: middle;
+}
+.logo-con > img:first-child {
+	margin-left: 0;
+}
+.company_logo {
+	width: 30%;
+	height: auto;
+	margin-top: 4%;
+}
+.game_logo {
+	width: 22%;
+	height: auto;
+}
+.split {
+	width: 2px;
+	height:auto;
+}
+</style>
+</head>
+
+
+<body>
+<div class="wx-logo">
+	<!-- <img alt="会动的海报" src="/Public/images/clothing/wx-cloth-logo.jpg" > -->
+</div>
+
+<div class="logo-con">
+	<img class="company_logo" src="/Public/images/father/logo.png" />
+	<img class="split" src="/Public/images/father/split.png" />
+	<img class="game_logo" src="/Public/images/father/game_logo.png" />
+</div>
+
+<a href="/father/game" class="btn">
+	<img class="btn-bg" src="/Public/images/father/start_bg.png">
+</a>
+<script src="http://res.wx.qq.com/open/js/jweixin-1.0.0.js"></script>
+<script>
+
+window.onload = function(){
+	//微信JS SDK 类设置
+	wx.config({
+		debug: false,
+		appId: '{$wxkey.appId}',
+		timestamp: {$wxkey.timeStamp},
+		nonceStr: '{$wxkey.nonceStr}',
+		signature: '{$wxkey.signature}',
+		jsApiList: [
+		//  'checkJsApi',
+		  'onMenuShareTimeline',          //朋友圈
+		  'onMenuShareAppMessage',       //朋友
+		  'onMenuShareQQ',
+		  'onMenuShareWeibo'
+		]
+	});
+	wx.ready(function(){
+		//var shareUrl = "https://open.weixin.qq.com/connect/oauth2/authorize?appid=wx33c182aa7e4ad93c&redirect_uri=http%3A%2F%2Fwww.kohian.com" + 
+					//encodeURI(top.location.pathname) + "&response_type=code&scope=snsapi_base&state=aaabcd#wechat_redirect";
+		
+		var shareObj = {
+				title: "带你回忆那些爸爸的口头禅", // 分享标题
+			    desc: "【锋尚爸爸】那些爸爸的口头禅你还记得吗？", // 分享描述
+			    link: top.location.protocol + "//" + top.location.host + "/" + top.location.pathname, // 分享链接
+			    imgUrl: top.location.protocol + "//" + top.location.host + "/Public/images/father/share.jpg", // 分享图标
+			    success: function () { 
+			        // 用户确认分享后执行的回调函数
+			    },
+			    cancel: function () { 
+			        // 用户取消分享后执行的回调函数
+			    }
+			}
+		wx.onMenuShareAppMessage(shareObj);
+		wx.onMenuShareTimeline(shareObj);
+		wx.onMenuShareQQ(shareObj);
+		wx.onMenuShareQQ(shareObj);
+		wx.onMenuShareQZone(shareObj);
+	});
+}//end
+</script>
+</body>
+</html>
